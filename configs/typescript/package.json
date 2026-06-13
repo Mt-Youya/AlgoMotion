@@ -1,0 +1,9 @@
+{
+  "name": "@algomotion/config-ts",
+  "version": "0.0.1",
+  "private": true,
+  "license": "PROPRIETARY",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,220 @@
+/* ─── AlgoMotion Design Tokens ────────────────────────────────────────────────
+ * Source of truth: DESIGN.md + PRODUCT.md
+ * Colors: Paper / Ink / Cobalt / Signal / Coral / Mist
+ * Theme: light-first, oklch full-palette, graph-paper + precision-instrument feel
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Brand palette */
+  --color-am-paper: oklch(96% 0.012 95); /* warm off-white page background */
+  --color-am-ink: oklch(19% 0.025 260); /* near-black for typography */
+  --color-am-cobalt: oklch(48% 0.22 265); /* primary brand / committed action */
+  --color-am-signal: oklch(87% 0.2 118); /* active algorithm state / CTA */
+  --color-am-coral: oklch(67% 0.22 30); /* comparisons, interrupts, accent */
+  --color-am-mist: oklch(91% 0.025 245); /* subtle surface / hover tint */
+
+  /* Easing */
+  --ease-am-out: cubic-bezier(0.16, 1, 0.3, 1); /* exponential, snappy */
+  --ease-am-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* Typography — Geist */
+  --font-sans: "Geist", "Geist Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+
+  /* Spacing rhythm (8-pt grid) */
+  --spacing-section: clamp(5rem, 12vw, 10rem);
+}
+
+/* ─── Tailwind 4 color bridge: map CSS vars → --color-* so bg-popover etc work ── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* ─── shadcn CSS variable bridge (light-first) ────────────────────────────── */
+:root {
+  /* Base surfaces — Paper & Mist */
+  --background: oklch(96% 0.012 95); /* am-paper */
+  --foreground: oklch(19% 0.025 260); /* am-ink   */
+
+  --card: oklch(94% 0.01 95);
+  --card-foreground: oklch(19% 0.025 260);
+
+  --popover: oklch(96% 0.012 95);
+  --popover-foreground: oklch(19% 0.025 260);
+
+  /* Primary — Cobalt (brand, committed actions) */
+  --primary: oklch(48% 0.22 265);
+  --primary-foreground: oklch(96% 0.012 95);
+
+  /* Secondary — Mist (subtle surfaces, ghost states) */
+  --secondary: oklch(91% 0.025 245);
+  --secondary-foreground: oklch(19% 0.025 260);
+
+  /* Muted — desaturated paper */
+  --muted: oklch(92% 0.01 95);
+  --muted-foreground: oklch(52% 0.02 260);
+
+  /* Accent — Signal green (active algorithm state, CTAs) */
+  --accent: oklch(87% 0.2 118);
+  --accent-foreground: oklch(19% 0.025 260);
+
+  /* Destructive — Coral (comparisons, errors, interrupts) */
+  --destructive: oklch(67% 0.22 30);
+  --destructive-foreground: oklch(96% 0.012 95);
+
+  /* Structure */
+  --border: oklch(84% 0.018 260);
+  --input: oklch(84% 0.018 260);
+  --ring: oklch(67% 0.22 30); /* coral focus ring */
+
+  /* Charts — use full palette */
+  --chart-1: oklch(48% 0.22 265); /* cobalt  */
+  --chart-2: oklch(87% 0.2 118); /* signal  */
+  --chart-3: oklch(67% 0.22 30); /* coral   */
+  --chart-4: oklch(91% 0.025 245); /* mist    */
+  --chart-5: oklch(19% 0.025 260); /* ink     */
+
+  /* Radius — slightly squared, tactile (per DESIGN.md "never glassy") */
+  --radius: 0.5rem; /* ~8px at 16px root */
+}
+
+/* ─── Dark mode override ──────────────────────────────────────────────────── */
+/* DESIGN.md is light-first; dark mode inverts paper/ink and deepens cobalt   */
+.dark {
+  --background: oklch(16% 0.02 260);
+  --foreground: oklch(93% 0.012 95);
+
+  --card: oklch(20% 0.022 260);
+  --card-foreground: oklch(93% 0.012 95);
+
+  --popover: oklch(20% 0.022 260);
+  --popover-foreground: oklch(93% 0.012 95);
+
+  --primary: oklch(63% 0.22 265); /* brighter cobalt on dark */
+  --primary-foreground: oklch(96% 0.012 95);
+
+  --secondary: oklch(27% 0.025 245);
+  --secondary-foreground: oklch(93% 0.012 95);
+
+  --muted: oklch(25% 0.018 260);
+  --muted-foreground: oklch(64% 0.02 260);
+
+  --accent: oklch(87% 0.2 118); /* signal stays vivid */
+  --accent-foreground: oklch(16% 0.02 260);
+
+  --destructive: oklch(72% 0.22 30); /* coral slightly lighter */
+  --destructive-foreground: oklch(16% 0.02 260);
+
+  --border: oklch(32% 0.022 260);
+  --input: oklch(32% 0.022 260);
+  --ring: oklch(72% 0.22 30);
+}
+
+/* ─── Button component styles ─────────────────────────────────────────────── */
+/* DESIGN.md: "tactile, bordered, slightly squared; never glassy"             */
+
+.am-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  border: 1.5px solid transparent;
+  border-radius: 9px;
+  font-family: var(--font-sans);
+  font-weight: 720;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition:
+    transform 320ms var(--ease-am-out),
+    background 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.am-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Coral focus ring — highly visible, WCAG 2.2 AA */
+.am-button:focus-visible {
+  outline: 3px solid oklch(67% 0.22 30);
+  outline-offset: 3px;
+}
+
+/* Primary — Signal green, ink text (launch / CTA action per DESIGN.md) */
+.am-button--primary {
+  color: oklch(19% 0.025 260);
+  background: oklch(87% 0.2 118);
+  border-color: transparent;
+}
+.am-button--primary:hover {
+  background: oklch(84% 0.2 118);
+  box-shadow: 0 4px 16px oklch(87% 0.2 118 / 0.28);
+}
+
+/* Secondary — Cobalt outline, cobalt text */
+.am-button--secondary {
+  color: oklch(48% 0.22 265);
+  border-color: oklch(48% 0.22 265);
+  background: transparent;
+}
+.am-button--secondary:hover {
+  background: oklch(48% 0.22 265 / 0.06);
+}
+
+/* Ghost — ink/paper contextual */
+.am-button--ghost {
+  color: inherit;
+  border-color: color-mix(in oklch, currentColor 28%, transparent);
+  background: transparent;
+}
+.am-button--ghost:hover {
+  background: color-mix(in oklch, currentColor 6%, transparent);
+}
+
+/* Sizes */
+.am-button--sm {
+  min-height: 36px;
+  padding: 0 13px;
+  font-size: 12px;
+}
+.am-button--md {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 13.5px;
+}
+.am-button--lg {
+  min-height: 54px;
+  padding: 0 24px;
+  font-size: 15px;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────────────────────── */
+/* PRODUCT.md: "Respect prefers-reduced-motion by disabling scroll scrubbing  */
+/* and shortening state changes"                                               */
+@media (prefers-reduced-motion: reduce) {
+  .am-button {
+    transition-duration: 0.01ms !important;
+  }
+  .am-button:hover {
+    transform: none;
+  }
+}

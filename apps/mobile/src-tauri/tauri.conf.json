@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AlgoMotion",
+  "version": "0.1.0",
+  "identifier": "io.algomotion.mobile",
+  "build": {
+    "beforeDevCommand": "pnpm --filter @algomotion/web dev",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "pnpm --filter @algomotion/web build",
+    "frontendDist": "../../web/out"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "AlgoMotion",
+        "width": 430,
+        "height": 860,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Education",
+    "shortDescription": "Interactive algorithm learning for iOS and Android."
+  }
+}

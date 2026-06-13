@@ -1,0 +1,7 @@
+{
+  "extends": "@algomotion/config-ts/base.json",
+  "compilerOptions": {
+    "lib": ["ES2022"]
+  },
+  "include": ["src/**/*.ts"]
+}

@@ -1,0 +1,32 @@
+/* ─── Global stylesheet entry point ────────────────────────────────────────
+ * Layer order matters — do not reorder these imports.
+ *
+ *  1. Tailwind base utilities
+ *  2. App design tokens (oklch palette + easing)
+ *  3. Base-UI component library (packages/ui)
+ *  4. Browser reset + element defaults
+ *  5. Shared UI components (nav, button, footer)
+ *  6. Page-specific styles
+ * ────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Frameworks */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* 2. Tokens */
+@import "./tokens.css";
+
+/* 3. Component library */
+@import "@algomotion/ui/style.css";
+
+/* 4. Reset */
+@import "./reset.css";
+
+/* 5. Shared components */
+@import "./components.css";
+
+/* 6. Pages */
+@import "./page-home.css";
+@import "./page-lab.css";
+@import "./page-not-found.css";

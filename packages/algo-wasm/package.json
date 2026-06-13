@@ -1,0 +1,16 @@
+{
+  "name": "@algomotion/algo-wasm",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "pkg"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "cargo check",
+    "build:wasm": "wasm-pack build --target web --out-dir pkg",
+    "typecheck": "cargo check",
+    "test": "cargo test",
+    "clean": "cargo clean"
+  }
+}

@@ -1,0 +1,383 @@
+/* ─── Lab page (/lab) ───────────────────────────────────────────────────────
+ * Algorithm playground: shell, nav, heading, workspace, transport, stats.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+.lab-shell {
+  min-height: 100svh;
+  padding: 24px clamp(18px, 4vw, 64px) 80px;
+  background: var(--paper);
+}
+
+/* ── Lab nav ─────────────────────────────────────────────────────────────── */
+.lab-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  min-height: 58px;
+  margin: 0 auto;
+  padding: 8px 10px 8px 18px;
+  color: var(--paper);
+  border-radius: 14px;
+  background: var(--ink);
+}
+
+.lab-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 760;
+  letter-spacing: -0.04em;
+}
+
+.lab-logo {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.lab-logo circle {
+  fill: var(--signal);
+  stroke: var(--ink);
+}
+
+.lab-nav > div {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.lab-nav > div span {
+  position: relative;
+  padding-left: 15px;
+  color: color-mix(in oklch, var(--paper) 70%, transparent);
+}
+
+.lab-nav > div span::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--signal);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.lab-nav > div a {
+  padding: 10px 13px;
+  color: var(--ink);
+  border-radius: 7px;
+  background: var(--signal);
+  font-weight: 700;
+}
+
+.lab-lang-toggle {
+  padding: 6px 12px;
+  color: color-mix(in oklch, var(--paper) 60%, transparent);
+  border: 1px solid color-mix(in oklch, var(--paper) 20%, transparent);
+  border-radius: 7px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.lab-lang-toggle:hover {
+  color: var(--paper);
+  border-color: color-mix(in oklch, var(--paper) 40%, transparent);
+}
+
+/* ── Lab heading ─────────────────────────────────────────────────────────── */
+.lab-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(280px, 4fr);
+  gap: 48px;
+  align-items: end;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(90px, 11vw, 160px) 0 clamp(50px, 7vw, 90px);
+  isolation: isolate;
+}
+
+.lab-heading > div > p {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 760;
+  letter-spacing: 0.15em;
+}
+
+.lab-heading h1 {
+  margin: 0;
+  font-size: clamp(4.4rem, 9vw, 9.5rem);
+  font-weight: 850;
+  letter-spacing: -0.085em;
+  line-height: 0.8;
+}
+
+.lab-heading > p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.4vw, 1.22rem);
+  line-height: 1.65;
+}
+
+/* ── Workspace ───────────────────────────────────────────────────────────── */
+.lab-workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 3fr) minmax(0, 9fr);
+  gap: 14px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.lab-controls,
+.lab-stage {
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+}
+
+.lab-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 26px;
+  background: var(--mist);
+}
+
+.lab-controls label {
+  display: grid;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.lab-controls select,
+.lab-controls textarea,
+.lab-speed select {
+  width: 100%;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 7px;
+  background: var(--paper);
+  font: inherit;
+}
+
+.lab-controls select,
+.lab-speed select {
+  min-height: 44px;
+  padding: 0 11px;
+}
+
+.lab-controls textarea {
+  padding: 12px;
+  resize: vertical;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.55;
+}
+
+.lab-error {
+  margin: 0;
+  padding: 12px;
+  border: 1.5px solid var(--ink);
+  border-radius: 7px;
+  background: color-mix(in oklch, var(--coral) 38%, var(--paper));
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.lab-meta {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.lab-meta div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.lab-meta span {
+  color: var(--ink-soft);
+}
+
+/* ── Stage ───────────────────────────────────────────────────────────────── */
+.lab-stage {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 34px);
+  background: var(--paper);
+}
+
+.lab-stage-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.lab-stage-head > div {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lab-stage-head p {
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* .am-array height is handled by visualizer/styles.css via dvh */
+
+/* ── Transport controls ──────────────────────────────────────────────────── */
+.lab-transport {
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.lab-buttons {
+  display: flex;
+  gap: 7px;
+}
+
+.lab-progress {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.lab-progress input {
+  width: 100%;
+  accent-color: var(--cobalt);
+}
+
+.lab-speed {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lab-speed select {
+  width: auto;
+  min-height: 36px;
+}
+
+/* ── Stats ───────────────────────────────────────────────────────────────── */
+.lab-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 1440px;
+  margin: 14px auto 0;
+}
+
+.lab-stats > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--signal);
+}
+
+.lab-stats > div:nth-child(2) {
+  background: var(--coral);
+}
+.lab-stats > div:nth-child(3) {
+  background: var(--mist);
+}
+.lab-stats > div:nth-child(4) {
+  color: var(--paper);
+  background: var(--cobalt);
+}
+
+.lab-stats span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.lab-stats strong {
+  font-size: clamp(1.8rem, 3vw, 3.4rem);
+  letter-spacing: -0.06em;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .lab-heading,
+  .lab-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-heading {
+    gap: 28px;
+  }
+  .lab-transport {
+    grid-template-columns: 1fr;
+  }
+  .lab-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .lab-shell {
+    padding-inline: 14px;
+  }
+  .lab-nav > div span {
+    display: none;
+  }
+  .lab-heading h1 {
+    font-size: clamp(3.8rem, 19vw, 5.6rem);
+  }
+  .lab-stage-head {
+    grid-template-columns: 1fr;
+  }
+  .lab-stage-head p {
+    text-align: left;
+  }
+  .lab-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lab-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@algomotion/algorithms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@algomotion/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@algomotion/config-ts": "workspace:*",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}

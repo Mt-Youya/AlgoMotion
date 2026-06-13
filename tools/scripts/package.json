@@ -1,0 +1,23 @@
+{
+  "name": "@algomotion/scripts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "verify": "tsx src/verify-workspace.ts",
+    "trace": "tsx src/generate-trace.ts"
+  },
+  "dependencies": {
+    "@algomotion/algorithms": "workspace:*",
+    "tsx": "^4.22.4"
+  },
+  "devDependencies": {
+    "@algomotion/config-ts": "workspace:*",
+    "@types/node": "^25.9.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}

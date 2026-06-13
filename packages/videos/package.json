@@ -1,0 +1,32 @@
+{
+  "name": "@algomotion/videos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts SortingLesson media/sorting-lesson.mp4",
+    "still": "remotion still src/index.ts SortingLesson media/sorting-lesson.png --frame=90",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@algomotion/algorithms": "workspace:*",
+    "@algomotion/shared": "workspace:*",
+    "@algomotion/visualizer": "workspace:*",
+    "@remotion/cli": "^4.0.475",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remotion": "^4.0.475"
+  },
+  "devDependencies": {
+    "@algomotion/config-ts": "workspace:*",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}

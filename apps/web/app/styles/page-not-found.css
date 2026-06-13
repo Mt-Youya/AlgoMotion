@@ -1,0 +1,34 @@
+/* ─── 404 Not Found page ────────────────────────────────────────────────── */
+
+.not-found {
+  display: grid;
+  min-height: 100svh;
+  padding: 24px;
+  place-content: center;
+  color: var(--paper);
+  text-align: center;
+  background: var(--cobalt);
+}
+
+.not-found p {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.not-found h1 {
+  max-width: 850px;
+  margin: 20px 0 36px;
+  font-size: clamp(3rem, 8vw, 8rem);
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+}
+
+.not-found a {
+  justify-self: center;
+  padding: 15px 20px;
+  color: var(--ink);
+  border-radius: 8px;
+  background: var(--signal);
+  font-weight: 720;
+}

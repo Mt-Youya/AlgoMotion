@@ -1,0 +1,23 @@
+/* ─── App-level design tokens ───────────────────────────────────────────────
+ * Semantic aliases over the brand palette defined in packages/ui/src/styles/tokens.css.
+ * Use these in app CSS; use --am-* only inside packages/ui components.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Palette shortcuts */
+  --paper: oklch(96% 0.012 95);
+  --paper-deep: oklch(91% 0.025 95);
+  --ink: oklch(19% 0.025 260);
+  --ink-soft: oklch(32% 0.028 260);
+  --cobalt: oklch(48% 0.22 265);
+  --cobalt-dark: oklch(32% 0.18 266);
+  --signal: oklch(87% 0.2 118);
+  --coral: oklch(67% 0.22 30);
+  --mist: oklch(91% 0.025 245);
+
+  /* Derived */
+  --line: color-mix(in oklch, var(--ink) 18%, transparent);
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

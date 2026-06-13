@@ -1,0 +1,19 @@
+{
+  "name": "@algomotion/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "cargo check --manifest-path src-tauri/Cargo.toml",
+    "typecheck": "cargo check --manifest-path src-tauri/Cargo.toml",
+    "test": "cargo test --manifest-path src-tauri/Cargo.toml",
+    "init:ios": "tauri ios init",
+    "init:android": "tauri android init",
+    "ios": "tauri ios dev",
+    "android": "tauri android dev",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2"
+  }
+}

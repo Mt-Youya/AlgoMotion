@@ -1,0 +1,11 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+  - "configs/*"
+  - "tools/scripts"
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+nodeVersion: 24.16.0
