@@ -171,6 +171,11 @@ const T = {
   },
 } as const
 
+type InputErrorMessages = Pick<
+  (typeof T)[Lang],
+  "errAtLeastOne" | "errTooMany" | "errInvalidNum" | "errValidNum"
+>
+
 // ─── Flat lookup map ─────────────────────────────────────────────────────────
 
 const allAlgorithmsFlat: Record<string, AlgorithmMeta> = {}
@@ -182,7 +187,7 @@ for (const metas of Object.values(algorithmsByCategory)) {
 
 // ─── Parse array input ───────────────────────────────────────────────────────
 
-function parseArrayInput(value: string, t: (typeof T)["zh"]): number[] {
+function parseArrayInput(value: string, t: InputErrorMessages): number[] {
   const values = value
     .split(/[\s,，]+/)
     .map((item) => item.trim())
@@ -197,7 +202,7 @@ function parseArrayInput(value: string, t: (typeof T)["zh"]): number[] {
 
 // ─── Derive worker payload from schema + raw input ───────────────────────────
 
-function buildWorkerInput(schema: AlgorithmInputSchema | undefined, raw: string, t: (typeof T)["zh"]): number[] {
+function buildWorkerInput(schema: AlgorithmInputSchema | undefined, raw: string, t: InputErrorMessages): number[] {
   if (!schema || schema.type === "array") {
     return parseArrayInput(raw, t)
   }
