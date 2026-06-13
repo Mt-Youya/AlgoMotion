@@ -7,5 +7,3 @@ packages:
 allowBuilds:
   esbuild: true
   sharp: true
-
-nodeVersion: 24.16.0
