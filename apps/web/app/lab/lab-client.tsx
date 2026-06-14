@@ -1,6 +1,6 @@
 "use client"
 
-import { algorithmsByCategory, CATEGORY_LABELS, CATEGORY_ORDER, DIFFICULTY_LABELS } from "@algomotion/algorithms"
+import { algorithmsByCategory, CATEGORY_LABELS, CATEGORY_ORDER } from "@algomotion/algorithms"
 import type {
   AlgorithmInputSchema,
   AlgorithmMeta,
@@ -8,6 +8,7 @@ import type {
   AlgorithmWorkerRequest,
   AlgorithmWorkerResponse,
 } from "@algomotion/shared"
+import { cn } from "@algomotion/ui/lib/utils"
 import {
   Button,
   ComboboxContent,
@@ -35,6 +36,7 @@ import {
   ItemDescription,
   ItemTitle,
   Textarea,
+  Badge,
 } from "@algomotion/ui"
 import {
   ArrayVisualizer,
@@ -171,10 +173,7 @@ const T = {
   },
 } as const
 
-type InputErrorMessages = Pick<
-  (typeof T)[Lang],
-  "errAtLeastOne" | "errTooMany" | "errInvalidNum" | "errValidNum"
->
+type InputErrorMessages = Pick<(typeof T)[Lang], "errAtLeastOne" | "errTooMany" | "errInvalidNum" | "errValidNum">
 
 // ─── Flat lookup map ─────────────────────────────────────────────────────────
 
@@ -620,7 +619,7 @@ export function LabClient() {
                     if (filtered.length === 0) return null
                     const catLabel = CATEGORY_LABELS[category]
                     return (
-                      <ComboboxGroup key={category}>
+                      <ComboboxGroup key={category} className="p-2">
                         <ComboboxLabel>{catLabel ? catLabel[lang] : category}</ComboboxLabel>
                         {filtered.map((meta) => {
                           if (!meta) return
@@ -632,6 +631,12 @@ export function LabClient() {
                             advanced: { zh: "进阶", en: "Adv" },
                             expert: { zh: "专家", en: "Exp" },
                           }
+                          const diffLevel = {
+                            beginner: "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300",
+                            intermediate: "bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
+                            advanced: "bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300",
+                            expert: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
+                          }
                           return (
                             <ComboboxItem key={meta.id as string} value={meta.id as string}>
                               <Item size="xs" className="p-0">
@@ -641,9 +646,9 @@ export function LabClient() {
                                       <span
                                         className={`mt-1 shrink-0 inline-block w-2 h-2 rounded-full ${diffDot[diff] ?? "bg-gray-400"}`}
                                       />
-                                      <span className="mt-0.5 shrink-0 text-[11px] font-bold opacity-50 w-[2em] text-center tabular-nums">
+                                      <Badge className={cn(diffLevel[diff], "hover:text-white")}>
                                         {diffShort[diff]?.[lang]}
-                                      </span>
+                                      </Badge>
                                       <span className="mt-0.5 shrink-0 w-px self-stretch bg-current opacity-20" />
                                       <span className="truncate">{meta.displayName[lang]}</span>
                                     </span>
