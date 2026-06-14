@@ -1772,11 +1772,16 @@ function runKmp(input: number[]): AlgorithmRun {
   const rec = new ArrayTraceRecorder([...text])
   // Build lps (failure function)
   const lps = new Array<number>(m).fill(0)
-  let len = 0, i = 1
+  let len = 0,
+    i = 1
   while (i < m) {
-    if ((pattern[i] ?? -1) === (pattern[len] ?? -2)) { lps[i++] = ++len }
-    else if (len > 0) { len = lps[len - 1] ?? 0 }
-    else { lps[i++] = 0 }
+    if ((pattern[i] ?? -1) === (pattern[len] ?? -2)) {
+      lps[i++] = ++len
+    } else if (len > 0) {
+      len = lps[len - 1] ?? 0
+    } else {
+      lps[i++] = 0
+    }
   }
   // Search
   let j = 0
@@ -1784,7 +1789,8 @@ function runKmp(input: number[]): AlgorithmRun {
     rec.compareValue(ti, j, text[ti] ?? 0, pattern[j] ?? 0)
     if ((text[ti] ?? -1) === (pattern[j] ?? -2)) {
       rec.mark([ti], "active")
-      ti++; j++
+      ti++
+      j++
       if (j === m) {
         // Match found — mark the window
         for (let k = ti - m; k < ti; k++) rec.mark([k], "sorted")
@@ -1806,9 +1812,11 @@ function runRabinKarp(input: number[]): AlgorithmRun {
   const text = sep > 0 ? input.slice(sep + 1) : [2, 3, 1, 4, 1, 5, 9, 2, 6]
   const rec = new ArrayTraceRecorder([...text])
   const m = pattern.length
-  const BASE = 31, MOD = 1e9 + 9
+  const BASE = 31,
+    MOD = 1e9 + 9
   const patHash = pattern.reduce((h, v) => (h * BASE + v) % MOD, 0)
-  let winHash = 0, power = 1
+  let winHash = 0,
+    power = 1
   for (let i = 0; i < m - 1; i++) power = (power * BASE) % MOD
   for (let i = 0; i < m && i < text.length; i++) winHash = (winHash * BASE + (text[i] ?? 0)) % MOD
   for (let i = 0; i <= text.length - m; i++) {
@@ -1818,14 +1826,17 @@ function runRabinKarp(input: number[]): AlgorithmRun {
       let match = true
       for (let k = 0; k < m; k++) {
         rec.compareValue(i + k, k, text[i + k] ?? 0, pattern[k] ?? 0)
-        if ((text[i + k] ?? -1) !== (pattern[k] ?? -2)) { match = false; break }
+        if ((text[i + k] ?? -1) !== (pattern[k] ?? -2)) {
+          match = false
+          break
+        }
       }
       for (let k = 0; k < m; k++) rec.mark([i + k], match ? "sorted" : "active")
     } else {
       rec.mark([i], "visited")
     }
     if (i + m < text.length) {
-      winHash = ((winHash - (text[i] ?? 0) * power % MOD + MOD) * BASE + (text[i + m] ?? 0)) % MOD
+      winHash = ((winHash - (((text[i] ?? 0) * power) % MOD) + MOD) * BASE + (text[i + m] ?? 0)) % MOD
     }
   }
   return rec.finish(stringAlgorithms["rabin-karp"] as AlgorithmMeta)
@@ -1838,14 +1849,18 @@ function runZAlgorithm(input: number[]): AlgorithmRun {
   const z = new Array<number>(n).fill(0)
   z[0] = n
   const rec = new ArrayTraceRecorder([...arr])
-  let l = 0, r = 0
+  let l = 0,
+    r = 0
   for (let i = 1; i < n; i++) {
     if (i < r) z[i] = Math.min(r - i, z[i - l] ?? 0)
     while (i + (z[i] ?? 0) < n && (arr[z[i] ?? 0] ?? -1) === (arr[i + (z[i] ?? 0)] ?? -2)) {
       rec.compareValue(z[i] ?? 0, i + (z[i] ?? 0), arr[z[i] ?? 0] ?? 0, arr[i + (z[i] ?? 0)] ?? 0)
       z[i] = (z[i] ?? 0) + 1
     }
-    if (i + (z[i] ?? 0) > r) { l = i; r = i + (z[i] ?? 0) }
+    if (i + (z[i] ?? 0) > r) {
+      l = i
+      r = i + (z[i] ?? 0)
+    }
     rec.mark([i], (z[i] ?? 0) > 1 ? "sorted" : "active")
   }
   return rec.finish(stringAlgorithms["z-algorithm"] as AlgorithmMeta)
@@ -1856,18 +1871,29 @@ function runManacher(input: number[]): AlgorithmRun {
   const arr = input.length > 0 ? input : [1, 2, 3, 2, 1, 4, 4, 1]
   // Transform: insert 0 between each element as separator
   const t: number[] = [0]
-  for (const v of arr) { t.push(v); t.push(0) }
+  for (const v of arr) {
+    t.push(v)
+    t.push(0)
+  }
   const n = t.length
   const p = new Array<number>(n).fill(0)
   const rec = new ArrayTraceRecorder([...arr])
-  let c = 0, rBound = 0
+  let c = 0,
+    rBound = 0
   for (let i = 1; i < n - 1; i++) {
     const mirror = 2 * c - i
     if (i < rBound) p[i] = Math.min(rBound - i, p[mirror] ?? 0)
-    while (i - (p[i] ?? 0) - 1 >= 0 && i + (p[i] ?? 0) + 1 < n && (t[i - (p[i] ?? 0) - 1] ?? -1) === (t[i + (p[i] ?? 0) + 1] ?? -2)) {
+    while (
+      i - (p[i] ?? 0) - 1 >= 0 &&
+      i + (p[i] ?? 0) + 1 < n &&
+      (t[i - (p[i] ?? 0) - 1] ?? -1) === (t[i + (p[i] ?? 0) + 1] ?? -2)
+    ) {
       p[i] = (p[i] ?? 0) + 1
     }
-    if (i + (p[i] ?? 0) > rBound) { c = i; rBound = i + (p[i] ?? 0) }
+    if (i + (p[i] ?? 0) > rBound) {
+      c = i
+      rBound = i + (p[i] ?? 0)
+    }
     // Map back to original index
     const origIdx = Math.floor(i / 2)
     if (origIdx < arr.length) {
@@ -1888,8 +1914,10 @@ function runAhoCorasick(input: number[]): AlgorithmRun {
   const patterns: number[][] = []
   let cur: number[] = []
   for (const v of patternRaw) {
-    if (v === -2) { if (cur.length) patterns.push(cur); cur = [] }
-    else cur.push(v)
+    if (v === -2) {
+      if (cur.length) patterns.push(cur)
+      cur = []
+    } else cur.push(v)
   }
   if (cur.length) patterns.push(cur)
   if (patterns.length === 0) patterns.push(patternRaw.slice(0, 3))
@@ -1900,7 +1928,8 @@ function runAhoCorasick(input: number[]): AlgorithmRun {
     for (const pat of patterns) {
       if (pat.every((v, k) => (text[i + k] ?? -1) === v)) {
         for (let k = 0; k < pat.length; k++) rec.mark([i + k], "sorted")
-        matched = true; break
+        matched = true
+        break
       }
     }
     rec.compareValue(i, 0, text[i] ?? 0, patterns[0]?.[0] ?? 0)
@@ -1933,13 +1962,21 @@ function runSuffixArray(input: number[]): AlgorithmRun {
 
 export function runStringAlgorithm(id: StringAlgorithmId, input: number[]): AlgorithmRun {
   switch (id) {
-    case "hamming-distance": return runHammingDistance(input)
-    case "kmp": return runKmp(input)
-    case "rabin-karp": return runRabinKarp(input)
-    case "z-algorithm": return runZAlgorithm(input)
-    case "manacher": return runManacher(input)
-    case "aho-corasick": return runAhoCorasick(input)
-    case "suffix-array": return runSuffixArray(input)
-    default: return runHammingDistance(input)
+    case "hamming-distance":
+      return runHammingDistance(input)
+    case "kmp":
+      return runKmp(input)
+    case "rabin-karp":
+      return runRabinKarp(input)
+    case "z-algorithm":
+      return runZAlgorithm(input)
+    case "manacher":
+      return runManacher(input)
+    case "aho-corasick":
+      return runAhoCorasick(input)
+    case "suffix-array":
+      return runSuffixArray(input)
+    default:
+      return runHammingDistance(input)
   }
 }

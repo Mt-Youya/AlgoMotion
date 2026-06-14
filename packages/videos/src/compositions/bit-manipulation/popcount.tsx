@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Popcount",
-  subtitle:
-    "Counts the number of set bits (1s) in an integer using Brian Kernighan's trick in O(k) where k is th",
+  subtitle: "Counts the number of set bits (1s) in an integer using Brian Kernighan's trick in O(k) where k is th",
   category: "bit-manipulation",
   difficulty: "beginner",
 
@@ -42,18 +41,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Iteration 1 — n is non-zero (13 ≠ 0), so enter the loop.",
+          description: "Iteration 1 — n is non-zero (13 ≠ 0), so enter the loop.",
         },
         {
           step: 3,
-          description:
-            "Compute n − 1 = 12 (binary: 1100). The lowest set bit (bit 0) is cleared.",
+          description: "Compute n − 1 = 12 (binary: 1100). The lowest set bit (bit 0) is cleared.",
         },
         {
           step: 4,
-          description:
-            "Compute n & (n−1) = 13 & 12 = 1101 & 1100 = 1100 = 12. n is now 12.",
+          description: "Compute n & (n−1) = 13 & 12 = 1101 & 1100 = 1100 = 12. n is now 12.",
         },
         {
           step: 5,
@@ -61,8 +57,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description:
-            "Iteration 2 — n = 12 (1100) ≠ 0. Compute 12 & 11 = 1100 & 1011 = 1000 = 8. n = 8.",
+          description: "Iteration 2 — n = 12 (1100) ≠ 0. Compute 12 & 11 = 1100 & 1011 = 1000 = 8. n = 8.",
         },
         {
           step: 7,
@@ -70,8 +65,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description:
-            "Iteration 3 — n = 8 (1000) ≠ 0. Compute 8 & 7 = 1000 & 0111 = 0000 = 0. n = 0.",
+          description: "Iteration 3 — n = 8 (1000) ≠ 0. Compute 8 & 7 = 1000 & 0111 = 0000 = 0. n = 0.",
         },
         {
           step: 9,
@@ -79,13 +73,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "Loop condition: n = 0, so the while loop exits.",
+          description: "Loop condition: n = 0, so the while loop exits.",
         },
         {
           step: 11,
-          description:
-            "Return count = 3. Verified: 13 = 1101₂ has exactly three 1-bits.",
+          description: "Return count = 3. Verified: 13 = 1101₂ has exactly three 1-bits.",
         },
       ],
     },
@@ -242,8 +234,8 @@ if __name__ == "__main__":
       ],
     },
   ],
-};
+}
 
 export default function PopcountVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

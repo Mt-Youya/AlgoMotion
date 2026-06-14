@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Activity Selection",
-  subtitle:
-    "Select maximum non-overlapping activities by always picking earliest finish time.",
+  subtitle: "Select maximum non-overlapping activities by always picking earliest finish time.",
   category: "greedy",
   difficulty: "intermediate",
 
@@ -38,65 +37,53 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Start with unsorted activities: A(1,3), B(2,5), C(4,6), D(6,7), E(5,8), F(8,9).",
+          description: "Start with unsorted activities: A(1,3), B(2,5), C(4,6), D(6,7), E(5,8), F(8,9).",
           detail: "Each activity is represented as (start, finish).",
         },
         {
           step: 2,
-          description:
-            "Sort all activities by their finish time in ascending order.",
-          detail:
-            "Sorted order: A(1,3), B(2,5), C(4,6), D(6,7), E(5,8), F(8,9).",
+          description: "Sort all activities by their finish time in ascending order.",
+          detail: "Sorted order: A(1,3), B(2,5), C(4,6), D(6,7), E(5,8), F(8,9).",
         },
         {
           step: 3,
-          description:
-            "Initialize: select the first activity A(1,3). Set last_finish = 3.",
+          description: "Initialize: select the first activity A(1,3). Set last_finish = 3.",
           detail: "Selected = [A]. The first activity is always chosen.",
         },
         {
           step: 4,
-          description:
-            "Consider B(2,5): start=2 < last_finish=3 → SKIP. B overlaps with A.",
+          description: "Consider B(2,5): start=2 < last_finish=3 → SKIP. B overlaps with A.",
           detail: "Selected = [A]. last_finish remains 3.",
         },
         {
           step: 5,
-          description:
-            "Consider C(4,6): start=4 ≥ last_finish=3 → SELECT. Update last_finish = 6.",
+          description: "Consider C(4,6): start=4 ≥ last_finish=3 → SELECT. Update last_finish = 6.",
           detail: "Selected = [A, C]. C starts after A ends.",
         },
         {
           step: 6,
-          description:
-            "Consider D(6,7): start=6 ≥ last_finish=6 → SELECT. Update last_finish = 7.",
+          description: "Consider D(6,7): start=6 ≥ last_finish=6 → SELECT. Update last_finish = 7.",
           detail: "Selected = [A, C, D]. D starts exactly when C ends — valid.",
         },
         {
           step: 7,
-          description:
-            "Consider E(5,8): start=5 < last_finish=7 → SKIP. E overlaps with D.",
+          description: "Consider E(5,8): start=5 < last_finish=7 → SKIP. E overlaps with D.",
           detail: "Selected = [A, C, D]. last_finish remains 7.",
         },
         {
           step: 8,
-          description:
-            "Consider F(8,9): start=8 ≥ last_finish=7 → SELECT. Update last_finish = 9.",
+          description: "Consider F(8,9): start=8 ≥ last_finish=7 → SELECT. Update last_finish = 9.",
           detail: "Selected = [A, C, D, F]. F starts after D ends.",
         },
         {
           step: 9,
           description: "No more activities. Algorithm terminates.",
-          detail:
-            "Final selected set: {A, C, D, F} — 4 activities, which is the maximum possible.",
+          detail: "Final selected set: {A, C, D, F} — 4 activities, which is the maximum possible.",
         },
         {
           step: 10,
-          description:
-            "Verify: A(1,3), C(4,6), D(6,7), F(8,9) — none overlap. Result is optimal.",
-          detail:
-            "The greedy choice of earliest finish time guarantees the globally optimal solution.",
+          description: "Verify: A(1,3), C(4,6), D(6,7), F(8,9) — none overlap. Result is optimal.",
+          detail: "The greedy choice of earliest finish time guarantees the globally optimal solution.",
         },
       ],
     },
@@ -251,8 +238,8 @@ print(f"Selected {len(result)} activities: {result}")
       ],
     },
   ],
-};
+}
 
 export default function ActivitySelectionVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

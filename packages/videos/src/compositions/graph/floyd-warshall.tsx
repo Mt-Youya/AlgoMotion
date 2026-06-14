@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Floyd-Warshall Algorithm",
@@ -35,7 +35,8 @@ const config: AlgoVideoConfig = {
         {
           step: 1,
           title: "Initialize the distance matrix",
-          description: "Create a V×V matrix. Set dist[i][i] = 0 for all i. For each edge (u, v, w), set dist[u][v] = w. All other entries are set to ∞.",
+          description:
+            "Create a V×V matrix. Set dist[i][i] = 0 for all i. For each edge (u, v, w), set dist[u][v] = w. All other entries are set to ∞.",
         },
         {
           step: 2,
@@ -45,42 +46,50 @@ const config: AlgoVideoConfig = {
         {
           step: 3,
           title: "Inner loops: iterate over all (i, j) pairs",
-          description: "For each pair (i, j), compute dist[i][0] + dist[0][j]. If this is less than dist[i][j], update dist[i][j].",
+          description:
+            "For each pair (i, j), compute dist[i][0] + dist[0][j]. If this is less than dist[i][j], update dist[i][j].",
         },
         {
           step: 4,
           title: "Record improvements for k = 0",
-          description: "Any path that benefits from routing through vertex 0 is now recorded in the matrix. Paths that do not improve remain unchanged.",
+          description:
+            "Any path that benefits from routing through vertex 0 is now recorded in the matrix. Paths that do not improve remain unchanged.",
         },
         {
           step: 5,
           title: "Advance to k = 1",
-          description: "Now consider vertex 1 as an intermediate. The matrix already encodes optimal paths using only vertex 0, so we build on top of that.",
+          description:
+            "Now consider vertex 1 as an intermediate. The matrix already encodes optimal paths using only vertex 0, so we build on top of that.",
         },
         {
           step: 6,
           title: "Update paths through k = 1",
-          description: "For each (i, j), check dist[i][1] + dist[1][j] < dist[i][j]. If true, update. This may cascade improvements found in the previous round.",
+          description:
+            "For each (i, j), check dist[i][1] + dist[1][j] < dist[i][j]. If true, update. This may cascade improvements found in the previous round.",
         },
         {
           step: 7,
           title: "Continue for k = 2, 3, …, V-1",
-          description: "Repeat the same inner double-loop for every remaining intermediate vertex. Each round may improve more entries.",
+          description:
+            "Repeat the same inner double-loop for every remaining intermediate vertex. Each round may improve more entries.",
         },
         {
           step: 8,
           title: "Detect negative cycles (optional)",
-          description: "After all rounds, if any dist[i][i] < 0, a negative-weight cycle exists in the graph. The algorithm's output is invalid in that case.",
+          description:
+            "After all rounds, if any dist[i][i] < 0, a negative-weight cycle exists in the graph. The algorithm's output is invalid in that case.",
         },
         {
           step: 9,
           title: "Read the final matrix",
-          description: "dist[i][j] now contains the shortest path length from i to j considering all possible intermediate vertices.",
+          description:
+            "dist[i][j] now contains the shortest path length from i to j considering all possible intermediate vertices.",
         },
         {
           step: 10,
           title: "Reconstruct paths (optional)",
-          description: "Maintain a separate next[i][j] matrix updated alongside dist. Trace from source to destination using next pointers to recover the actual path.",
+          description:
+            "Maintain a separate next[i][j] matrix updated alongside dist. Trace from source to destination using next pointers to recover the actual path.",
         },
       ],
     },
@@ -192,23 +201,28 @@ def floyd_warshall_with_path(graph):
       variations: [
         {
           name: "Floyd-Warshall with Path Reconstruction",
-          description: "Maintain a next_hop[i][j] matrix updated alongside dist. After the algorithm, trace pointers to recover actual shortest paths, not just distances.",
+          description:
+            "Maintain a next_hop[i][j] matrix updated alongside dist. After the algorithm, trace pointers to recover actual shortest paths, not just distances.",
         },
         {
           name: "Transitive Closure (Boolean Floyd-Warshall)",
-          description: "Replace min/+ with OR/AND to determine reachability. reach[i][j] = true if any path from i to j exists. Runs in O(V³) time.",
+          description:
+            "Replace min/+ with OR/AND to determine reachability. reach[i][j] = true if any path from i to j exists. Runs in O(V³) time.",
         },
         {
           name: "Floyd-Warshall for Maximum Bottleneck Path",
-          description: "Change the recurrence to dist[i][j] = max(dist[i][j], min(dist[i][k], dist[k][j])) to find the path that maximizes the minimum edge weight.",
+          description:
+            "Change the recurrence to dist[i][j] = max(dist[i][j], min(dist[i][k], dist[k][j])) to find the path that maximizes the minimum edge weight.",
         },
         {
           name: "Johnson's Algorithm",
-          description: "Reweights edges to eliminate negatives, then runs Dijkstra from each vertex. Achieves O(V² log V + VE), better than O(V³) on sparse graphs.",
+          description:
+            "Reweights edges to eliminate negatives, then runs Dijkstra from each vertex. Achieves O(V² log V + VE), better than O(V³) on sparse graphs.",
         },
         {
           name: "Parallel Floyd-Warshall",
-          description: "The inner two loops over (i, j) are independent for a fixed k and can be parallelized across threads or GPU cores, reducing wall time significantly.",
+          description:
+            "The inner two loops over (i, j) are independent for a fixed k and can be parallelized across threads or GPU cores, reducing wall time significantly.",
         },
       ],
       tips: [
@@ -231,8 +245,8 @@ def floyd_warshall_with_path(graph):
       ],
     },
   },
-};
+}
 
 export default function FloydWarshallVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

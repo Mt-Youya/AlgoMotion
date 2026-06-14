@@ -215,7 +215,9 @@ footer > div {
   font-size: 11px;
   letter-spacing: 0.02em;
   text-decoration: none;
-  transition: border-color 0.18s, color 0.18s;
+  transition:
+    border-color 0.18s,
+    color 0.18s;
 }
 
 .footer-friends a:hover {

@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Binary Search",
-  subtitle:
-    "Repeatedly halves the search range on a sorted array to locate the target in O(log n) time.",
+  subtitle: "Repeatedly halves the search range on a sorted array to locate the target in O(log n) time.",
   category: "search",
   difficulty: "beginner",
 
@@ -40,10 +39,7 @@ const config: AlgoVideoConfig = {
           description: "Start with the full sorted array and set lo = 0, hi = n − 1.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "blue", "blue", "blue", "blue", "blue",
-              "blue", "blue", "blue", "blue", "blue",
-            ],
+            colors: ["blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"],
           },
         },
         {
@@ -51,10 +47,7 @@ const config: AlgoVideoConfig = {
           description: "Target = 23. Compute mid = (0 + 9) // 2 = 4. Inspect arr[4] = 16.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "blue", "blue", "blue", "blue", "yellow",
-              "blue", "blue", "blue", "blue", "blue",
-            ],
+            colors: ["blue", "blue", "blue", "blue", "yellow", "blue", "blue", "blue", "blue", "blue"],
           },
         },
         {
@@ -62,10 +55,7 @@ const config: AlgoVideoConfig = {
           description: "16 < 23 → target is in the RIGHT half. Update lo = mid + 1 = 5.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "gray",
-              "blue", "blue", "blue", "blue", "blue",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "blue", "blue", "blue", "blue", "blue"],
           },
         },
         {
@@ -73,10 +63,7 @@ const config: AlgoVideoConfig = {
           description: "Compute mid = (5 + 9) // 2 = 7. Inspect arr[7] = 45.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "gray",
-              "blue", "blue", "yellow", "blue", "blue",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "blue", "blue", "yellow", "blue", "blue"],
           },
         },
         {
@@ -84,10 +71,7 @@ const config: AlgoVideoConfig = {
           description: "45 > 23 → target is in the LEFT half. Update hi = mid − 1 = 6.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "gray",
-              "blue", "blue", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "blue", "blue", "gray", "gray", "gray"],
           },
         },
         {
@@ -95,10 +79,7 @@ const config: AlgoVideoConfig = {
           description: "Compute mid = (5 + 6) // 2 = 5. Inspect arr[5] = 23.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "gray",
-              "yellow", "blue", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "yellow", "blue", "gray", "gray", "gray"],
           },
         },
         {
@@ -106,21 +87,16 @@ const config: AlgoVideoConfig = {
           description: "23 == 23 → Target FOUND at index 5! Return 5.",
           arrayState: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "gray",
-              "green", "gray", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "green", "gray", "gray", "gray", "gray"],
           },
         },
         {
           step: 8,
-          description:
-            "Total comparisons: 3. For n = 10, log₂(10) ≈ 3.32 — exactly as predicted.",
+          description: "Total comparisons: 3. For n = 10, log₂(10) ≈ 3.32 — exactly as predicted.",
         },
         {
           step: 9,
-          description:
-            "If lo > hi at any point, the loop exits without finding the target and we return -1.",
+          description: "If lo > hi at any point, the loop exits without finding the target and we return -1.",
         },
         {
           step: 10,
@@ -246,8 +222,7 @@ print(binary_search(arr, 99))   # → -1`,
         },
         {
           name: "Find Last Occurrence",
-          description:
-            "Mirror of above: on equality set lo = mid + 1 and record the last valid mid.",
+          description: "Mirror of above: on equality set lo = mid + 1 and record the last valid mid.",
         },
         {
           name: "Search Insert Position (LeetCode 35)",
@@ -285,8 +260,8 @@ print(binary_search(arr, 99))   # → -1`,
       ],
     },
   },
-};
+}
 
 export default function BinarySearchVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Longest Common Substring",
@@ -36,13 +36,15 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description: "Set up a (m+1) × (n+1) DP table initialised to zero. Rows correspond to characters of A = 'ABCAB', columns to characters of B = 'CABAB'. The extra row and column are the base case.",
+          description:
+            "Set up a (m+1) × (n+1) DP table initialised to zero. Rows correspond to characters of A = 'ABCAB', columns to characters of B = 'CABAB'. The extra row and column are the base case.",
           values: [0, 0, 0, 0, 0, 0],
           colors: ["gray", "gray", "gray", "gray", "gray", "gray"],
         },
         {
           step: 2,
-          description: "All cells in row 0 and column 0 remain 0 — a substring ending before either string starts has length 0.",
+          description:
+            "All cells in row 0 and column 0 remain 0 — a substring ending before either string starts has length 0.",
           values: [0, 0, 0, 0, 0, 0],
           colors: ["green", "green", "green", "green", "green", "green"],
         },
@@ -54,7 +56,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description: "dp[1][2]: A[0]='A' vs B[1]='A'. Match! dp[1][2] = dp[0][1] + 1 = 0 + 1 = 1. A common substring 'A' ends here. best_len = 1.",
+          description:
+            "dp[1][2]: A[0]='A' vs B[1]='A'. Match! dp[1][2] = dp[0][1] + 1 = 0 + 1 = 1. A common substring 'A' ends here. best_len = 1.",
           values: [0, 0, 1, 0, 0, 0],
           colors: ["green", "blue", "yellow", "gray", "gray", "gray"],
         },
@@ -72,7 +75,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description: "dp[3][1]: A[2]='C' vs B[0]='C'. Match! dp[3][1] = dp[2][0] + 1 = 1. Common substring 'C' ends here.",
+          description:
+            "dp[3][1]: A[2]='C' vs B[0]='C'. Match! dp[3][1] = dp[2][0] + 1 = 1. Common substring 'C' ends here.",
           values: [0, 1, 0, 0, 0, 0],
           colors: ["green", "yellow", "gray", "gray", "gray", "gray"],
         },
@@ -90,19 +94,22 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description: "dp[4][2]: A[3]='A' vs B[1]='A'. Match! dp[4][2] = dp[3][1] + 1 = 1 + 1 = 2. Common substring 'CA' ends here. best_len = 2.",
+          description:
+            "dp[4][2]: A[3]='A' vs B[1]='A'. Match! dp[4][2] = dp[3][1] + 1 = 1 + 1 = 2. Common substring 'CA' ends here. best_len = 2.",
           values: [0, 0, 2, 0, 0, 0],
           colors: ["green", "gray", "yellow", "gray", "gray", "gray"],
         },
         {
           step: 11,
-          description: "Continuing the fill: dp[5][3] = dp[4][2] + 1 = 3 ('CAB'), dp[5][5] = dp[4][4] + 1 = 3 ('BAB' or 'AB'). The global max encountered is 3 (one valid answer: 'CAB').",
+          description:
+            "Continuing the fill: dp[5][3] = dp[4][2] + 1 = 3 ('CAB'), dp[5][5] = dp[4][4] + 1 = 3 ('BAB' or 'AB'). The global max encountered is 3 (one valid answer: 'CAB').",
           values: [0, 0, 0, 3, 0, 3],
           colors: ["green", "gray", "gray", "yellow", "gray", "yellow"],
         },
         {
           step: 12,
-          description: "Reconstruct by slicing A from index (best_i - best_len) to best_i. For best_len=3 at dp[5][3], the substring is A[2:5] = 'CAB'. Final answer: 'CAB' (length 3).",
+          description:
+            "Reconstruct by slicing A from index (best_i - best_len) to best_i. For best_len=3 at dp[5][3], the substring is A[2:5] = 'CAB'. Final answer: 'CAB' (length 3).",
         },
       ],
     },
@@ -236,23 +243,28 @@ print(f"Length: {length}, Substring: '{substr}'")  # Length: 4, Substring: 'CABD
       items: [
         {
           name: "Longest Common Subsequence (LCS)",
-          description: "Allows gaps between matched characters. The recurrence takes max(dp[i-1][j], dp[i][j-1]) on a mismatch instead of resetting to 0, and the answer is dp[m][n].",
+          description:
+            "Allows gaps between matched characters. The recurrence takes max(dp[i-1][j], dp[i][j-1]) on a mismatch instead of resetting to 0, and the answer is dp[m][n].",
         },
         {
           name: "Longest Repeated Substring",
-          description: "Find the longest substring that appears at least twice within a single string. Equivalent to finding the longest common substring between a string and itself (with non-overlapping constraint). Efficiently solved with suffix arrays.",
+          description:
+            "Find the longest substring that appears at least twice within a single string. Equivalent to finding the longest common substring between a string and itself (with non-overlapping constraint). Efficiently solved with suffix arrays.",
         },
         {
           name: "Longest Common Substring of K Strings",
-          description: "Generalise to K strings: build a generalised suffix array or use a DP table extended to K dimensions. Complexity becomes O(n^K) for DP, or O(n log n) with suffix structures.",
+          description:
+            "Generalise to K strings: build a generalised suffix array or use a DP table extended to K dimensions. Complexity becomes O(n^K) for DP, or O(n log n) with suffix structures.",
         },
         {
           name: "Approximate Common Substring",
-          description: "Allow up to k mismatches within the common block. The recurrence accumulates a mismatch count instead of resetting to 0, enabling fuzzy matching for noisy sequences.",
+          description:
+            "Allow up to k mismatches within the common block. The recurrence accumulates a mismatch count instead of resetting to 0, enabling fuzzy matching for noisy sequences.",
         },
         {
           name: "Suffix Array + LCP Array",
-          description: "Build the suffix array of the concatenated string A#B. The answer is the longest LCP between a suffix from A and a suffix from B. Achieves O((m+n) log(m+n)) time and O(m+n) space — the asymptotically optimal approach.",
+          description:
+            "Build the suffix array of the concatenated string A#B. The answer is the longest LCP between a suffix from A and a suffix from B. Achieves O((m+n) log(m+n)) time and O(m+n) space — the asymptotically optimal approach.",
         },
       ],
       tips: [
@@ -275,8 +287,8 @@ print(f"Length: {length}, Substring: '{substr}'")  # Length: 4, Substring: 'CABD
       ],
     },
   },
-};
+}
 
 export default function LongestCommonSubstringVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

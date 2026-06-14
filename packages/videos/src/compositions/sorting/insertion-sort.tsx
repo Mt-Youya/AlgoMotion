@@ -15,7 +15,8 @@ const config: AlgoVideoConfig = {
         "This mirrors how most people naturally sort a hand of playing cards — pick up one card at a time and slip it into place.",
         "The challenge is doing this efficiently: we need O(1) extra space while keeping the sorted portion intact after every insertion.",
       ],
-      callout: "Insertion Sort is optimal for small arrays and nearly-sorted data. It is the inner loop of Timsort, used in Python and Java.",
+      callout:
+        "Insertion Sort is optimal for small arrays and nearly-sorted data. It is the inner loop of Timsort, used in Python and Java.",
     },
     intuition: {
       heading: "Think of sorting a hand of playing cards",
@@ -26,13 +27,15 @@ const config: AlgoVideoConfig = {
         "You drop the key into that slot. Your left hand remains sorted after every card.",
         "After all cards are dealt and inserted, your entire hand is sorted — no extra table space needed.",
       ],
-      analogy: "Real-world analogy: sorting a hand of playing cards. You pick one card at a time and slide it left until it is in the right spot among the cards you already hold.",
+      analogy:
+        "Real-world analogy: sorting a hand of playing cards. You pick one card at a time and slide it left until it is in the right spot among the cards you already hold.",
     },
     walkthrough: {
       steps: [
         {
           label: "Initial Array",
-          description: "Start with the unsorted array [5, 2, 8, 1, 9, 3, 6]. Index 0 is trivially sorted — a single element is always in order.",
+          description:
+            "Start with the unsorted array [5, 2, 8, 1, 9, 3, 6]. Index 0 is trivially sorted — a single element is always in order.",
           array: [
             { value: 5, color: "#CEEB5A" },
             { value: 2, color: "#2255CC" },
@@ -45,7 +48,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert key = 2 (index 1)",
-          description: "Pick up the element at index 1: key = 2. Compare with arr[0] = 5. Since 5 > 2, shift 5 one position right.",
+          description:
+            "Pick up the element at index 1: key = 2. Compare with arr[0] = 5. Since 5 > 2, shift 5 one position right.",
           array: [
             { value: 5, color: "#E05A3A" },
             { value: 2, color: "#F0A030" },
@@ -71,7 +75,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert key = 8 (index 2)",
-          description: "Pick up the element at index 2: key = 8. Compare with arr[1] = 5. Since 5 < 8, no shift needed. 8 stays in place.",
+          description:
+            "Pick up the element at index 2: key = 8. Compare with arr[1] = 5. Since 5 < 8, no shift needed. 8 stays in place.",
           array: [
             { value: 2, color: "#CEEB5A" },
             { value: 5, color: "#CEEB5A" },
@@ -84,7 +89,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert key = 1 (index 3)",
-          description: "Pick up the element at index 3: key = 1. Compare with 8, 5, 2 — all are greater than 1, so each shifts right one position.",
+          description:
+            "Pick up the element at index 3: key = 1. Compare with 8, 5, 2 — all are greater than 1, so each shifts right one position.",
           array: [
             { value: 2, color: "#E05A3A" },
             { value: 5, color: "#E05A3A" },
@@ -97,7 +103,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Place key = 1 at index 0",
-          description: "After shifting 8, 5, and 2 right, place key = 1 at index 0. Sorted portion is now [1, 2, 5, 8].",
+          description:
+            "After shifting 8, 5, and 2 right, place key = 1 at index 0. Sorted portion is now [1, 2, 5, 8].",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },
@@ -110,7 +117,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert key = 9 (index 4)",
-          description: "Pick up the element at index 4: key = 9. Compare with 8 — 8 < 9, so 9 stays in place. Sorted portion: [1, 2, 5, 8, 9].",
+          description:
+            "Pick up the element at index 4: key = 9. Compare with 8 — 8 < 9, so 9 stays in place. Sorted portion: [1, 2, 5, 8, 9].",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },
@@ -123,7 +131,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert key = 3 (index 5)",
-          description: "Pick up the element at index 5: key = 3. Compare with 9, 8, 5 — all greater. Shift them right. Place 3 after 2.",
+          description:
+            "Pick up the element at index 5: key = 3. Compare with 9, 8, 5 — all greater. Shift them right. Place 3 after 2.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },
@@ -136,7 +145,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert key = 6 (index 6)",
-          description: "Pick up the element at index 6: key = 6. Compare with 9, 8 — both greater, shift right. Compare with 5 — 5 < 6, stop.",
+          description:
+            "Pick up the element at index 6: key = 6. Compare with 9, 8 — both greater, shift right. Compare with 5 — 5 < 6, stop.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },
@@ -149,7 +159,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Array Fully Sorted",
-          description: "All 7 elements have been inserted into their correct positions. The final sorted array is [1, 2, 3, 5, 6, 8, 9].",
+          description:
+            "All 7 elements have been inserted into their correct positions. The final sorted array is [1, 2, 3, 5, 6, 8, 9].",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Prim's Algorithm",
@@ -276,8 +276,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function PrimVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

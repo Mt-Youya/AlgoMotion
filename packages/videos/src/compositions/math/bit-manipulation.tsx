@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Bit Manipulation Basics",
-  subtitle:
-    "Common bit tricks: count set bits, check/set/clear a bit, detect power of two, and isolate the lowes",
+  subtitle: "Common bit tricks: count set bits, check/set/clear a bit, detect power of two, and isolate the lowes",
   category: "math",
   difficulty: "beginner",
 
@@ -48,8 +47,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "CHECK bit 3",
-          description:
-            "42 & 8 = 0b00101010 & 0b00001000 = 0b00001000 = 8. Result is non-zero, so bit 3 IS set in 42.",
+          description: "42 & 8 = 0b00101010 & 0b00001000 = 0b00001000 = 8. Result is non-zero, so bit 3 IS set in 42.",
         },
         {
           label: "SET bit 0 (currently clear)",
@@ -182,9 +180,7 @@ if __name__ == "__main__":
         { label: "Average (count bits)", value: "O(k)", color: "#2255CC" },
         { label: "Worst (count bits, 64-bit)", value: "O(64) = O(1)", color: "#E05A3A" },
       ],
-      spaceRows: [
-        { label: "Auxiliary", value: "O(1)", color: "#CEEB5A" },
-      ],
+      spaceRows: [{ label: "Auxiliary", value: "O(1)", color: "#CEEB5A" }],
       notes: [
         "Every individual bit trick (check/set/clear/toggle/LSB/power-of-two) executes in O(1) — a constant number of CPU instructions.",
         "Kernighan's count_set_bits runs in O(k) where k = popcount(n). For 64-bit integers k ≤ 64, so it is effectively O(1) in practice.",
@@ -219,8 +215,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function BitManipulationVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Edit Distance",
@@ -36,8 +36,7 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Initialize a (m+1) × (n+1) DP table where m = len('horse') = 5 and n = len('ros') = 3.",
+          description: "Initialize a (m+1) × (n+1) DP table where m = len('horse') = 5 and n = len('ros') = 3.",
         },
         {
           step: 2,
@@ -66,8 +65,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description:
-            "Continue filling the table row by row, applying the recurrence relation at each cell.",
+          description: "Continue filling the table row by row, applying the recurrence relation at each cell.",
         },
         {
           step: 8,
@@ -258,8 +256,8 @@ def minDistanceOptimized(word1: str, word2: str) -> int:
       ],
     },
   },
-};
+}
 
 export default function EditDistanceVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

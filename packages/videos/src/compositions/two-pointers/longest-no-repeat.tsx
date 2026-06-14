@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Longest Substring Without Repeating",
-  subtitle:
-    "Uses a sliding window with a hash set to find the longest substring without duplicate characters.",
+  subtitle: "Uses a sliding window with a hash set to find the longest substring without duplicate characters.",
   category: "two-pointers",
   difficulty: "intermediate",
 
@@ -41,77 +40,37 @@ const config: AlgoVideoConfig = {
         {
           index: 1,
           label: "Initialize",
-          description:
-            "Set left = 0, max_len = 0, and an empty hash set window_set = {}.",
+          description: "Set left = 0, max_len = 0, and an empty hash set window_set = {}.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
           },
         },
         {
           index: 2,
           label: "right=0: add 'a'",
-          description:
-            "'a' is not in the set. Add it. window = {a}. max_len = max(0, 1) = 1.",
+          description: "'a' is not in the set. Add it. window = {a}. max_len = max(0, 1) = 1.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "green",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["green", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
           },
         },
         {
           index: 3,
           label: "right=1: add 'b'",
-          description:
-            "'b' is not in the set. Add it. window = {a, b}. max_len = max(1, 2) = 2.",
+          description: "'b' is not in the set. Add it. window = {a, b}. max_len = max(1, 2) = 2.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "green",
-              "green",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["green", "green", "gray", "gray", "gray", "gray", "gray", "gray"],
           },
         },
         {
           index: 4,
           label: "right=2: add 'c'",
-          description:
-            "'c' is not in the set. Add it. window = {a, b, c}. max_len = max(2, 3) = 3.",
+          description: "'c' is not in the set. Add it. window = {a, b, c}. max_len = max(2, 3) = 3.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "green",
-              "green",
-              "green",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["green", "green", "green", "gray", "gray", "gray", "gray", "gray"],
           },
         },
         {
@@ -121,73 +80,34 @@ const config: AlgoVideoConfig = {
             "'a' is already in the set. Shrink: remove s[left]='a' and advance left to 1. Now window = {b, c}.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "red",
-              "green",
-              "green",
-              "yellow",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["red", "green", "green", "yellow", "gray", "gray", "gray", "gray"],
           },
         },
         {
           index: 6,
           label: "right=3: add 'a' again",
-          description:
-            "After shrinking, add 'a' at right=3. window = {b, c, a}. max_len stays 3.",
+          description: "After shrinking, add 'a' at right=3. window = {b, c, a}. max_len stays 3.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "gray",
-              "green",
-              "green",
-              "green",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["gray", "green", "green", "green", "gray", "gray", "gray", "gray"],
           },
         },
         {
           index: 7,
           label: "right=4: 'b' collision",
-          description:
-            "'b' is in the set. Remove s[left=1]='b', advance left to 2. Then add 'b'. window = {c, a, b}.",
+          description: "'b' is in the set. Remove s[left=1]='b', advance left to 2. Then add 'b'. window = {c, a, b}.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "gray",
-              "red",
-              "green",
-              "green",
-              "green",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["gray", "red", "green", "green", "green", "gray", "gray", "gray"],
           },
         },
         {
           index: 8,
           label: "right=5: 'c' collision",
-          description:
-            "'c' is in the set. Remove s[left=2]='c', advance left to 3. Add 'c'. window = {a, b, c}.",
+          description: "'c' is in the set. Remove s[left=2]='c', advance left to 3. Add 'c'. window = {a, b, c}.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "gray",
-              "gray",
-              "red",
-              "green",
-              "green",
-              "green",
-              "gray",
-              "gray",
-            ],
+            colors: ["gray", "gray", "red", "green", "green", "green", "gray", "gray"],
           },
         },
         {
@@ -197,16 +117,7 @@ const config: AlgoVideoConfig = {
             "'b' is in the set. Remove s[left=3]='a', s[left=4]='b', advance left to 5. Add 'b'. window = {c, b}.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "red",
-              "green",
-              "green",
-              "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "red", "green", "green", "gray"],
           },
         },
         {
@@ -216,35 +127,16 @@ const config: AlgoVideoConfig = {
             "'b' is in the set. Remove s[left=5]='c', s[left=6]='b', advance left to 7. Add 'b'. window = {b}.",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "red",
-              "green",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "gray", "red", "green"],
           },
         },
         {
           index: 11,
           label: "Scan complete",
-          description:
-            "All characters processed. max_len = 3. The answer is 3 (from any of the 'abc' windows).",
+          description: "All characters processed. max_len = 3. The answer is 3 (from any of the 'abc' windows).",
           arrayState: {
             values: ["a", "b", "c", "a", "b", "c", "b", "b"],
-            colors: [
-              "blue",
-              "blue",
-              "blue",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-              "gray",
-            ],
+            colors: ["blue", "blue", "blue", "gray", "gray", "gray", "gray", "gray"],
           },
         },
       ],
@@ -404,8 +296,8 @@ def length_of_longest_substring_optimised(s: str) -> int:
       ],
     },
   ],
-};
+}
 
 export default function LongestNoRepeatVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

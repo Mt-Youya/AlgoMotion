@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Minimum Window Substring",
-  subtitle:
-    "Finds the smallest substring of s that contains all characters of t using an expanding/shrinking win",
+  subtitle: "Finds the smallest substring of s that contains all characters of t using an expanding/shrinking win",
   category: "two-pointers",
   difficulty: "advanced",
 
@@ -13,7 +12,7 @@ const config: AlgoVideoConfig = {
       heading: "Problem Statement",
       bullets: [
         "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window.",
-        "If there is no such substring, return an empty string \"\".",
+        'If there is no such substring, return an empty string "".',
         "The window must contain at least the same frequency of each character as t requires — e.g. if t='AA', the window must contain at least two 'A's.",
         "The answer is guaranteed to be unique when it exists.",
         "Constraints: 1 ≤ |s|, |t| ≤ 10^5; s and t consist of uppercase and lowercase English letters.",
@@ -37,39 +36,48 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description: "Initialize: s='ADOBECODEBANC', t='ABC'. Build need={A:1,B:1,C:1}. Set have=0, required=3, L=0, R=0, best=''.",
+          description:
+            "Initialize: s='ADOBECODEBANC', t='ABC'. Build need={A:1,B:1,C:1}. Set have=0, required=3, L=0, R=0, best=''.",
         },
         {
           step: 2,
-          description: "Expand R to index 0 → s[0]='A'. window={A:1}. window[A]==need[A] so have=1. have(1) < required(3), keep expanding.",
+          description:
+            "Expand R to index 0 → s[0]='A'. window={A:1}. window[A]==need[A] so have=1. have(1) < required(3), keep expanding.",
         },
         {
           step: 3,
-          description: "Expand R to index 4 → s[4]='B'. window={A:1,D:1,O:1,B:1}. window[B]==need[B] so have=2. Still need C.",
+          description:
+            "Expand R to index 4 → s[4]='B'. window={A:1,D:1,O:1,B:1}. window[B]==need[B] so have=2. Still need C.",
         },
         {
           step: 4,
-          description: "Expand R to index 5 → s[5]='C'. window[C]==need[C] so have=3 == required=3. Window 'ADOBEC' is valid (len=6). Record best='ADOBEC'.",
+          description:
+            "Expand R to index 5 → s[5]='C'. window[C]==need[C] so have=3 == required=3. Window 'ADOBEC' is valid (len=6). Record best='ADOBEC'.",
         },
         {
           step: 5,
-          description: "Shrink L from 0: remove s[0]='A'. window[A]=0 < need[A]=1 → have drops to 2. Window invalid. Stop shrinking.",
+          description:
+            "Shrink L from 0: remove s[0]='A'. window[A]=0 < need[A]=1 → have drops to 2. Window invalid. Stop shrinking.",
         },
         {
           step: 6,
-          description: "Expand R through indices 6–10. Characters D,O,B,E,A added. When R=10, window contains A again → have=3 again. Window 'DOBECODEBA' — not shorter than best.",
+          description:
+            "Expand R through indices 6–10. Characters D,O,B,E,A added. When R=10, window contains A again → have=3 again. Window 'DOBECODEBA' — not shorter than best.",
         },
         {
           step: 7,
-          description: "Shrink L: remove D,O,B,E,C,O,D,E one by one. Each removal keeps have==3 as long as minimums are met. Record each valid window length.",
+          description:
+            "Shrink L: remove D,O,B,E,C,O,D,E one by one. Each removal keeps have==3 as long as minimums are met. Record each valid window length.",
         },
         {
           step: 8,
-          description: "Expand R to index 11 → s[11]='N'. No effect on have. Expand R to index 12 → s[12]='C'. window[C]≥need[C] → have stays 3.",
+          description:
+            "Expand R to index 11 → s[11]='N'. No effect on have. Expand R to index 12 → s[12]='C'. window[C]≥need[C] → have stays 3.",
         },
         {
           step: 9,
-          description: "Shrink L aggressively: L advances from 1 to 9. At L=9 window='BANC' (len=4). This is shorter than 'ADOBEC'. Update best='BANC'.",
+          description:
+            "Shrink L aggressively: L advances from 1 to 9. At L=9 window='BANC' (len=4). This is shorter than 'ADOBEC'. Update best='BANC'.",
         },
         {
           step: 10,
@@ -181,23 +189,28 @@ const config: AlgoVideoConfig = {
       variations: [
         {
           name: "Minimum Window Subsequence (LeetCode 727)",
-          description: "Find the minimum window in s such that t is a subsequence (order matters). Requires a different two-pointer approach tracking position in t.",
+          description:
+            "Find the minimum window in s such that t is a subsequence (order matters). Requires a different two-pointer approach tracking position in t.",
         },
         {
           name: "Permutation in String (LeetCode 567)",
-          description: "Check if any permutation of t exists as a substring of s. Fixed-size sliding window of length |t| instead of variable size.",
+          description:
+            "Check if any permutation of t exists as a substring of s. Fixed-size sliding window of length |t| instead of variable size.",
         },
         {
           name: "Find All Anagrams in a String (LeetCode 438)",
-          description: "Return all start indices of anagrams of t in s. Same fixed-size window, collect all valid positions.",
+          description:
+            "Return all start indices of anagrams of t in s. Same fixed-size window, collect all valid positions.",
         },
         {
           name: "Longest Substring Without Repeating Characters (LeetCode 3)",
-          description: "Sliding window where the constraint is all characters in the window are unique — shrink when a duplicate is added.",
+          description:
+            "Sliding window where the constraint is all characters in the window are unique — shrink when a duplicate is added.",
         },
         {
           name: "Substring with Concatenation of All Words (LeetCode 30)",
-          description: "Find substrings that are concatenations of all words in a list. Extends the frequency-map idea to word-level windows.",
+          description:
+            "Find substrings that are concatenations of all words in a list. Extends the frequency-map idea to word-level windows.",
         },
       ],
       tips: [
@@ -220,8 +233,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   ],
-};
+}
 
 export default function MinWindowSubstringVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

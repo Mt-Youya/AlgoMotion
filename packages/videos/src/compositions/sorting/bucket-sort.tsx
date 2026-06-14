@@ -45,7 +45,7 @@ const config: AlgoVideoConfig = {
             { value: 85, color: "#2255CC" },
             { value: 27, color: "#2255CC" },
             { value: 64, color: "#2255CC" },
-            { value: 9,  color: "#2255CC" },
+            { value: 9, color: "#2255CC" },
             { value: 55, color: "#2255CC" },
           ],
         },
@@ -66,11 +66,11 @@ const config: AlgoVideoConfig = {
           description:
             "42 → bucket 2 (floor(42/20)=2). 9 → bucket 0 (floor(9/20)=0). Each element lands in exactly one bucket.",
           array: [
-            { value: 9,  color: "#E05A3A" },
-            { value: 0,  color: "#DDE4F0" },
+            { value: 9, color: "#E05A3A" },
+            { value: 0, color: "#DDE4F0" },
             { value: 42, color: "#E05A3A" },
-            { value: 0,  color: "#DDE4F0" },
-            { value: 0,  color: "#DDE4F0" },
+            { value: 0, color: "#DDE4F0" },
+            { value: 0, color: "#DDE4F0" },
           ],
         },
         {
@@ -78,7 +78,7 @@ const config: AlgoVideoConfig = {
           description:
             "73 → B3, 11 → B0, 85 → B4, 27 → B1. Buckets are filling up. Elements close in value share a bucket.",
           array: [
-            { value: 9,  color: "#CEEB5A" },
+            { value: 9, color: "#CEEB5A" },
             { value: 27, color: "#CEEB5A" },
             { value: 42, color: "#CEEB5A" },
             { value: 73, color: "#CEEB5A" },
@@ -90,7 +90,7 @@ const config: AlgoVideoConfig = {
           description:
             "64 → B3 (joins 73), 55 → B2 (joins 42). B3 now has [73, 64]. B2 has [42, 55]. Distribution is complete.",
           array: [
-            { value: 9,  color: "#CEEB5A" },
+            { value: 9, color: "#CEEB5A" },
             { value: 27, color: "#CEEB5A" },
             { value: 55, color: "#F0A030" },
             { value: 64, color: "#F0A030" },
@@ -102,7 +102,7 @@ const config: AlgoVideoConfig = {
           description:
             "B2 = [42, 55] — already in order. Sort B3 = [73, 64] → [64, 73]. Insertion sort is O(k²) but k is tiny.",
           array: [
-            { value: 9,  color: "#CEEB5A" },
+            { value: 9, color: "#CEEB5A" },
             { value: 27, color: "#CEEB5A" },
             { value: 42, color: "#2255CC" },
             { value: 55, color: "#2255CC" },
@@ -111,10 +111,9 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Sort Bucket B3: [73, 64] → [64, 73]",
-          description:
-            "64 < 73 so we swap. B3 is now sorted. All other single-element buckets need no sorting.",
+          description: "64 < 73 so we swap. B3 is now sorted. All other single-element buckets need no sorting.",
           array: [
-            { value: 9,  color: "#CEEB5A" },
+            { value: 9, color: "#CEEB5A" },
             { value: 27, color: "#CEEB5A" },
             { value: 42, color: "#CEEB5A" },
             { value: 55, color: "#CEEB5A" },
@@ -128,7 +127,7 @@ const config: AlgoVideoConfig = {
           description:
             "Read buckets B0 through B4 in order: [9, 11] + [27] + [42, 55] + [64, 73] + [85]. Result is fully sorted.",
           array: [
-            { value: 9,  color: "#CEEB5A" },
+            { value: 9, color: "#CEEB5A" },
             { value: 11, color: "#CEEB5A" },
             { value: 27, color: "#CEEB5A" },
             { value: 42, color: "#CEEB5A" },
@@ -143,7 +142,7 @@ const config: AlgoVideoConfig = {
           description:
             "Sorted: [9, 11, 27, 42, 55, 64, 73, 85]. Total time: O(n) for distribution + O(k²) per bucket ≈ O(n) average.",
           array: [
-            { value: 9,  color: "#CEEB5A" },
+            { value: 9, color: "#CEEB5A" },
             { value: 11, color: "#CEEB5A" },
             { value: 27, color: "#CEEB5A" },
             { value: 42, color: "#CEEB5A" },
@@ -224,14 +223,14 @@ const config: AlgoVideoConfig = {
 
     complexity: {
       timeRows: [
-        { label: "Best Case",    value: "O(n + k)", color: "#CEEB5A" },
+        { label: "Best Case", value: "O(n + k)", color: "#CEEB5A" },
         { label: "Average Case", value: "O(n + k)", color: "#2255CC" },
-        { label: "Worst Case",   value: "O(n²)",    color: "#E05A3A" },
+        { label: "Worst Case", value: "O(n²)", color: "#E05A3A" },
       ],
       spaceRows: [
         { label: "Auxiliary (buckets)", value: "O(n + k)", color: "#2255CC" },
-        { label: "In-place",            value: "No",        color: "#E05A3A" },
-        { label: "Stable",              value: "Yes (if inner sort is stable)", color: "#CEEB5A" },
+        { label: "In-place", value: "No", color: "#E05A3A" },
+        { label: "Stable", value: "Yes (if inner sort is stable)", color: "#CEEB5A" },
       ],
       notes: [
         "n = number of elements, k = number of buckets. Best/average case assumes uniform distribution.",

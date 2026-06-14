@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Sieve of Eratosthenes",
-  subtitle:
-    "Finds all prime numbers up to n by iteratively marking the multiples of each prime starting from 2.",
+  subtitle: "Finds all prime numbers up to n by iteratively marking the multiples of each prime starting from 2.",
   category: "math",
   difficulty: "intermediate",
 
@@ -38,34 +37,66 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Initialize a boolean array `is_prime[0..20]` with all values set to True.",
+          description: "Initialize a boolean array `is_prime[0..20]` with all values set to True.",
           state: {
             array: [
-              false, false, true, true, true, true, true, true, true, true,
-              true, true, true, true, true, true, true, true, true, true, true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
             ],
             colors: [
-              "gray", "gray", "green", "green", "green", "green", "green",
-              "green", "green", "green", "green", "green", "green", "green",
-              "green", "green", "green", "green", "green", "green", "green",
+              "gray",
+              "gray",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
+              "green",
             ],
           },
         },
         {
           step: 2,
-          description:
-            "Set is_prime[0] = False and is_prime[1] = False (0 and 1 are not prime by definition).",
+          description: "Set is_prime[0] = False and is_prime[1] = False (0 and 1 are not prime by definition).",
         },
         {
           step: 3,
-          description:
-            "Current prime p = 2. Mark multiples: 4, 6, 8, 10, 12, 14, 16, 18, 20 → False.",
+          description: "Current prime p = 2. Mark multiples: 4, 6, 8, 10, 12, 14, 16, 18, 20 → False.",
           state: {
             array: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],
-            colors: [
-              "green", "red", "red", "red", "red", "red", "red", "red", "red", "red",
-            ],
+            colors: ["green", "red", "red", "red", "red", "red", "red", "red", "red", "red"],
           },
         },
         {
@@ -80,18 +111,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description:
-            "Since p = 5 > √20 ≈ 4.47, the inner loop stops. All remaining unmarked numbers are prime.",
+          description: "Since p = 5 > √20 ≈ 4.47, the inner loop stops. All remaining unmarked numbers are prime.",
         },
         {
           step: 7,
-          description:
-            "Collect all indices where is_prime[i] == True: {2, 3, 5, 7, 11, 13, 17, 19}.",
+          description: "Collect all indices where is_prime[i] == True: {2, 3, 5, 7, 11, 13, 17, 19}.",
         },
         {
           step: 8,
-          description:
-            "Return the collected list. These are all primes ≤ 20.",
+          description: "Return the collected list. These are all primes ≤ 20.",
         },
       ],
     },
@@ -244,8 +272,8 @@ if __name__ == "__main__":
       ],
     },
   ],
-};
+}
 
 export default function SieveOfEratosthenesVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

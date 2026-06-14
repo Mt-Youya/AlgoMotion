@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Permutations",
@@ -78,7 +78,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description: "Fix position 1: swap(1,1) → [2,1,3] → record [2,1,3]. Then swap(1,2) → [2,3,1] → record [2,3,1].",
+          description:
+            "Fix position 1: swap(1,1) → [2,1,3] → record [2,1,3]. Then swap(1,2) → [2,3,1] → record [2,3,1].",
           values: [2, 1, 3],
           colors: ["green", "green", "green"],
         },
@@ -272,8 +273,8 @@ def permute_with_used(nums: list[int]) -> list[list[int]]:
       ],
     },
   },
-};
+}
 
 export default function PermutationsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -69,8 +69,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Enter Right Subtree — Node 6",
-          description:
-            "We call inorder(6) for root's right child. Before visiting 6, we go left and call inorder(5).",
+          description: "We call inorder(6) for root's right child. Before visiting 6, we go left and call inorder(5).",
         },
         {
           label: "Visit Node 5 — Leaf",

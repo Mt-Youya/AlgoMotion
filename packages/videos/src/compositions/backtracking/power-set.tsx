@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Power Set",
@@ -45,8 +45,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Include element 1. Path = [1]. Recurse with index 1 to decide about element 2.",
+          description: "Include element 1. Path = [1]. Recurse with index 1 to decide about element 2.",
           array: {
             values: [1, 2, 3],
             colors: ["green", "yellow", "white"],
@@ -54,8 +53,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Include element 2. Path = [1, 2]. Recurse with index 2 to decide about element 3.",
+          description: "Include element 2. Path = [1, 2]. Recurse with index 2 to decide about element 3.",
           array: {
             values: [1, 2, 3],
             colors: ["green", "green", "yellow"],
@@ -90,8 +88,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description:
-            "Include element 3. Path = [1, 3]. Record subset {1, 3}. Backtrack: remove 3.",
+          description: "Include element 3. Path = [1, 3]. Record subset {1, 3}. Backtrack: remove 3.",
           array: {
             values: [1, 2, 3],
             colors: ["green", "white", "green"],
@@ -117,8 +114,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "All 8 subsets collected: ∅, {3}, {2}, {2,3}, {1}, {1,3}, {1,2}, {1,2,3}. Recursion complete.",
+          description: "All 8 subsets collected: ∅, {3}, {2}, {2,3}, {1}, {1,3}, {1,2}, {1,2,3}. Recursion complete.",
           array: {
             values: [1, 2, 3],
             colors: ["green", "green", "green"],
@@ -298,8 +294,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function PowerSetVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

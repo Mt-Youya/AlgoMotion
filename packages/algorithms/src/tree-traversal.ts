@@ -1371,7 +1371,8 @@ function buildChildren(arr: number[]): { left: number[]; right: number[]; valid:
   const valid = arr.map((v) => v !== -1)
   for (let i = 0; i < n; i++) {
     if (!valid[i]) continue
-    const l = 2 * i + 1, r = 2 * i + 2
+    const l = 2 * i + 1,
+      r = 2 * i + 2
     if (l < n && valid[l]) left[i] = l
     if (r < n && valid[r]) right[i] = r
   }
@@ -1474,18 +1475,26 @@ function runTreeLca(input: number[]): AlgorithmRun {
   const parent = new Array<number>(arr.length).fill(-1)
   for (let i = 0; i < arr.length; i++) {
     if (valid[i]) {
-      const l = 2 * i + 1, r = 2 * i + 2
+      const l = 2 * i + 1,
+        r = 2 * i + 2
       if (l < arr.length && valid[l]) parent[l] = i
       if (r < arr.length && valid[r]) parent[r] = i
     }
   }
   const ancestors = new Set<number>()
   let cur = p
-  while (cur >= 0) { ancestors.add(cur); rec.mark([cur], "active"); cur = parent[cur] ?? -1 }
+  while (cur >= 0) {
+    ancestors.add(cur)
+    rec.mark([cur], "active")
+    cur = parent[cur] ?? -1
+  }
   cur = q
   while (cur >= 0) {
     rec.compareValue(cur, p, cur, p)
-    if (ancestors.has(cur)) { rec.mark([cur], "sorted"); break }
+    if (ancestors.has(cur)) {
+      rec.mark([cur], "sorted")
+      break
+    }
     rec.mark([cur], "visited")
     cur = parent[cur] ?? -1
   }
@@ -1515,13 +1524,20 @@ function runTreeSerialize(input: number[]): AlgorithmRun {
 
 export function runTreeAlgorithm(algorithmId: TreeAlgorithmId, input: number[]): AlgorithmRun {
   switch (algorithmId) {
-    case "tree-inorder":    return runTreeInorder(input)
-    case "tree-preorder":   return runTreePreorder(input)
-    case "tree-postorder":  return runTreePostorder(input)
-    case "tree-level-order":return runTreeLevelOrder(input)
-    case "tree-height":     return runTreeHeight(input)
-    case "tree-lca":        return runTreeLca(input)
-    case "tree-serialize":  return runTreeSerialize(input)
+    case "tree-inorder":
+      return runTreeInorder(input)
+    case "tree-preorder":
+      return runTreePreorder(input)
+    case "tree-postorder":
+      return runTreePostorder(input)
+    case "tree-level-order":
+      return runTreeLevelOrder(input)
+    case "tree-height":
+      return runTreeHeight(input)
+    case "tree-lca":
+      return runTreeLca(input)
+    case "tree-serialize":
+      return runTreeSerialize(input)
     default: {
       const _exhaustive: never = algorithmId
       throw new Error(`Unknown tree algorithm: ${_exhaustive}`)

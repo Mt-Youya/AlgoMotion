@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Hamiltonian Cycle",
@@ -296,8 +296,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function HamiltonianCycleVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

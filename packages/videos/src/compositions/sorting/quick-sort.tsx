@@ -49,8 +49,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Choose Pivot",
-          description:
-            "Select the last element (3) as the pivot. We will find its correct position by partitioning.",
+          description: "Select the last element (3) as the pivot. We will find its correct position by partitioning.",
           array: [
             { value: 7, color: "#2255CC" },
             { value: 2, color: "#2255CC" },
@@ -63,8 +62,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Scan: j=0, arr[0]=7",
-          description:
-            "Compare 7 with pivot 3. Since 7 > 3, we do not move the boundary pointer i. Continue scanning.",
+          description: "Compare 7 with pivot 3. Since 7 > 3, we do not move the boundary pointer i. Continue scanning.",
           array: [
             { value: 7, color: "#E05A3A" },
             { value: 2, color: "#2255CC" },

@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "GCD & LCM",
-  subtitle:
-    "Computes the greatest common divisor using the Euclidean algorithm, then derives the LCM as (a*b)/gc",
+  subtitle: "Computes the greatest common divisor using the Euclidean algorithm, then derives the LCM as (a*b)/gc",
   category: "math",
   difficulty: "beginner",
 
@@ -39,43 +38,35 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Apply the Euclidean step: 48 = 2 × 18 + 12. The new pair becomes (18, 12).",
+          description: "Apply the Euclidean step: 48 = 2 × 18 + 12. The new pair becomes (18, 12).",
         },
         {
           step: 3,
-          description:
-            "Apply again: 18 = 1 × 12 + 6. The new pair becomes (12, 6).",
+          description: "Apply again: 18 = 1 × 12 + 6. The new pair becomes (12, 6).",
         },
         {
           step: 4,
-          description:
-            "Apply again: 12 = 2 × 6 + 0. The remainder is 0, so we stop.",
+          description: "Apply again: 12 = 2 × 6 + 0. The remainder is 0, so we stop.",
         },
         {
           step: 5,
-          description:
-            "Since the remainder is 0, GCD(48, 18) = 6 (the last non-zero value).",
+          description: "Since the remainder is 0, GCD(48, 18) = 6 (the last non-zero value).",
         },
         {
           step: 6,
-          description:
-            "Now derive LCM using the identity: LCM(a, b) = (a × b) / GCD(a, b).",
+          description: "Now derive LCM using the identity: LCM(a, b) = (a × b) / GCD(a, b).",
         },
         {
           step: 7,
-          description:
-            "Substitute values: LCM(48, 18) = (48 × 18) / 6 = 864 / 6 = 144.",
+          description: "Substitute values: LCM(48, 18) = (48 × 18) / 6 = 864 / 6 = 144.",
         },
         {
           step: 8,
-          description:
-            "Verify GCD: 48 / 6 = 8 ✓, 18 / 6 = 3 ✓. No larger divisor exists.",
+          description: "Verify GCD: 48 / 6 = 8 ✓, 18 / 6 = 3 ✓. No larger divisor exists.",
         },
         {
           step: 9,
-          description:
-            "Verify LCM: 144 / 48 = 3 ✓, 144 / 18 = 8 ✓. No smaller common multiple exists.",
+          description: "Verify LCM: 144 / 48 = 3 ✓, 144 / 18 = 8 ✓. No smaller common multiple exists.",
         },
         {
           step: 10,
@@ -89,8 +80,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 12,
-          description:
-            "For multiple numbers, chain the operation: GCD(a, b, c) = GCD(GCD(a, b), c). Same for LCM.",
+          description: "For multiple numbers, chain the operation: GCD(a, b, c) = GCD(GCD(a, b), c). Same for LCM.",
         },
       ],
     },
@@ -210,8 +200,7 @@ if __name__ == "__main__":
       variations: [
         {
           name: "Recursive Euclidean",
-          description:
-            "def gcd(a, b): return a if b == 0 else gcd(b, a % b). Elegant but uses O(log n) stack space.",
+          description: "def gcd(a, b): return a if b == 0 else gcd(b, a % b). Elegant but uses O(log n) stack space.",
         },
         {
           name: "Binary GCD (Stein's Algorithm)",
@@ -254,8 +243,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function GcdLcmVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

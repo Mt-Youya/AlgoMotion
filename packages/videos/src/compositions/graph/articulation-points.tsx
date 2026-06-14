@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Articulation Points",
@@ -35,11 +35,13 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           label: "Step 1 — Build the graph",
-          description: "Start with graph: 0-1, 0-2, 1-2, 2-3, 3-4, 3-5. Vertices 0-5, edges forming a triangle (0,1,2) connected via vertex 2 to a star (3,4,5).",
+          description:
+            "Start with graph: 0-1, 0-2, 1-2, 2-3, 3-4, 3-5. Vertices 0-5, edges forming a triangle (0,1,2) connected via vertex 2 to a star (3,4,5).",
         },
         {
           label: "Step 2 — Initialize DFS arrays",
-          description: "Create disc[] = [-1,-1,-1,-1,-1,-1], low[] = [-1,-1,-1,-1,-1,-1], parent[] = [-1,-1,-1,-1,-1,-1], visited[] = [F,F,F,F,F,F].",
+          description:
+            "Create disc[] = [-1,-1,-1,-1,-1,-1], low[] = [-1,-1,-1,-1,-1,-1], parent[] = [-1,-1,-1,-1,-1,-1], visited[] = [F,F,F,F,F,F].",
         },
         {
           label: "Step 3 — DFS from vertex 0",
@@ -55,15 +57,18 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 6 — Back edge 2→0",
-          description: "From 2, neighbor 0 is already visited and is not parent. Back edge found: low[2] = min(low[2], disc[0]) = min(2, 0) = 0.",
+          description:
+            "From 2, neighbor 0 is already visited and is not parent. Back edge found: low[2] = min(low[2], disc[0]) = min(2, 0) = 0.",
         },
         {
           label: "Step 7 — Propagate low values upward",
-          description: "Return to vertex 1: low[1] = min(low[1], low[2]) = min(1, 0) = 0. Return to vertex 0: low[0] = min(low[0], low[1]) = 0.",
+          description:
+            "Return to vertex 1: low[1] = min(low[1], low[2]) = min(1, 0) = 0. Return to vertex 0: low[0] = min(low[0], low[1]) = 0.",
         },
         {
           label: "Step 8 — Visit vertex 3 from 2",
-          description: "From 2, visit unvisited neighbor 3: disc[3]=3, low[3]=3, parent[3]=2. Timer = 4. Check AP condition for vertex 2: low[3]=3 >= disc[2]=2 → vertex 2 IS an AP.",
+          description:
+            "From 2, visit unvisited neighbor 3: disc[3]=3, low[3]=3, parent[3]=2. Timer = 4. Check AP condition for vertex 2: low[3]=3 >= disc[2]=2 → vertex 2 IS an AP.",
         },
         {
           label: "Step 9 — Visit vertices 4 and 5",
@@ -71,15 +76,18 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 10 — Propagate low back to 3",
-          description: "low[3] = min(3, low[4], low[5]) = 3. Return to vertex 2: low[2] = min(0, low[3]) = 0. AP check for vertex 3: low[4]=4 >= disc[3]=3 → vertex 3 IS an AP.",
+          description:
+            "low[3] = min(3, low[4], low[5]) = 3. Return to vertex 2: low[2] = min(0, low[3]) = 0. AP check for vertex 3: low[4]=4 >= disc[3]=3 → vertex 3 IS an AP.",
         },
         {
           label: "Step 11 — Root vertex check",
-          description: "Vertex 0 is the DFS root. It has only one DFS child (vertex 1 via the tree edge 0→1). Root is AP only if it has >1 DFS children. Vertex 0 is NOT an AP.",
+          description:
+            "Vertex 0 is the DFS root. It has only one DFS child (vertex 1 via the tree edge 0→1). Root is AP only if it has >1 DFS children. Vertex 0 is NOT an AP.",
         },
         {
           label: "Step 12 — Final result",
-          description: "Articulation points found: {2, 3}. Removing vertex 2 splits {0,1} from {3,4,5}. Removing vertex 3 splits {4} and {5} from the rest.",
+          description:
+            "Articulation points found: {2, 3}. Removing vertex 2 splits {0,1} from {3,4,5}. Removing vertex 3 splits {4} and {5} from the rest.",
         },
       ],
     },
@@ -151,9 +159,17 @@ const config: AlgoVideoConfig = {
       kind: "complexity",
       heading: "Time & Space Complexity",
       timeRows: [
-        { label: "Best Case", value: "O(V + E)", note: "Single DFS traversal always visits all vertices and edges exactly once" },
+        {
+          label: "Best Case",
+          value: "O(V + E)",
+          note: "Single DFS traversal always visits all vertices and edges exactly once",
+        },
         { label: "Average Case", value: "O(V + E)", note: "DFS-based; performance is independent of graph structure" },
-        { label: "Worst Case", value: "O(V + E)", note: "Dense graph with V² edges still linear in the number of edges" },
+        {
+          label: "Worst Case",
+          value: "O(V + E)",
+          note: "Dense graph with V² edges still linear in the number of edges",
+        },
       ],
       spaceRows: [
         { label: "disc[] / low[] / parent[]", value: "O(V)", note: "Three arrays of size V for DFS bookkeeping" },
@@ -172,23 +188,28 @@ const config: AlgoVideoConfig = {
       variations: [
         {
           name: "Bridge Finding (Tarjan)",
-          description: "Find edges (not vertices) whose removal disconnects the graph. Condition changes to low[v] > disc[u] (strict inequality) instead of >=.",
+          description:
+            "Find edges (not vertices) whose removal disconnects the graph. Condition changes to low[v] > disc[u] (strict inequality) instead of >=.",
         },
         {
           name: "Biconnected Components",
-          description: "Decompose the graph into maximal biconnected subgraphs (no articulation points). Use a stack to collect edges during DFS and output a component when an AP is found.",
+          description:
+            "Decompose the graph into maximal biconnected subgraphs (no articulation points). Use a stack to collect edges during DFS and output a component when an AP is found.",
         },
         {
           name: "Iterative DFS Version",
-          description: "Replace recursion with an explicit stack to handle very large graphs without hitting Python's recursion depth limit. Requires careful simulation of the call stack state.",
+          description:
+            "Replace recursion with an explicit stack to handle very large graphs without hitting Python's recursion depth limit. Requires careful simulation of the call stack state.",
         },
         {
           name: "Online / Dynamic Articulation Points",
-          description: "Maintain articulation points as edges are inserted or deleted. Uses more advanced data structures like link-cut trees for O(log V) per update.",
+          description:
+            "Maintain articulation points as edges are inserted or deleted. Uses more advanced data structures like link-cut trees for O(log V) per update.",
         },
         {
           name: "Directed Graph — Strongly Connected Components",
-          description: "Tarjan's SCC algorithm is a generalization of the AP concept to directed graphs, finding strongly connected components in O(V + E).",
+          description:
+            "Tarjan's SCC algorithm is a generalization of the AP concept to directed graphs, finding strongly connected components in O(V + E).",
         },
       ],
       tips: [
@@ -211,8 +232,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   ],
-};
+}
 
 export default function ArticulationPointsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

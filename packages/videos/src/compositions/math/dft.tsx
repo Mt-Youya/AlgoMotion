@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "DFT / FFT",
-  subtitle:
-    "Computes the Discrete Fourier Transform in O(n log n) using the Cooley-Tukey radix-2 FFT algorithm.",
+  subtitle: "Computes the Discrete Fourier Transform in O(n log n) using the Cooley-Tukey radix-2 FFT algorithm.",
   category: "math",
   difficulty: "expert",
 
@@ -38,8 +37,7 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           label: "Step 1 — Input signal in time domain",
-          description:
-            "Start with 8 real-valued samples: x = [1, 2, 3, 4, 4, 3, 2, 1]. This is a symmetric pulse.",
+          description: "Start with 8 real-valued samples: x = [1, 2, 3, 4, 4, 3, 2, 1]. This is a symmetric pulse.",
           array: [
             { value: 1, color: "blue" },
             { value: 2, color: "blue" },
@@ -298,8 +296,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function DftVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

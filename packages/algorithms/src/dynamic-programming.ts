@@ -698,7 +698,8 @@ export function lcsRun(input: number[]): AlgorithmRun {
   const sep = input.indexOf(-1)
   const A = sep > 0 ? input.slice(0, sep) : [1, 2, 3, 2, 1]
   const B = sep > 0 ? input.slice(sep + 1) : [3, 2, 1, 2]
-  const m = A.length, n = B.length
+  const m = A.length,
+    n = B.length
   // Flatten dp[m+1][n+1] row by row into a 1-D array for visualisation
   const flat = new Array<number>((m + 1) * (n + 1)).fill(0)
   const recorder = new ArrayTraceRecorder(flat)
@@ -727,7 +728,8 @@ export function editDistance(input: number[]): AlgorithmRun {
   const sep = input.indexOf(-1)
   const A = sep > 0 ? input.slice(0, sep) : [1, 2, 3]
   const B = sep > 0 ? input.slice(sep + 1) : [1, 3, 4]
-  const m = A.length, n = B.length
+  const m = A.length,
+    n = B.length
   const flat = new Array<number>((m + 1) * (n + 1)).fill(0)
   for (let i = 0; i <= m; i++) flat[i * (n + 1)] = i
   for (let j = 0; j <= n; j++) flat[j] = j
@@ -780,12 +782,16 @@ export function triangleDP(input: number[]): AlgorithmRun {
   const arr = input.length > 0 ? input : [2, 3, 4, 6, 5, 7, 4, 1, 8, 3]
   const recorder = new ArrayTraceRecorder([...arr])
   // Find number of rows
-  let rows = 0, idx = 0
-  while (idx < arr.length) { rows++; idx += rows }
+  let rows = 0,
+    idx = 0
+  while (idx < arr.length) {
+    rows++
+    idx += rows
+  }
   // Bottom-up: start from second-to-last row
   let base = idx - rows // start of last row
   for (let r = rows - 2; r >= 0; r--) {
-    base -= (r + 1)
+    base -= r + 1
     for (let c = 0; c <= r; c++) {
       const cur = base + c
       const left = base + (r + 1) + c
@@ -806,7 +812,7 @@ export function minPathSum(input: number[]): AlgorithmRun {
   const n = Math.max(2, Math.min(input[1] ?? 3, 6))
   // Fill grid with remaining input values or sequential values
   const grid: number[] = []
-  for (let i = 0; i < m * n; i++) grid.push(input[i + 2] ?? ((i % 5) + 1))
+  for (let i = 0; i < m * n; i++) grid.push(input[i + 2] ?? (i % 5) + 1)
   const recorder = new ArrayTraceRecorder([...grid])
   // First row cumulative sum
   for (let j = 1; j < n; j++) {

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Hash Map (Chaining)",
@@ -48,51 +48,50 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          title: "Insert (\"apple\", \"A\")",
+          title: 'Insert ("apple", "A")',
           description:
-            "Compute hash(\"apple\") % 6 = 2. Prepend a new node {key: \"apple\", val: \"A\", next: None} to bucket[2]'s list. bucket[2] now points to this node.",
+            'Compute hash("apple") % 6 = 2. Prepend a new node {key: "apple", val: "A", next: None} to bucket[2]\'s list. bucket[2] now points to this node.',
         },
         {
           step: 4,
-          title: "Insert (\"banana\", \"B\")",
+          title: 'Insert ("banana", "B")',
           description:
-            "hash(\"banana\") % 6 = 4. No collision — bucket[4] was empty. Prepend the node. bucket[4] → {\"banana\", \"B\"}.",
+            'hash("banana") % 6 = 4. No collision — bucket[4] was empty. Prepend the node. bucket[4] → {"banana", "B"}.',
         },
         {
           step: 5,
-          title: "Insert (\"cherry\", \"C\") — collision!",
+          title: 'Insert ("cherry", "C") — collision!',
           description:
-            "hash(\"cherry\") % 6 = 2. Bucket[2] already contains \"apple\". Prepend the new node: bucket[2] → {\"cherry\", \"C\"} → {\"apple\", \"A\"}.",
+            'hash("cherry") % 6 = 2. Bucket[2] already contains "apple". Prepend the new node: bucket[2] → {"cherry", "C"} → {"apple", "A"}.',
         },
         {
           step: 6,
-          title: "Insert (\"date\", \"D\") and (\"elderberry\", \"E\")",
+          title: 'Insert ("date", "D") and ("elderberry", "E")',
           description:
-            "\"date\" hashes to bucket[1] (no collision). \"elderberry\" hashes to bucket[4], creating a second collision: bucket[4] → {\"elderberry\", \"E\"} → {\"banana\", \"B\"}.",
+            '"date" hashes to bucket[1] (no collision). "elderberry" hashes to bucket[4], creating a second collision: bucket[4] → {"elderberry", "E"} → {"banana", "B"}.',
         },
         {
           step: 7,
-          title: "Lookup (\"cherry\")",
+          title: 'Lookup ("cherry")',
           description:
-            "Compute hash(\"cherry\") % 6 = 2. Walk bucket[2]'s chain: first node key is \"cherry\" — match found. Return value \"C\". Only 1 comparison needed.",
+            'Compute hash("cherry") % 6 = 2. Walk bucket[2]\'s chain: first node key is "cherry" — match found. Return value "C". Only 1 comparison needed.',
         },
         {
           step: 8,
-          title: "Lookup (\"apple\") — chain traversal",
+          title: 'Lookup ("apple") — chain traversal',
           description:
-            "hash(\"apple\") % 6 = 2. Walk bucket[2]: first node is \"cherry\" (no match), second node is \"apple\" (match). Return \"A\". Two comparisons.",
+            'hash("apple") % 6 = 2. Walk bucket[2]: first node is "cherry" (no match), second node is "apple" (match). Return "A". Two comparisons.',
         },
         {
           step: 9,
-          title: "Lookup (\"fig\") — miss",
-          description:
-            "hash(\"fig\") % 6 = 3. bucket[3] is empty (None). Return None immediately — no traversal needed.",
+          title: 'Lookup ("fig") — miss',
+          description: 'hash("fig") % 6 = 3. bucket[3] is empty (None). Return None immediately — no traversal needed.',
         },
         {
           step: 10,
-          title: "Delete (\"banana\")",
+          title: 'Delete ("banana")',
           description:
-            "hash(\"banana\") % 6 = 4. Traverse bucket[4]: first node is \"elderberry\" (skip), second is \"banana\" (match). Unlink: elderberry.next = banana.next (None). Chain is now bucket[4] → {\"elderberry\", \"E\"}.",
+            'hash("banana") % 6 = 4. Traverse bucket[4]: first node is "elderberry" (skip), second is "banana" (match). Unlink: elderberry.next = banana.next (None). Chain is now bucket[4] → {"elderberry", "E"}.',
         },
         {
           step: 11,
@@ -315,8 +314,8 @@ class HashMap:
       ],
     },
   },
-};
+}
 
 export default function HashMapChainingVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

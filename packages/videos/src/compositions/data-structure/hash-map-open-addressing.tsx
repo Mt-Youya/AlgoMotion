@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Hash Map (Open Addressing)",
@@ -43,8 +43,7 @@ const config: AlgoVideoConfig = {
         {
           step: 2,
           title: "Insert key=10, value=100",
-          description:
-            "h(10) = 10 % 11 = 10. Slot 10 is EMPTY → store (10, 100) there. count = 1. No probing needed.",
+          description: "h(10) = 10 % 11 = 10. Slot 10 is EMPTY → store (10, 100) there. count = 1. No probing needed.",
         },
         {
           step: 3,
@@ -293,8 +292,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   },
-};
+}
 
 export default function HashMapOpenAddressingVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

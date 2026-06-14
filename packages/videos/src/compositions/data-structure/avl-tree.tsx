@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "AVL Tree",
@@ -58,7 +58,8 @@ const config: AlgoVideoConfig = {
         {
           step: 5,
           title: "Right Rotation at Node 3",
-          description: "Perform a right rotation: 2 becomes the new root, 1 is its left child, 3 is its right child. All BFs = 0.",
+          description:
+            "Perform a right rotation: 2 becomes the new root, 1 is its left child, 3 is its right child. All BFs = 0.",
         },
         {
           step: 6,
@@ -78,12 +79,14 @@ const config: AlgoVideoConfig = {
         {
           step: 9,
           title: "Left Rotation at Node 3",
-          description: "Perform a left rotation: 4 becomes the new subtree root, 3 is its left child, 5 is its right child.",
+          description:
+            "Perform a left rotation: 4 becomes the new subtree root, 3 is its left child, 5 is its right child.",
         },
         {
           step: 10,
           title: "Final Tree",
-          description: "Root=2, left=1, right=4, 4's left=3, 4's right=5. All balance factors are in [-1,1]. Height = 3 = O(log 5).",
+          description:
+            "Root=2, left=1, right=4, 4's left=3, 4's right=5. All balance factors are in [-1,1]. Height = 3 = O(log 5).",
         },
       ],
     },
@@ -206,23 +209,28 @@ class AVLTree:
       variations: [
         {
           name: "Red-Black Tree",
-          description: "A looser self-balancing BST that allows height up to 2×log(n). Fewer rotations on insert/delete — preferred in most standard library implementations (e.g., Java TreeMap, C++ std::map).",
+          description:
+            "A looser self-balancing BST that allows height up to 2×log(n). Fewer rotations on insert/delete — preferred in most standard library implementations (e.g., Java TreeMap, C++ std::map).",
         },
         {
           name: "Weight-Balanced Tree",
-          description: "Balances based on the number of nodes in subtrees rather than height. Useful when rank/order-statistic queries are frequent.",
+          description:
+            "Balances based on the number of nodes in subtrees rather than height. Useful when rank/order-statistic queries are frequent.",
         },
         {
           name: "Scapegoat Tree",
-          description: "Rebuilds subtrees from scratch when imbalance is detected. Simpler to implement — no per-node metadata needed, but uses amortized O(log n) rather than worst-case.",
+          description:
+            "Rebuilds subtrees from scratch when imbalance is detected. Simpler to implement — no per-node metadata needed, but uses amortized O(log n) rather than worst-case.",
         },
         {
           name: "Treap",
-          description: "Combines BST keys with random priorities to achieve expected O(log n) balance without explicit rebalancing logic. Elegant and easy to implement.",
+          description:
+            "Combines BST keys with random priorities to achieve expected O(log n) balance without explicit rebalancing logic. Elegant and easy to implement.",
         },
         {
           name: "B-Tree / B+ Tree",
-          description: "Generalization to n-ary trees used in databases and file systems. Keeps data sorted and allows searches, insertions, and deletions in O(log n) with very cache-friendly access patterns.",
+          description:
+            "Generalization to n-ary trees used in databases and file systems. Keeps data sorted and allows searches, insertions, and deletions in O(log n) with very cache-friendly access patterns.",
         },
       ],
       tips: [
@@ -245,8 +253,8 @@ class AVLTree:
       ],
     },
   ],
-};
+}
 
 export default function AvlTreeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

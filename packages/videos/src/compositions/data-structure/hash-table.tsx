@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Hash Table",
@@ -40,60 +40,52 @@ const config: AlgoVideoConfig = {
         {
           step: 1,
           label: "Create empty table",
-          description:
-            "Allocate an array of size m (e.g., 11). Every slot starts as None (empty).",
+          description: "Allocate an array of size m (e.g., 11). Every slot starts as None (empty).",
         },
         {
           step: 2,
           label: "Define hash function",
-          description:
-            "hash(key) = key % m. For key=22, m=11: index = 22 % 11 = 0.",
+          description: "hash(key) = key % m. For key=22, m=11: index = 22 % 11 = 0.",
         },
         {
           step: 3,
           label: "Insert key=22",
-          description:
-            "Compute hash(22)=0. Slot 0 is empty → store 22 at index 0.",
+          description: "Compute hash(22)=0. Slot 0 is empty → store 22 at index 0.",
           values: [22, null, null, null, null, null, null, null, null, null, null],
           colors: ["green", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
         },
         {
           step: 4,
           label: "Insert key=33",
-          description:
-            "hash(33)=0. Slot 0 is occupied (collision!). Probe slot 1 → empty → store 33 at index 1.",
+          description: "hash(33)=0. Slot 0 is occupied (collision!). Probe slot 1 → empty → store 33 at index 1.",
           values: [22, 33, null, null, null, null, null, null, null, null, null],
           colors: ["blue", "green", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
         },
         {
           step: 5,
           label: "Insert key=55",
-          description:
-            "hash(55)=0. Slots 0 and 1 occupied. Probe 2 → empty → store 55 at index 2.",
+          description: "hash(55)=0. Slots 0 and 1 occupied. Probe 2 → empty → store 55 at index 2.",
           values: [22, 33, 55, null, null, null, null, null, null, null, null],
           colors: ["blue", "blue", "green", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
         },
         {
           step: 6,
           label: "Insert key=7",
-          description:
-            "hash(7)=7. Slot 7 is empty → store 7 at index 7 directly.",
+          description: "hash(7)=7. Slot 7 is empty → store 7 at index 7 directly.",
           values: [22, 33, 55, null, null, null, null, 7, null, null, null],
           colors: ["blue", "blue", "blue", "gray", "gray", "gray", "gray", "green", "gray", "gray", "gray"],
         },
         {
           step: 7,
           label: "Search for key=55",
-          description:
-            "hash(55)=0. Check slot 0: 22≠55. Check slot 1: 33≠55. Check slot 2: 55=55 → FOUND at index 2.",
+          description: "hash(55)=0. Check slot 0: 22≠55. Check slot 1: 33≠55. Check slot 2: 55=55 → FOUND at index 2.",
           values: [22, 33, 55, null, null, null, null, 7, null, null, null],
           colors: ["yellow", "yellow", "green", "gray", "gray", "gray", "gray", "blue", "gray", "gray", "gray"],
         },
         {
           step: 8,
           label: "Search for key=99 (not present)",
-          description:
-            "hash(99)=0. Probe 0→22, 1→33, 2→55, 3→None. Empty slot reached → key NOT found.",
+          description: "hash(99)=0. Probe 0→22, 1→33, 2→55, 3→None. Empty slot reached → key NOT found.",
         },
         {
           step: 9,
@@ -112,8 +104,7 @@ const config: AlgoVideoConfig = {
         {
           step: 11,
           label: "Load factor check",
-          description:
-            "α = 3/11 ≈ 0.27. Well below 0.7 threshold — no rehashing needed. Performance stays near O(1).",
+          description: "α = 3/11 ≈ 0.27. Well below 0.7 threshold — no rehashing needed. Performance stays near O(1).",
         },
         {
           step: 12,
@@ -285,8 +276,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   ],
-};
+}
 
 export default function HashTableVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

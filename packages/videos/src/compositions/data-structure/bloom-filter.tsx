@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Bloom Filter",
@@ -52,7 +52,8 @@ const config: AlgoVideoConfig = {
         {
           step: 4,
           title: "Insert 'dog'",
-          description: "Compute h1('dog')=2, h2('dog')=5, h3('dog')=9. Set bits 2, 5, 9 to 1. Bit 5 was already set — no problem.",
+          description:
+            "Compute h1('dog')=2, h2('dog')=5, h3('dog')=9. Set bits 2, 5, 9 to 1. Bit 5 was already set — no problem.",
         },
         {
           step: 5,
@@ -67,7 +68,8 @@ const config: AlgoVideoConfig = {
         {
           step: 7,
           title: "Query 'fish' — False Positive",
-          description: "h1('fish')=2, h2('fish')=5, h3('fish')=7. Bits 2, 5, 7 are all 1 (set by 'dog' and 'cat'). Result: PROBABLY IN SET — but 'fish' was never inserted!",
+          description:
+            "h1('fish')=2, h2('fish')=5, h3('fish')=7. Bits 2, 5, 7 are all 1 (set by 'dog' and 'cat'). Result: PROBABLY IN SET — but 'fish' was never inserted!",
         },
         {
           step: 8,
@@ -82,17 +84,20 @@ const config: AlgoVideoConfig = {
         {
           step: 10,
           title: "Choosing m for a target FP rate",
-          description: "For FP rate p and n elements: m = -n * ln(p) / (ln(2))^2. For 1% FP rate with 1M items: ~9.6 MB vs ~32 MB for a hash set.",
+          description:
+            "For FP rate p and n elements: m = -n * ln(p) / (ln(2))^2. For 1% FP rate with 1M items: ~9.6 MB vs ~32 MB for a hash set.",
         },
         {
           step: 11,
           title: "No deletion support",
-          description: "You cannot safely delete from a standard Bloom filter — clearing a bit might invalidate other elements that share it.",
+          description:
+            "You cannot safely delete from a standard Bloom filter — clearing a bit might invalidate other elements that share it.",
         },
         {
           step: 12,
           title: "Counting Bloom filter variant",
-          description: "Replace each bit with a small counter (4 bits). Increment on insert, decrement on delete. Supports deletion at 4x memory cost.",
+          description:
+            "Replace each bit with a small counter (4 bits). Increment on insert, decrement on delete. Supports deletion at 4x memory cost.",
         },
       ],
     },
@@ -189,23 +194,28 @@ class BloomFilter:
       variations: [
         {
           name: "Counting Bloom Filter",
-          description: "Replaces each bit with a small counter (e.g., 4 bits). Supports deletion by decrementing counters. Uses 4× more space than a standard Bloom filter.",
+          description:
+            "Replaces each bit with a small counter (e.g., 4 bits). Supports deletion by decrementing counters. Uses 4× more space than a standard Bloom filter.",
         },
         {
           name: "Scalable Bloom Filter",
-          description: "Dynamically grows by chaining multiple Bloom filters. Maintains a target FP rate even as the set grows beyond the initial capacity estimate.",
+          description:
+            "Dynamically grows by chaining multiple Bloom filters. Maintains a target FP rate even as the set grows beyond the initial capacity estimate.",
         },
         {
           name: "Cuckoo Filter",
-          description: "Stores fingerprints in a cuckoo hash table. Supports deletion, achieves better space efficiency than counting Bloom filters, and has similar FP rates.",
+          description:
+            "Stores fingerprints in a cuckoo hash table. Supports deletion, achieves better space efficiency than counting Bloom filters, and has similar FP rates.",
         },
         {
           name: "Blocked Bloom Filter",
-          description: "Divides the bit array into cache-line-sized blocks. Each element maps to one block, improving CPU cache performance at a small FP rate cost.",
+          description:
+            "Divides the bit array into cache-line-sized blocks. Each element maps to one block, improving CPU cache performance at a small FP rate cost.",
         },
         {
           name: "XOR Filter",
-          description: "A static, immutable filter that achieves ~1.23 bits/element for 1% FP — more space-efficient than Bloom filters but requires knowing all elements upfront.",
+          description:
+            "A static, immutable filter that achieves ~1.23 bits/element for 1% FP — more space-efficient than Bloom filters but requires knowing all elements upfront.",
         },
       ],
       tips: [
@@ -228,8 +238,8 @@ class BloomFilter:
       ],
     },
   },
-};
+}
 
 export default function BloomFilterVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

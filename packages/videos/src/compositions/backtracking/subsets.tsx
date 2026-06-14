@@ -44,8 +44,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Include 1, Include 2 — Recurse",
-          description:
-            "At index 1, we include nums[1] = 2. Path becomes [1, 2]. We recurse with start index = 2.",
+          description: "At index 1, we include nums[1] = 2. Path becomes [1, 2]. We recurse with start index = 2.",
         },
         {
           label: "Include 1, 2, 3 — Base Case Hit",

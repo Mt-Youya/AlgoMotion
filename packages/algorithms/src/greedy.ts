@@ -977,7 +977,10 @@ function fractionalKnapsack(input: number[]): AlgorithmRun {
   for (let i = 0; i < sorted.length; i++) {
     rec.mark([i], "active")
     rec.compareValue(i, Math.max(0, i - 1), sorted[i]?.ratio ?? 0, sorted[i - 1]?.ratio ?? 0)
-    if (remaining <= 0) { rec.mark([i], "visited"); continue }
+    if (remaining <= 0) {
+      rec.mark([i], "visited")
+      continue
+    }
     const take = Math.min(sorted[i]?.w ?? 0, remaining)
     remaining -= take
     rec.mark([i], take > 0 ? "sorted" : "visited")
@@ -997,7 +1000,8 @@ function huffmanCoding(input: number[]): AlgorithmRun {
   const rec = new ArrayTraceRecorder([...heap])
   while (heap.length > 1) {
     // Find two minimums
-    let m1 = 0, m2 = 1
+    let m1 = 0,
+      m2 = 1
     rec.compare(m1, m2)
     rec.mark([m1, m2], "active")
     const sum = (heap[m1] ?? 0) + (heap[m2] ?? 0)

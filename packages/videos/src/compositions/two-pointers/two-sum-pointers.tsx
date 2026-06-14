@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Two Sum — Two Pointers",
-  subtitle:
-    "Uses two pointers on a sorted array to find a pair that sums to the target in O(n) time.",
+  subtitle: "Uses two pointers on a sorted array to find a pair that sums to the target in O(n) time.",
   category: "two-pointers",
   difficulty: "beginner",
 
@@ -218,13 +217,11 @@ print(two_sum_sorted(numbers, target))  # Output: [1, 2]
         },
         {
           name: "Three Sum",
-          description:
-            "Fix one element and apply two-pointer on the remaining subarray. O(n²) overall. LeetCode #15.",
+          description: "Fix one element and apply two-pointer on the remaining subarray. O(n²) overall. LeetCode #15.",
         },
         {
           name: "Four Sum",
-          description:
-            "Fix two elements with nested loops, then two-pointer on the rest. O(n³) overall. LeetCode #18.",
+          description: "Fix two elements with nested loops, then two-pointer on the rest. O(n³) overall. LeetCode #18.",
         },
         {
           name: "Two Sum — Closest to Target",
@@ -258,8 +255,8 @@ print(two_sum_sorted(numbers, target))  # Output: [1, 2]
       ],
     },
   ],
-};
+}
 
 export default function TwoSumPointersVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

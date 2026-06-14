@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Doubly Linked List",
@@ -55,8 +55,7 @@ const config: AlgoVideoConfig = {
         {
           step: 4,
           title: "Append 20",
-          description:
-            "Create Node(20). Set node20.prev = node10 and node10.next = node20. Update `tail` to node20.",
+          description: "Create Node(20). Set node20.prev = node10 and node10.next = node20. Update `tail` to node20.",
         },
         {
           step: 5,
@@ -67,14 +66,12 @@ const config: AlgoVideoConfig = {
         {
           step: 6,
           title: "Forward traversal",
-          description:
-            "Start at `head`. Follow `next` pointers until `current` is None. Visits: 10 → 20 → 30 → 40.",
+          description: "Start at `head`. Follow `next` pointers until `current` is None. Visits: 10 → 20 → 30 → 40.",
         },
         {
           step: 7,
           title: "Backward traversal",
-          description:
-            "Start at `tail`. Follow `prev` pointers until `current` is None. Visits: 40 → 30 → 20 → 10.",
+          description: "Start at `tail`. Follow `prev` pointers until `current` is None. Visits: 40 → 30 → 20 → 10.",
         },
         {
           step: 8,
@@ -91,8 +88,7 @@ const config: AlgoVideoConfig = {
         {
           step: 10,
           title: "Prepend 5 to the front",
-          description:
-            "Create Node(5). Set node5.next = head (node10), node10.prev = node5. Update `head` to node5.",
+          description: "Create Node(5). Set node5.next = head (node10), node10.prev = node5. Update `head` to node5.",
         },
         {
           step: 11,
@@ -273,8 +269,8 @@ class DoublyLinkedList:
       ],
     },
   },
-};
+}
 
 export default function DoublyLinkedListVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

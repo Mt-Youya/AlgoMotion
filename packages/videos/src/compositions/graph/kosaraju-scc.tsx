@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Kosaraju's SCC",
@@ -43,8 +43,7 @@ const config: AlgoVideoConfig = {
         {
           step: 2,
           title: "Initialize DFS structures",
-          description:
-            "Create a visited array of size V (all False), and an empty stack for recording finish times.",
+          description: "Create a visited array of size V (all False), and an empty stack for recording finish times.",
         },
         {
           step: 3,
@@ -67,8 +66,7 @@ const config: AlgoVideoConfig = {
         {
           step: 6,
           title: "Reset visited array",
-          description:
-            "Set all visited entries back to False. The stack still holds the finish order from pass 1.",
+          description: "Set all visited entries back to False. The stack still holds the finish order from pass 1.",
         },
         {
           step: 7,
@@ -79,20 +77,17 @@ const config: AlgoVideoConfig = {
         {
           step: 8,
           title: "Pop vertex 1 (top of stack)",
-          description:
-            "DFS on Gᵀ from 1 visits {1, 0, 2} — these form SCC-1. Mark all three visited.",
+          description: "DFS on Gᵀ from 1 visits {1, 0, 2} — these form SCC-1. Mark all three visited.",
         },
         {
           step: 9,
           title: "Pop next unvisited — vertex 3",
-          description:
-            "DFS on Gᵀ from 3 visits {3, 4} — SCC-2. Edges 3↔4 are preserved under transposition.",
+          description: "DFS on Gᵀ from 3 visits {3, 4} — SCC-2. Edges 3↔4 are preserved under transposition.",
         },
         {
           step: 10,
           title: "Pop next unvisited — vertex 6",
-          description:
-            "DFS on Gᵀ from 6 visits {6, 5, 7} — SCC-3. The reversed cycle 5←6←7←5 is still a cycle.",
+          description: "DFS on Gᵀ from 6 visits {6, 5, 7} — SCC-3. The reversed cycle 5←6←7←5 is still a cycle.",
         },
         {
           step: 11,
@@ -222,8 +217,7 @@ print(g.kosaraju())
         },
         {
           name: "Path-Based SCC (Gabow's)",
-          description:
-            "Uses two stacks during a single DFS. More cache-friendly than Tarjan's in practice.",
+          description: "Uses two stacks during a single DFS. More cache-friendly than Tarjan's in practice.",
         },
         {
           name: "Iterative Kosaraju",
@@ -261,8 +255,8 @@ print(g.kosaraju())
       ],
     },
   },
-};
+}
 
 export default function KosarajuSccVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

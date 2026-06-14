@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Min-Heap",
@@ -43,7 +43,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Insert 2 — append",
-          description: "Append the new value at the end of the array: [1, 3, 5, 7, 9, 8, 6, 2]. It becomes the left child of index 3 (value 7).",
+          description:
+            "Append the new value at the end of the array: [1, 3, 5, 7, 9, 8, 6, 2]. It becomes the left child of index 3 (value 7).",
         },
         {
           label: "Sift-up step 1",
@@ -87,7 +88,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Sift-down step 2",
-          description: "Now at index 1 (value 7). Children are index 3 (3) and index 4 (9). Smallest child is 3. Since 7 > 3, swap.",
+          description:
+            "Now at index 1 (value 7). Children are index 3 (3) and index 4 (9). Smallest child is 3. Since 7 > 3, swap.",
           arrayState: {
             values: [2, 3, 5, 7, 9, 8, 6],
             colors: ["green", "green", "default", "yellow", "default", "default", "default"],
@@ -95,7 +97,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Sift-down complete",
-          description: "Now at index 3 (value 7). Children would be indices 7 and 8 — out of bounds. Stop. Heap property restored.",
+          description:
+            "Now at index 3 (value 7). Children would be indices 7 and 8 — out of bounds. Stop. Heap property restored.",
           arrayState: {
             values: [2, 3, 5, 7, 9, 8, 6],
             colors: ["green", "green", "green", "green", "green", "green", "green"],
@@ -103,7 +106,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Build heap in O(n)",
-          description: "Given an arbitrary array, call sift-down on every non-leaf from index n//2-1 down to 0. Total work is O(n) due to geometric series — most nodes are near the bottom and do little work.",
+          description:
+            "Given an arbitrary array, call sift-down on every non-leaf from index n//2-1 down to 0. Total work is O(n) due to geometric series — most nodes are near the bottom and do little work.",
         },
       ],
     },
@@ -174,9 +178,18 @@ const config: AlgoVideoConfig = {
         { lines: "5-7", note: "Index arithmetic: parent at (i-1)//2, children at 2i+1 and 2i+2. No pointers needed." },
         { lines: "10-12", note: "peek() is O(1) — the minimum is always at index 0 by the heap property." },
         { lines: "14-16", note: "push() appends then calls sift-up to restore the heap property in O(log n)." },
-        { lines: "18-23", note: "pop() swaps root with last element, removes last (O(1)), then sifts down the new root." },
-        { lines: "25-33", note: "sift_up() repeatedly compares a node with its parent and swaps upward until the heap property holds." },
-        { lines: "35-46", note: "sift_down() finds the smallest among a node and its two children, swaps if needed, and recurses downward." },
+        {
+          lines: "18-23",
+          note: "pop() swaps root with last element, removes last (O(1)), then sifts down the new root.",
+        },
+        {
+          lines: "25-33",
+          note: "sift_up() repeatedly compares a node with its parent and swaps upward until the heap property holds.",
+        },
+        {
+          lines: "35-46",
+          note: "sift_down() finds the smallest among a node and its two children, swaps if needed, and recurses downward.",
+        },
         { lines: "52-57", note: "heapify() builds a heap in O(n) by sifting down every non-leaf from bottom to top." },
       ],
     },
@@ -208,23 +221,28 @@ const config: AlgoVideoConfig = {
       variations: [
         {
           name: "Max-Heap",
-          description: "Flip the comparison: every parent ≥ its children. Root holds the maximum. Used in heapsort and scheduling algorithms.",
+          description:
+            "Flip the comparison: every parent ≥ its children. Root holds the maximum. Used in heapsort and scheduling algorithms.",
         },
         {
           name: "d-ary Heap",
-          description: "Each node has d children instead of 2. Reduces tree height to log_d(n), improving decrease-key at the cost of slower sift-down. d=4 is common in practice.",
+          description:
+            "Each node has d children instead of 2. Reduces tree height to log_d(n), improving decrease-key at the cost of slower sift-down. d=4 is common in practice.",
         },
         {
           name: "Fibonacci Heap",
-          description: "Amortized O(1) insert and decrease-key, O(log n) extract-min. Theoretically optimal for Dijkstra's algorithm but complex to implement.",
+          description:
+            "Amortized O(1) insert and decrease-key, O(log n) extract-min. Theoretically optimal for Dijkstra's algorithm but complex to implement.",
         },
         {
           name: "Binomial Heap",
-          description: "Supports O(log n) merge of two heaps. Useful when merging priority queues is a frequent operation.",
+          description:
+            "Supports O(log n) merge of two heaps. Useful when merging priority queues is a frequent operation.",
         },
         {
           name: "Python heapq module",
-          description: "Built-in min-heap via heapq.heappush / heapq.heappop. Operates directly on a plain list. Use heapq.nsmallest for top-k queries.",
+          description:
+            "Built-in min-heap via heapq.heappush / heapq.heappop. Operates directly on a plain list. Use heapq.nsmallest for top-k queries.",
         },
       ],
       tips: [
@@ -248,8 +266,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   ],
-};
+}
 
 export default function HeapMinVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

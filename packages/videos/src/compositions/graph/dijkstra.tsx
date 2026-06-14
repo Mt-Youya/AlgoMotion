@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Dijkstra's Algorithm",
@@ -49,8 +49,7 @@ const config: AlgoVideoConfig = {
         {
           step: 3,
           label: "Mark settled",
-          description:
-            "Mark u as visited. Its current dist[u] value is now the final shortest distance from source.",
+          description: "Mark u as visited. Its current dist[u] value is now the final shortest distance from source.",
         },
         {
           step: 4,
@@ -67,20 +66,17 @@ const config: AlgoVideoConfig = {
         {
           step: 6,
           label: "Process B (dist=3)",
-          description:
-            "Relax B→D: dist[D] = 3 + 5 = 8. B→C already settled. Push (8, D) into heap.",
+          description: "Relax B→D: dist[D] = 3 + 5 = 8. B→C already settled. Push (8, D) into heap.",
         },
         {
           step: 7,
           label: "Process D (dist=8)",
-          description:
-            "Relax D→E: dist[D] + 2 = 10 > 9, no update. D is settled.",
+          description: "Relax D→E: dist[D] + 2 = 10 > 9, no update. D is settled.",
         },
         {
           step: 8,
           label: "Process E (dist=9)",
-          description:
-            "E has no unvisited neighbors. E is settled. Priority queue is now empty.",
+          description: "E has no unvisited neighbors. E is settled. Priority queue is now empty.",
         },
         {
           step: 9,
@@ -267,8 +263,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function DijkstraVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Deque",
@@ -39,31 +39,38 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description: "Initialize an empty deque backed by a doubly-linked list. Both head and tail pointers are null.",
+          description:
+            "Initialize an empty deque backed by a doubly-linked list. Both head and tail pointers are null.",
         },
         {
           step: 2,
-          description: "push_back(10): Create a new node with value 10. Since the deque is empty, both head and tail point to this node. State: [10]",
+          description:
+            "push_back(10): Create a new node with value 10. Since the deque is empty, both head and tail point to this node. State: [10]",
         },
         {
           step: 3,
-          description: "push_back(20): Create node 20, link it after the current tail (10). Update tail to node 20. State: [10, 20]",
+          description:
+            "push_back(20): Create node 20, link it after the current tail (10). Update tail to node 20. State: [10, 20]",
         },
         {
           step: 4,
-          description: "push_back(30): Create node 30, link after tail (20). Tail now points to 30. State: [10, 20, 30]",
+          description:
+            "push_back(30): Create node 30, link after tail (20). Tail now points to 30. State: [10, 20, 30]",
         },
         {
           step: 5,
-          description: "push_front(5): Create node 5, link it before the current head (10). Update head to node 5. State: [5, 10, 20, 30]",
+          description:
+            "push_front(5): Create node 5, link it before the current head (10). Update head to node 5. State: [5, 10, 20, 30]",
         },
         {
           step: 6,
-          description: "pop_front(): Remove node at head (5). Update head to the next node (10). Set head.prev = null. Return 5. State: [10, 20, 30]",
+          description:
+            "pop_front(): Remove node at head (5). Update head to the next node (10). Set head.prev = null. Return 5. State: [10, 20, 30]",
         },
         {
           step: 7,
-          description: "pop_back(): Remove node at tail (30). Update tail to the previous node (20). Set tail.next = null. Return 30. State: [10, 20]",
+          description:
+            "pop_back(): Remove node at tail (30). Update tail to the previous node (20). Set tail.next = null. Return 30. State: [10, 20]",
         },
         {
           step: 8,
@@ -79,11 +86,13 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 11,
-          description: "pop_front() twice: Remove 10 (head becomes 20), then remove 20 (head becomes null, tail becomes null). Deque is now empty.",
+          description:
+            "pop_front() twice: Remove 10 (head becomes 20), then remove 20 (head becomes null, tail becomes null). Deque is now empty.",
         },
         {
           step: 12,
-          description: "All operations complete. Every push/pop touched only the head or tail pointer — never iterated — confirming O(1) per operation.",
+          description:
+            "All operations complete. Every push/pop touched only the head or tail pointer — never iterated — confirming O(1) per operation.",
         },
       ],
     },
@@ -261,8 +270,8 @@ class Deque:
       ],
     },
   ],
-};
+}
 
 export default function DequeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

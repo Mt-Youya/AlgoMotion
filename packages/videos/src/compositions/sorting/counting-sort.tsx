@@ -33,7 +33,8 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           label: "Start: input array",
-          description: "We begin with the unsorted input [4, 2, 2, 8, 3, 3, 1]. The value range is [1, 8], so we need a count array of size 9 (indices 0–8).",
+          description:
+            "We begin with the unsorted input [4, 2, 2, 8, 3, 3, 1]. The value range is [1, 8], so we need a count array of size 9 (indices 0–8).",
           array: [
             { value: 4, color: "#2255CC" },
             { value: 2, color: "#2255CC" },
@@ -46,7 +47,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Initialise count array",
-          description: "Create count[0..8] filled with zeros. Each index represents a possible value in the input range.",
+          description:
+            "Create count[0..8] filled with zeros. Each index represents a possible value in the input range.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 0, color: "#DDE4F0" },
@@ -61,7 +63,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Count occurrences",
-          description: "Scan the input. For each element x, increment count[x]. After scanning: count[1]=1, count[2]=2, count[3]=2, count[4]=1, count[8]=1.",
+          description:
+            "Scan the input. For each element x, increment count[x]. After scanning: count[1]=1, count[2]=2, count[3]=2, count[4]=1, count[8]=1.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#CEEB5A" },
@@ -76,7 +79,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Build prefix sums",
-          description: "Accumulate: count[i] += count[i-1]. Now count[v] holds the number of elements ≤ v, which equals the last valid output index for value v (1-based).",
+          description:
+            "Accumulate: count[i] += count[i-1]. Now count[v] holds the number of elements ≤ v, which equals the last valid output index for value v (1-based).",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#2255CC" },
@@ -91,7 +95,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Prepare output array",
-          description: "Allocate an output array of the same length as the input, initially empty. We will fill it using the prefix-sum positions.",
+          description:
+            "Allocate an output array of the same length as the input, initially empty. We will fill it using the prefix-sum positions.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 0, color: "#DDE4F0" },
@@ -104,7 +109,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Place elements (right-to-left)",
-          description: "Traverse input right-to-left. For input[6]=1: pos = count[1]-1 = 0, place 1 at output[0], decrement count[1] to 0.",
+          description:
+            "Traverse input right-to-left. For input[6]=1: pos = count[1]-1 = 0, place 1 at output[0], decrement count[1] to 0.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 0, color: "#DDE4F0" },
@@ -117,7 +123,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Continue placing elements",
-          description: "input[5]=3: pos = count[3]-1 = 4, place 3 at output[4]. input[4]=3: pos = count[3]-1 = 3, place 3 at output[3]. Stability is maintained.",
+          description:
+            "input[5]=3: pos = count[3]-1 = 4, place 3 at output[4]. input[4]=3: pos = count[3]-1 = 3, place 3 at output[3]. Stability is maintained.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 0, color: "#DDE4F0" },
@@ -130,7 +137,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Place remaining elements",
-          description: "Continue: input[3]=8 → output[6]=8; input[2]=2 → output[2]=2; input[1]=2 → output[1]=2; input[0]=4 → output[5]=4.",
+          description:
+            "Continue: input[3]=8 → output[6]=8; input[2]=2 → output[2]=2; input[1]=2 → output[1]=2; input[0]=4 → output[5]=4.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },
@@ -143,7 +151,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Copy output to input",
-          description: "Copy the output array back into the original array. The array is now fully sorted in ascending order.",
+          description:
+            "Copy the output array back into the original array. The array is now fully sorted in ascending order.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },
@@ -156,7 +165,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Sort complete",
-          description: "All 7 elements are in sorted order: [1, 2, 2, 3, 3, 4, 8]. No comparisons were made — just counting and indexing.",
+          description:
+            "All 7 elements are in sorted order: [1, 2, 2, 3, 3, 4, 8]. No comparisons were made — just counting and indexing.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 2, color: "#CEEB5A" },

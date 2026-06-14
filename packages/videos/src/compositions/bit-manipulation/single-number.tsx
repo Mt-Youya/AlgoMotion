@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Single Number",
-  subtitle:
-    "Finds the element that appears exactly once in an array where every other element appears twice, usi",
+  subtitle: "Finds the element that appears exactly once in an array where every other element appears twice, usi",
   category: "bit-manipulation",
   difficulty: "beginner",
 
@@ -57,17 +56,20 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description: "Process nums[3] = 1. Compute result = 7 XOR 1 = 6 (binary: 111 XOR 001 = 110). The first '1' cancels with this '1'.",
+          description:
+            "Process nums[3] = 1. Compute result = 7 XOR 1 = 6 (binary: 111 XOR 001 = 110). The first '1' cancels with this '1'.",
           arrayState: { values: [4, 1, 2, 1, 2], colors: ["green", "green", "green", "yellow", "gray"] },
         },
         {
           step: 6,
-          description: "Process nums[4] = 2. Compute result = 6 XOR 2 = 4 (binary: 110 XOR 010 = 100). The first '2' cancels with this '2'.",
+          description:
+            "Process nums[4] = 2. Compute result = 6 XOR 2 = 4 (binary: 110 XOR 010 = 100). The first '2' cancels with this '2'.",
           arrayState: { values: [4, 1, 2, 1, 2], colors: ["green", "green", "green", "green", "yellow"] },
         },
         {
           step: 7,
-          description: "All elements processed. result = 4. The two 1s cancelled each other (1 XOR 1 = 0). The two 2s cancelled each other (2 XOR 2 = 0). Only 4 remains.",
+          description:
+            "All elements processed. result = 4. The two 1s cancelled each other (1 XOR 1 = 0). The two 2s cancelled each other (2 XOR 2 = 0). Only 4 remains.",
           arrayState: { values: [4, 1, 2, 1, 2], colors: ["green", "green", "green", "green", "green"] },
         },
         {
@@ -145,13 +147,13 @@ if __name__ == "__main__":
     complexity: {
       heading: "Time & Space Complexity",
       timeRows: [
-        { case: "Best",    notation: "O(n)", note: "Must always visit every element at least once" },
+        { case: "Best", notation: "O(n)", note: "Must always visit every element at least once" },
         { case: "Average", notation: "O(n)", note: "Linear scan regardless of input distribution" },
-        { case: "Worst",   notation: "O(n)", note: "No early exit possible; unique element may be last" },
+        { case: "Worst", notation: "O(n)", note: "No early exit possible; unique element may be last" },
       ],
       spaceRows: [
         { type: "Auxiliary", notation: "O(1)", note: "Only a single integer variable `result` is used" },
-        { type: "Input",     notation: "O(n)", note: "Input array itself (not counted toward algorithm space)" },
+        { type: "Input", notation: "O(n)", note: "Input array itself (not counted toward algorithm space)" },
       ],
       insights: [
         "XOR is one of the rare bit tricks that solves a seemingly complex problem in a single pass with zero extra memory.",
@@ -209,8 +211,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function SingleNumberVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

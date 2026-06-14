@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Minimum Path Sum",
@@ -36,7 +36,8 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description: "Start with input grid: [[1,3,1],[1,5,1],[4,2,1]]. We want the minimum-cost path from (0,0) to (2,2).",
+          description:
+            "Start with input grid: [[1,3,1],[1,5,1],[4,2,1]]. We want the minimum-cost path from (0,0) to (2,2).",
         },
         {
           step: 2,
@@ -44,15 +45,18 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description: "Base case — set dp[0][0] = grid[0][0] = 1. The cost of reaching the start is just its own value.",
+          description:
+            "Base case — set dp[0][0] = grid[0][0] = 1. The cost of reaching the start is just its own value.",
         },
         {
           step: 4,
-          description: "Fill the first row left-to-right: dp[0][1] = dp[0][0] + grid[0][1] = 1+3 = 4; dp[0][2] = 4+1 = 5. Only rightward moves are possible.",
+          description:
+            "Fill the first row left-to-right: dp[0][1] = dp[0][0] + grid[0][1] = 1+3 = 4; dp[0][2] = 4+1 = 5. Only rightward moves are possible.",
         },
         {
           step: 5,
-          description: "Fill the first column top-to-bottom: dp[1][0] = dp[0][0] + grid[1][0] = 1+1 = 2; dp[2][0] = 2+4 = 6. Only downward moves are possible.",
+          description:
+            "Fill the first column top-to-bottom: dp[1][0] = dp[0][0] + grid[1][0] = 1+1 = 2; dp[2][0] = 2+4 = 6. Only downward moves are possible.",
         },
         {
           step: 6,
@@ -72,11 +76,13 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description: "The answer is dp[2][2] = 7. The optimal path is (0,0)→(0,1)→... wait, let's trace back: dp[2][2]=7 came from dp[1][2]=6, which came from dp[0][2]=5, which came from dp[0][1]=4, which came from dp[0][0]=1. Path: right→right→down→down.",
+          description:
+            "The answer is dp[2][2] = 7. The optimal path is (0,0)→(0,1)→... wait, let's trace back: dp[2][2]=7 came from dp[1][2]=6, which came from dp[0][2]=5, which came from dp[0][1]=4, which came from dp[0][0]=1. Path: right→right→down→down.",
         },
         {
           step: 11,
-          description: "Space optimization: we can reduce memory to O(n) by keeping only one row of the dp array and updating it in-place as we iterate through each row.",
+          description:
+            "Space optimization: we can reduce memory to O(n) by keeping only one row of the dp array and updating it in-place as we iterate through each row.",
         },
         {
           step: 12,
@@ -178,23 +184,28 @@ def minPathSumOptimized(grid: list[list[int]]) -> int:
       variations: [
         {
           name: "Unique Paths",
-          description: "Count the number of distinct paths from top-left to bottom-right (no weights), using the same right/down movement constraint.",
+          description:
+            "Count the number of distinct paths from top-left to bottom-right (no weights), using the same right/down movement constraint.",
         },
         {
           name: "Unique Paths II",
-          description: "Same as Unique Paths but some cells are blocked by obstacles; skip those cells in the DP recurrence.",
+          description:
+            "Same as Unique Paths but some cells are blocked by obstacles; skip those cells in the DP recurrence.",
         },
         {
           name: "Triangle Minimum Path Sum",
-          description: "Given a triangle array, find the minimum path sum from top to bottom, where each step moves to an adjacent number in the row below.",
+          description:
+            "Given a triangle array, find the minimum path sum from top to bottom, where each step moves to an adjacent number in the row below.",
         },
         {
           name: "Dungeon Game",
-          description: "The knight must maintain health > 0 at all times; fill the DP table from bottom-right to top-left to find the minimum initial health needed.",
+          description:
+            "The knight must maintain health > 0 at all times; fill the DP table from bottom-right to top-left to find the minimum initial health needed.",
         },
         {
           name: "Cherry Pickup",
-          description: "Two traversals of the same grid (down-right then up-left) to maximize cherries collected — a harder variant requiring simultaneous path DP.",
+          description:
+            "Two traversals of the same grid (down-right then up-left) to maximize cherries collected — a harder variant requiring simultaneous path DP.",
         },
       ],
       tips: [
@@ -217,8 +228,8 @@ def minPathSumOptimized(grid: list[list[int]]) -> int:
       ],
     },
   },
-};
+}
 
 export default function MinPathSumVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

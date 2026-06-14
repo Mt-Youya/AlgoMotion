@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Fenwick Tree (BIT)",
@@ -198,11 +198,23 @@ print(bit.query(7))          # 21  (updated prefix sum)`,
       timeRows: [
         { case: "Best", complexity: "O(1)", note: "update/query on index that is a power of 2 (single BIT node)" },
         { case: "Average", complexity: "O(log n)", note: "Typical case — traverses ~log₂(n) nodes per operation" },
-        { case: "Worst", complexity: "O(log n)", note: "Strictly bounded by number of bits in n — never exceeds ⌊log₂(n)⌋+1 steps" },
+        {
+          case: "Worst",
+          complexity: "O(log n)",
+          note: "Strictly bounded by number of bits in n — never exceeds ⌊log₂(n)⌋+1 steps",
+        },
       ],
       spaceRows: [
-        { operation: "BIT array storage", complexity: "O(n)", note: "Exactly n+1 integers — same asymptotic space as the input array" },
-        { operation: "Extra per operation", complexity: "O(1)", note: "Only a loop counter and accumulator — no recursion or auxiliary structures" },
+        {
+          operation: "BIT array storage",
+          complexity: "O(n)",
+          note: "Exactly n+1 integers — same asymptotic space as the input array",
+        },
+        {
+          operation: "Extra per operation",
+          complexity: "O(1)",
+          note: "Only a loop counter and accumulator — no recursion or auxiliary structures",
+        },
       ],
       insights: [
         "Both update and query are strictly O(log n) — the loop runs at most ⌊log₂(n)⌋ iterations, guaranteed by bit manipulation.",
@@ -262,8 +274,8 @@ print(bit.query(7))          # 21  (updated prefix sum)`,
       ],
     },
   ],
-};
+}
 
 export default function FenwickTreeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

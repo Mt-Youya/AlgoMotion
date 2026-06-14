@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Segment Tree",
@@ -58,7 +58,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Range query: sum(1, 4)",
-          description: "Traverse from root. [0..5] partially overlaps → recurse. [0..2] partially overlaps → recurse. [0..1] out of range on left → skip [0]. [1..1] fully inside → collect 3. [2..2] fully inside → collect 5. [3..5] partially overlaps → recurse. [3..4] fully inside → collect 16. Total = 3+5+16 = 24.",
+          description:
+            "Traverse from root. [0..5] partially overlaps → recurse. [0..2] partially overlaps → recurse. [0..1] out of range on left → skip [0]. [1..1] fully inside → collect 3. [2..2] fully inside → collect 5. [3..5] partially overlaps → recurse. [3..4] fully inside → collect 16. Total = 3+5+16 = 24.",
           values: [1, 3, 5, 7, 9, 11],
           colors: ["grey", "yellow", "yellow", "yellow", "yellow", "grey"],
         },
@@ -70,7 +71,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Propagate update upward",
-          description: "Recompute parent [3..4] = 10+9 = 19, then [3..5] = 19+11 = 30, then root = 9+30 = 39. Only O(log n) nodes touched.",
+          description:
+            "Recompute parent [3..4] = 10+9 = 19, then [3..5] = 19+11 = 30, then root = 9+30 = 39. Only O(log n) nodes touched.",
         },
         {
           label: "Verify updated query: sum(1, 4)",
@@ -80,11 +82,13 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Range minimum query variant",
-          description: "Replace sum with min in merge step. tree[0] stores global minimum. Same O(log n) query and update guarantees.",
+          description:
+            "Replace sum with min in merge step. tree[0] stores global minimum. Same O(log n) query and update guarantees.",
         },
         {
           label: "Lazy propagation preview",
-          description: "For range updates (add k to all elements in [l, r]), store a 'lazy' tag at each node to defer propagation until needed — keeps both range update and range query at O(log n).",
+          description:
+            "For range updates (add k to all elements in [l, r]), store a 'lazy' tag at each node to defer propagation until needed — keeps both range update and range query at O(log n).",
         },
       ],
     },
@@ -171,9 +175,9 @@ print(st.query(1, 4))   # 27`,
     complexity: {
       heading: "Time & Space Complexity",
       timeRows: [
-        { label: "Build",  best: "O(n)",      avg: "O(n)",      worst: "O(n)" },
-        { label: "Query",  best: "O(1)",      avg: "O(log n)",  worst: "O(log n)" },
-        { label: "Update", best: "O(log n)",  avg: "O(log n)",  worst: "O(log n)" },
+        { label: "Build", best: "O(n)", avg: "O(n)", worst: "O(n)" },
+        { label: "Query", best: "O(1)", avg: "O(log n)", worst: "O(log n)" },
+        { label: "Update", best: "O(log n)", avg: "O(log n)", worst: "O(log n)" },
       ],
       spaceRows: [
         { label: "Tree storage", complexity: "O(n)" },
@@ -191,23 +195,28 @@ print(st.query(1, 4))   # 27`,
       items: [
         {
           name: "Range Minimum / Maximum Query (RMQ)",
-          description: "Replace the sum merge with min or max. Identical structure, useful for problems like 'lowest common ancestor' and sliding-window minimum.",
+          description:
+            "Replace the sum merge with min or max. Identical structure, useful for problems like 'lowest common ancestor' and sliding-window minimum.",
         },
         {
           name: "Lazy Propagation Segment Tree",
-          description: "Add a lazy[] array to defer range-update propagation. Enables O(log n) range updates (add/set) in addition to range queries.",
+          description:
+            "Add a lazy[] array to defer range-update propagation. Enables O(log n) range updates (add/set) in addition to range queries.",
         },
         {
           name: "Segment Tree with Coordinate Compression",
-          description: "When indices are sparse (e.g., up to 10⁹ but only 10⁵ distinct values), compress coordinates first, then build on the compressed array.",
+          description:
+            "When indices are sparse (e.g., up to 10⁹ but only 10⁵ distinct values), compress coordinates first, then build on the compressed array.",
         },
         {
           name: "Persistent Segment Tree",
-          description: "Each update creates a new root pointing to modified nodes while sharing unchanged subtrees. Supports historical queries in O(log n) with O(n log n) total space.",
+          description:
+            "Each update creates a new root pointing to modified nodes while sharing unchanged subtrees. Supports historical queries in O(log n) with O(n log n) total space.",
         },
         {
           name: "2D Segment Tree (Segment Tree of Segment Trees)",
-          description: "Nest one segment tree per node for 2D range queries. Answers rectangle sum/min queries in O(log² n) with O(n log n) space.",
+          description:
+            "Nest one segment tree per node for 2D range queries. Answers rectangle sum/min queries in O(log² n) with O(n log n) space.",
         },
       ],
       tips: [
@@ -230,8 +239,8 @@ print(st.query(1, 4))   # 27`,
       ],
     },
   },
-};
+}
 
 export default function SegmentTreeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Interval Scheduling",
@@ -45,19 +45,24 @@ const config: AlgoVideoConfig = {
           description: "Process A[0,3]: heap is empty → allocate Machine 1. Heap: [3]. Machines used: 1.",
         },
         {
-          description: "Process B[1,4]: heap top is 3 > 1 → no free machine → allocate Machine 2. Heap: [3, 4]. Machines used: 2.",
+          description:
+            "Process B[1,4]: heap top is 3 > 1 → no free machine → allocate Machine 2. Heap: [3, 4]. Machines used: 2.",
         },
         {
-          description: "Process D[2,5]: heap top is 3 > 2 → no free machine → allocate Machine 3. Heap: [3, 4, 5]. Machines used: 3.",
+          description:
+            "Process D[2,5]: heap top is 3 > 2 → no free machine → allocate Machine 3. Heap: [3, 4, 5]. Machines used: 3.",
         },
         {
-          description: "Process C[3,6]: heap top is 3 ≤ 3 → Machine 1 is free! Reuse it. Pop 3, push 6. Heap: [4, 5, 6]. Machines: still 3.",
+          description:
+            "Process C[3,6]: heap top is 3 ≤ 3 → Machine 1 is free! Reuse it. Pop 3, push 6. Heap: [4, 5, 6]. Machines: still 3.",
         },
         {
-          description: "Process F[4,8]: heap top is 4 ≤ 4 → Machine 2 is free. Reuse it. Pop 4, push 8. Heap: [5, 6, 8]. Machines: still 3.",
+          description:
+            "Process F[4,8]: heap top is 4 ≤ 4 → Machine 2 is free. Reuse it. Pop 4, push 8. Heap: [5, 6, 8]. Machines: still 3.",
         },
         {
-          description: "Process E[5,7]: heap top is 5 ≤ 5 → Machine 3 is free. Reuse it. Pop 5, push 7. Heap: [6, 7, 8]. Machines: still 3.",
+          description:
+            "Process E[5,7]: heap top is 5 ≤ 5 → Machine 3 is free. Reuse it. Pop 5, push 7. Heap: [6, 7, 8]. Machines: still 3.",
         },
         {
           description: "All intervals assigned. Final heap: [6, 7, 8]. Maximum heap size reached was 3.",
@@ -135,11 +140,23 @@ print(min_machines(intervals))  # Output: 3
       timeRows: [
         { label: "Best Case", value: "O(n log n)", note: "Sorting dominates even when no overlaps exist." },
         { label: "Average Case", value: "O(n log n)", note: "Each heap push/pop is O(log n) over n intervals." },
-        { label: "Worst Case", value: "O(n log n)", note: "All intervals overlap — heap grows to size n, each operation O(log n)." },
+        {
+          label: "Worst Case",
+          value: "O(n log n)",
+          note: "All intervals overlap — heap grows to size n, each operation O(log n).",
+        },
       ],
       spaceRows: [
-        { label: "Heap", value: "O(n)", note: "In the worst case all intervals overlap and all end times are in the heap." },
-        { label: "Sorted Input", value: "O(1) extra", note: "Sorting in-place uses O(1) additional space (Python's Timsort uses O(n) internally)." },
+        {
+          label: "Heap",
+          value: "O(n)",
+          note: "In the worst case all intervals overlap and all end times are in the heap.",
+        },
+        {
+          label: "Sorted Input",
+          value: "O(1) extra",
+          note: "Sorting in-place uses O(1) additional space (Python's Timsort uses O(n) internally).",
+        },
       ],
       insights: [
         "The peak heap size at any moment equals the number of concurrently active machines — this is exactly the answer.",
@@ -153,23 +170,28 @@ print(min_machines(intervals))  # Output: 3
       variations: [
         {
           name: "Interval Scheduling Maximization",
-          description: "Select the maximum number of non-overlapping intervals that fit on a single machine. Sort by end time and greedily pick the earliest-ending compatible interval.",
+          description:
+            "Select the maximum number of non-overlapping intervals that fit on a single machine. Sort by end time and greedily pick the earliest-ending compatible interval.",
         },
         {
           name: "Weighted Job Scheduling",
-          description: "Each interval has a profit. Maximize total profit of selected non-overlapping intervals. Requires dynamic programming with binary search — O(n log n).",
+          description:
+            "Each interval has a profit. Maximize total profit of selected non-overlapping intervals. Requires dynamic programming with binary search — O(n log n).",
         },
         {
           name: "Meeting Rooms I",
-          description: "Determine if a single machine can handle all intervals without overlap. Simply check if any two sorted intervals overlap.",
+          description:
+            "Determine if a single machine can handle all intervals without overlap. Simply check if any two sorted intervals overlap.",
         },
         {
           name: "Meeting Rooms II",
-          description: "Exactly this problem — find the minimum number of conference rooms for all meetings. The classic LeetCode 253 formulation.",
+          description:
+            "Exactly this problem — find the minimum number of conference rooms for all meetings. The classic LeetCode 253 formulation.",
         },
         {
           name: "Task Scheduling with Cooldown",
-          description: "CPU scheduling where the same task must wait k time units between executions. Uses a greedy frequency-first approach with a priority queue.",
+          description:
+            "CPU scheduling where the same task must wait k time units between executions. Uses a greedy frequency-first approach with a priority queue.",
         },
       ],
       tips: [
@@ -192,8 +214,8 @@ print(min_machines(intervals))  # Output: 3
       ],
     },
   },
-};
+}
 
 export default function IntervalSchedulingVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Combinations",
@@ -37,38 +37,32 @@ const config: AlgoVideoConfig = {
         {
           id: 1,
           title: "Initialise",
-          description:
-            "Start with an empty combination [] and the full range [1..4]. We need to fill 2 slots.",
+          description: "Start with an empty combination [] and the full range [1..4]. We need to fill 2 slots.",
         },
         {
           id: 2,
           title: "Pick 1 → combo = [1]",
-          description:
-            "Choose 1 as the first element. Recurse with start=2, needing 1 more element.",
+          description: "Choose 1 as the first element. Recurse with start=2, needing 1 more element.",
         },
         {
           id: 3,
           title: "Pick 2 → combo = [1,2]  ✓",
-          description:
-            "Length reached k=2. Record [1,2] as a valid combination, then backtrack.",
+          description: "Length reached k=2. Record [1,2] as a valid combination, then backtrack.",
         },
         {
           id: 4,
           title: "Pick 3 → combo = [1,3]  ✓",
-          description:
-            "After backtracking, try 3 as the second element. Record [1,3], then backtrack.",
+          description: "After backtracking, try 3 as the second element. Record [1,3], then backtrack.",
         },
         {
           id: 5,
           title: "Pick 4 → combo = [1,4]  ✓",
-          description:
-            "Try 4 as the second element. Record [1,4]. Backtrack all the way to [].",
+          description: "Try 4 as the second element. Record [1,4]. Backtrack all the way to [].",
         },
         {
           id: 6,
           title: "Pick 2 → combo = [2]",
-          description:
-            "First element is now 2. Recurse with start=3, needing 1 more element.",
+          description: "First element is now 2. Recurse with start=3, needing 1 more element.",
         },
         {
           id: 7,
@@ -83,8 +77,7 @@ const config: AlgoVideoConfig = {
         {
           id: 9,
           title: "Pick 3 → combo = [3]",
-          description:
-            "First element is now 3. Recurse with start=4, needing 1 more element.",
+          description: "First element is now 3. Recurse with start=4, needing 1 more element.",
         },
         {
           id: 10,
@@ -100,8 +93,7 @@ const config: AlgoVideoConfig = {
         {
           id: 12,
           title: "Done — 6 combinations",
-          description:
-            "Result: [1,2], [1,3], [1,4], [2,3], [2,4], [3,4]. Exactly C(4,2)=6 combinations.",
+          description: "Result: [1,2], [1,3], [1,4], [2,3], [2,4], [3,4]. Exactly C(4,2)=6 combinations.",
         },
       ],
     },
@@ -249,8 +241,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function CombinationsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

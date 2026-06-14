@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Breadth-First Search",
-  subtitle:
-    "Explores all neighbors at current depth before moving to next level using a queue.",
+  subtitle: "Explores all neighbors at current depth before moving to next level using a queue.",
   category: "graph",
   difficulty: "beginner",
 
@@ -45,13 +44,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Dequeue node 0. Inspect its neighbors: nodes 1 and 2. Neither is visited yet.",
+          description: "Dequeue node 0. Inspect its neighbors: nodes 1 and 2. Neither is visited yet.",
         },
         {
           step: 4,
-          description:
-            "Enqueue nodes 1 and 2, mark both as visited. Queue is now [1, 2].",
+          description: "Enqueue nodes 1 and 2, mark both as visited. Queue is now [1, 2].",
         },
         {
           step: 5,
@@ -65,28 +62,23 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description:
-            "Dequeue node 3. It has no unvisited neighbors. Queue is now [4, 5, 6].",
+          description: "Dequeue node 3. It has no unvisited neighbors. Queue is now [4, 5, 6].",
         },
         {
           step: 8,
-          description:
-            "Dequeue node 4. It has no unvisited neighbors. Queue is now [5, 6].",
+          description: "Dequeue node 4. It has no unvisited neighbors. Queue is now [5, 6].",
         },
         {
           step: 9,
-          description:
-            "Dequeue node 5. It has no unvisited neighbors. Queue is now [6].",
+          description: "Dequeue node 5. It has no unvisited neighbors. Queue is now [6].",
         },
         {
           step: 10,
-          description:
-            "Dequeue node 6. It has no unvisited neighbors. Queue is now empty.",
+          description: "Dequeue node 6. It has no unvisited neighbors. Queue is now empty.",
         },
         {
           step: 11,
-          description:
-            "Queue is empty — BFS is complete. Traversal order: 0 → 1 → 2 → 3 → 4 → 5 → 6.",
+          description: "Queue is empty — BFS is complete. Traversal order: 0 → 1 → 2 → 3 → 4 → 5 → 6.",
         },
       ],
     },
@@ -230,8 +222,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function GraphBfsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

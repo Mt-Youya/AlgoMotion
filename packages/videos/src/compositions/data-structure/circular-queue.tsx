@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Circular Queue",
-  subtitle:
-    "Fixed-size ring buffer queue with O(1) enqueue and dequeue without shifting.",
+  subtitle: "Fixed-size ring buffer queue with O(1) enqueue and dequeue without shifting.",
   category: "data-structure",
   difficulty: "intermediate",
 
@@ -56,20 +55,17 @@ const config: AlgoVideoConfig = {
         {
           step: 4,
           title: "Enqueue — Guard",
-          description:
-            "Before inserting, verify the queue is not full. If full, raise an error or return False.",
+          description: "Before inserting, verify the queue is not full. If full, raise an error or return False.",
         },
         {
           step: 5,
           title: "Enqueue — Write",
-          description:
-            "Write the new value into buffer[tail], then advance tail = (tail + 1) % capacity.",
+          description: "Write the new value into buffer[tail], then advance tail = (tail + 1) % capacity.",
         },
         {
           step: 6,
           title: "Dequeue — Guard",
-          description:
-            "Before removing, verify the queue is not empty. If empty, raise an error or return None.",
+          description: "Before removing, verify the queue is not empty. If empty, raise an error or return None.",
         },
         {
           step: 7,
@@ -80,8 +76,7 @@ const config: AlgoVideoConfig = {
         {
           step: 8,
           title: "Peek Front",
-          description:
-            "Return buffer[head] without modifying head. O(1) — no traversal needed.",
+          description: "Return buffer[head] without modifying head. O(1) — no traversal needed.",
         },
         {
           step: 9,
@@ -244,8 +239,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   },
-};
+}
 
 export default function CircularQueueVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

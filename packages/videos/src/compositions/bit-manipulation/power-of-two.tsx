@@ -15,8 +15,7 @@ const config: AlgoVideoConfig = {
         "Edge cases: 0 and negative numbers are never powers of two.",
         "The naive approach loops and divides by 2 — but there is a one-line bit trick.",
       ],
-      callout:
-        "LeetCode 231 — Easy. Appears frequently in bit-manipulation warm-up rounds.",
+      callout: "LeetCode 231 — Easy. Appears frequently in bit-manipulation warm-up rounds.",
     },
     intuition: {
       heading: "The One-Bit Property",
@@ -34,13 +33,11 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           label: "Input: n = 16",
-          description:
-            "We receive n = 16. Our goal is to decide in O(1) whether this is a power of two.",
+          description: "We receive n = 16. Our goal is to decide in O(1) whether this is a power of two.",
         },
         {
           label: "Guard Check: n > 0?",
-          description:
-            "First verify n > 0. Zero and negatives can never be powers of two. 16 > 0, so we continue.",
+          description: "First verify n > 0. Zero and negatives can never be powers of two. 16 > 0, so we continue.",
         },
         {
           label: "Binary of n = 16",
@@ -59,23 +56,19 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Result: 0 == 0 → True",
-          description:
-            "The AND result equals 0, so we return true. n = 16 is indeed a power of two (2^4).",
+          description: "The AND result equals 0, so we return true. n = 16 is indeed a power of two (2^4).",
         },
         {
           label: "Counter-example: n = 12",
-          description:
-            "12 = 00001100₂, 11 = 00001011₂. AND = 00001000 = 8 ≠ 0, so 12 is not a power of two.",
+          description: "12 = 00001100₂, 11 = 00001011₂. AND = 00001000 = 8 ≠ 0, so 12 is not a power of two.",
         },
         {
           label: "Counter-example: n = 0",
-          description:
-            "The guard n > 0 catches this immediately. We return false without touching the bit trick.",
+          description: "The guard n > 0 catches this immediately. We return false without touching the bit trick.",
         },
         {
           label: "Counter-example: n = 1",
-          description:
-            "1 = 00000001₂, 0 = 00000000₂. AND = 0. Return true — 1 is 2^0, a valid power of two.",
+          description: "1 = 00000001₂, 0 = 00000000₂. AND = 0. Return true — 1 is 2^0, a valid power of two.",
         },
         {
           label: "General Rule",
@@ -145,13 +138,13 @@ assert is_power_of_two(-4)  == False  # negative`,
     },
     complexity: {
       timeRows: [
-        { label: "Best",    value: "O(1)", color: "#4ade80" },
+        { label: "Best", value: "O(1)", color: "#4ade80" },
         { label: "Average", value: "O(1)", color: "#4ade80" },
-        { label: "Worst",   value: "O(1)", color: "#4ade80" },
+        { label: "Worst", value: "O(1)", color: "#4ade80" },
       ],
       spaceRows: [
         { label: "Auxiliary", value: "O(1)", color: "#4ade80" },
-        { label: "Total",     value: "O(1)", color: "#4ade80" },
+        { label: "Total", value: "O(1)", color: "#4ade80" },
       ],
       notes: [
         "A single bitwise AND and a comparison — two CPU instructions regardless of the magnitude of n.",

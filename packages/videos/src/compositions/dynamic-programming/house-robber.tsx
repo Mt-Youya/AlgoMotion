@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "House Robber",
@@ -227,8 +227,8 @@ class Solution:
       ],
     },
   },
-};
+}
 
 export default function HouseRobberVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

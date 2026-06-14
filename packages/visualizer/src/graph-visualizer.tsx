@@ -96,10 +96,7 @@ interface GraphVisualizerProps {
 }
 
 export function GraphVisualizer({ data, width = 560, height = 340, className }: GraphVisualizerProps) {
-  const positions = useMemo(
-    () => computeLayout(data.nodes, width, height),
-    [data.nodes, width, height]
-  )
+  const positions = useMemo(() => computeLayout(data.nodes, width, height), [data.nodes, width, height])
 
   const nodeRadius = Math.max(18, Math.min(26, 140 / Math.max(data.nodes.length, 1)))
 
@@ -114,15 +111,7 @@ export function GraphVisualizer({ data, width = 560, height = 340, className }: 
       {/* Arrowhead markers */}
       <defs>
         {Object.entries(EDGE_COLORS).map(([role, color]) => (
-          <marker
-            key={role}
-            id={`arrow-${role}`}
-            markerWidth="8"
-            markerHeight="8"
-            refX="6"
-            refY="3"
-            orient="auto"
-          >
+          <marker key={role} id={`arrow-${role}`} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill={color} />
           </marker>
         ))}
@@ -169,23 +158,8 @@ export function GraphVisualizer({ data, width = 560, height = 340, className }: 
             />
             {edge.weight !== undefined && (
               <g>
-                <rect
-                  x={mx - 10}
-                  y={my - 9}
-                  width={20}
-                  height={16}
-                  rx={3}
-                  fill="#1e293b"
-                  opacity={0.75}
-                />
-                <text
-                  x={mx}
-                  y={my + 3}
-                  textAnchor="middle"
-                  fontSize={10}
-                  fill="#f8fafc"
-                  fontWeight="600"
-                >
+                <rect x={mx - 10} y={my - 9} width={20} height={16} rx={3} fill="#1e293b" opacity={0.75} />
+                <text x={mx} y={my + 3} textAnchor="middle" fontSize={10} fill="#f8fafc" fontWeight="600">
                   {edge.weight}
                 </text>
               </g>
@@ -240,7 +214,11 @@ export function GraphVisualizer({ data, width = 560, height = 340, className }: 
  *   0->1       (directed)
  *   0->1:5     (directed + weighted)
  */
-export function parseGraphInput(text: string, directed = false, weighted = false): { graph: GraphData; error?: string } {
+export function parseGraphInput(
+  text: string,
+  directed = false,
+  weighted = false
+): { graph: GraphData; error?: string } {
   const lines = text
     .split(/[\n,;]+/)
     .map((l) => l.trim())

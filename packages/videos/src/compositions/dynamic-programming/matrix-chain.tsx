@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Matrix Chain Multiplication",
@@ -56,8 +56,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description:
-            "Fill chain length L=3. dp[0][2]: try k=0 → dp[0][0]+dp[1][2]+10·30·60 = 0+9000+18000 = 27000.",
+          description: "Fill chain length L=3. dp[0][2]: try k=0 → dp[0][0]+dp[1][2]+10·30·60 = 0+9000+18000 = 27000.",
         },
         {
           step: 6,
@@ -66,8 +65,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description:
-            "The optimal cost for multiplying all 3 matrices is dp[0][2] = 4500 scalar multiplications.",
+          description: "The optimal cost for multiplying all 3 matrices is dp[0][2] = 4500 scalar multiplications.",
         },
         {
           step: 8,
@@ -81,13 +79,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "Time complexity O(n³): three nested loops — chain length, start index, and split point k.",
+          description: "Time complexity O(n³): three nested loops — chain length, start index, and split point k.",
         },
         {
           step: 11,
-          description:
-            "Space complexity O(n²): the dp and split-point tables each hold n² entries.",
+          description: "Space complexity O(n²): the dp and split-point tables each hold n² entries.",
         },
       ],
     },
@@ -187,13 +183,11 @@ print(f"Optimal order: {optimal_parens(split, 0, len(dims) - 2)}")
       variations: [
         {
           name: "Optimal Binary Search Tree",
-          description:
-            "Similar DP structure — minimize expected search cost by choosing optimal root at each split.",
+          description: "Similar DP structure — minimize expected search cost by choosing optimal root at each split.",
         },
         {
           name: "Boolean Parenthesization",
-          description:
-            "Count the number of ways to parenthesize a boolean expression to make it evaluate to true.",
+          description: "Count the number of ways to parenthesize a boolean expression to make it evaluate to true.",
         },
         {
           name: "Burst Balloons",
@@ -202,8 +196,7 @@ print(f"Optimal order: {optimal_parens(split, 0, len(dims) - 2)}")
         },
         {
           name: "Polygon Triangulation",
-          description:
-            "Minimize the cost of triangulating a convex polygon — structurally identical recurrence.",
+          description: "Minimize the cost of triangulating a convex polygon — structurally identical recurrence.",
         },
         {
           name: "Hu-Shing Algorithm",
@@ -231,8 +224,8 @@ print(f"Optimal order: {optimal_parens(split, 0, len(dims) - 2)}")
       ],
     },
   },
-};
+}
 
 export default function MatrixChainVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

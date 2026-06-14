@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Graph (Adjacency List)",
@@ -182,7 +182,8 @@ class Graph:
       variations: [
         {
           name: "Directed Graph",
-          description: "Only append v to adj[u] (not the reverse). Models one-way relationships like web links or task dependencies.",
+          description:
+            "Only append v to adj[u] (not the reverse). Models one-way relationships like web links or task dependencies.",
         },
         {
           name: "Weighted Adjacency List",
@@ -190,15 +191,18 @@ class Graph:
         },
         {
           name: "Adjacency List with Sets",
-          description: "Replace lists with sets to achieve O(1) edge lookup and O(1) removal at the cost of higher constant factors.",
+          description:
+            "Replace lists with sets to achieve O(1) edge lookup and O(1) removal at the cost of higher constant factors.",
         },
         {
           name: "CSR (Compressed Sparse Row)",
-          description: "Flatten all neighbor lists into a single array with an offset array. Cache-friendly and memory-optimal for static graphs.",
+          description:
+            "Flatten all neighbor lists into a single array with an offset array. Cache-friendly and memory-optimal for static graphs.",
         },
         {
           name: "Multigraph / Hypergraph",
-          description: "Allow duplicate edges or edges connecting more than two vertices by storing edge objects instead of plain IDs.",
+          description:
+            "Allow duplicate edges or edges connecting more than two vertices by storing edge objects instead of plain IDs.",
         },
       ],
       tips: [
@@ -221,8 +225,8 @@ class Graph:
       ],
     },
   },
-};
+}
 
 export default function GraphAdjacencyListVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

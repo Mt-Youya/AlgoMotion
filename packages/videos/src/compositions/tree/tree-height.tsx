@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Tree Height",
@@ -40,18 +40,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Recurse into the left child (node 2). Call height(node_2).",
+          description: "Recurse into the left child (node 2). Call height(node_2).",
         },
         {
           step: 3,
-          description:
-            "Recurse deeper into left subtree: call height(node_4), then height(node_8).",
+          description: "Recurse deeper into left subtree: call height(node_4), then height(node_8).",
         },
         {
           step: 4,
-          description:
-            "Node 8 has no children. Both recursive calls return 0. height(node_8) = 1 + max(0, 0) = 1.",
+          description: "Node 8 has no children. Both recursive calls return 0. height(node_8) = 1 + max(0, 0) = 1.",
         },
         {
           step: 5,
@@ -60,13 +57,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description:
-            "Node 5 is a leaf. height(node_5) = 1 + max(0, 0) = 1.",
+          description: "Node 5 is a leaf. height(node_5) = 1 + max(0, 0) = 1.",
         },
         {
           step: 7,
-          description:
-            "Back at node 2: left height = 2, right height = 1. height(node_2) = 1 + max(2, 1) = 3.",
+          description: "Back at node 2: left height = 2, right height = 1. height(node_2) = 1 + max(2, 1) = 3.",
         },
         {
           step: 8,
@@ -75,18 +70,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "height(node_3) = 1 + max(1, 1) = 2.",
+          description: "height(node_3) = 1 + max(1, 1) = 2.",
         },
         {
           step: 10,
-          description:
-            "Back at root (node 1): left height = 3, right height = 2. height(root) = 1 + max(3, 2) = 4.",
+          description: "Back at root (node 1): left height = 3, right height = 2. height(root) = 1 + max(3, 2) = 4.",
         },
         {
           step: 11,
-          description:
-            "The maximum depth of the tree is 4. The longest path is: 1 → 2 → 4 → 8.",
+          description: "The maximum depth of the tree is 4. The longest path is: 1 → 2 → 4 → 8.",
         },
       ],
     },
@@ -175,13 +167,13 @@ def max_depth_stack(root: TreeNode | None) -> int:
     complexity: {
       heading: "Complexity Analysis",
       time: [
-        { case: "Best",    complexity: "O(n)", note: "Must visit every node regardless of shape" },
+        { case: "Best", complexity: "O(n)", note: "Must visit every node regardless of shape" },
         { case: "Average", complexity: "O(n)", note: "All n nodes are visited exactly once" },
-        { case: "Worst",   complexity: "O(n)", note: "Skewed tree — still O(n) nodes to visit" },
+        { case: "Worst", complexity: "O(n)", note: "Skewed tree — still O(n) nodes to visit" },
       ],
       space: [
         { case: "Recursive DFS", complexity: "O(h)", note: "Call stack depth equals tree height h" },
-        { case: "BFS queue",     complexity: "O(w)", note: "w = maximum width (nodes at widest level)" },
+        { case: "BFS queue", complexity: "O(w)", note: "w = maximum width (nodes at widest level)" },
         { case: "Worst (skewed)", complexity: "O(n)", note: "h = n for a completely skewed tree" },
       ],
       insights: [
@@ -240,8 +232,8 @@ def max_depth_stack(root: TreeNode | None) -> int:
       ],
     },
   },
-};
+}
 
 export default function TreeHeightVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

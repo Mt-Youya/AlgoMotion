@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Tarjan's SCC",
@@ -16,8 +16,7 @@ const config: AlgoVideoConfig = {
         "SCCs reveal the cyclic structure of directed graphs and are fundamental in compilers (dependency analysis), deadlock detection, and social network analysis.",
         "The algorithm must correctly handle back edges (which form cycles), cross edges, and forward edges in the DFS tree.",
       ],
-      callout:
-        "Tarjan's algorithm runs in O(V + E) time — optimal for this problem — using only one DFS and a stack.",
+      callout: "Tarjan's algorithm runs in O(V + E) time — optimal for this problem — using only one DFS and a stack.",
     },
 
     intuition: {
@@ -47,8 +46,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Visit node 1 (neighbor of 0)",
-          description:
-            "Set disc[1] = low[1] = 1, timer = 2. Push 1 onto stack. Explore neighbor 2.",
+          description: "Set disc[1] = low[1] = 1, timer = 2. Push 1 onto stack. Explore neighbor 2.",
         },
         {
           label: "Visit node 2 (neighbor of 1)",
@@ -239,8 +237,8 @@ print(tarjan_scc(graph, 8))
       ],
     },
   },
-};
+}
 
 export default function TarjanSccVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

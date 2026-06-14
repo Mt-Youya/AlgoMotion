@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Burst Balloons",
@@ -90,8 +90,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "dp[1][5]: try k=2: 0+48+3×1×1=51. k=3: 15+40+3×5×1=70. k=4: 135+0+3×8×1=159. dp[1][5]=159.",
+          description: "dp[1][5]: try k=2: 0+48+3×1×1=51. k=3: 15+40+3×5×1=70. k=4: 135+0+3×8×1=159. dp[1][5]=159.",
           values: [159, 159, 0, 0, 0, 0],
           colors: ["yellow", "yellow", "gray", "gray", "gray", "gray"],
         },
@@ -287,8 +286,8 @@ print(maxCoins([1, 5]))          # 10`,
       ],
     },
   },
-};
+}
 
 export default function BurstBalloonsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

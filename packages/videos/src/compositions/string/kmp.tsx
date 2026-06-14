@@ -44,8 +44,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Compute LPS: P[1]='B'",
-          description:
-            "P[1]='B' vs P[0]='A' — mismatch, length=0, so lps[1]=0, i=2.",
+          description: "P[1]='B' vs P[0]='A' — mismatch, length=0, so lps[1]=0, i=2.",
         },
         {
           label: "Compute LPS: P[2]='A'",
@@ -64,8 +63,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "KMP Search: i=0..3, j=0..3",
-          description:
-            "T[0..3]='ABAB' all match P[0..3]='ABAB'. Both i and j advance in lockstep. i=4, j=4.",
+          description: "T[0..3]='ABAB' all match P[0..3]='ABAB'. Both i and j advance in lockstep. i=4, j=4.",
         },
         {
           label: "KMP Search: mismatch at i=4, j=4",
@@ -74,13 +72,11 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "KMP Search: resume from j=2",
-          description:
-            "T[4]='A' vs P[2]='A' — match. i=5, j=3. T[5]='B' vs P[3]='B' — match. i=6, j=4.",
+          description: "T[4]='A' vs P[2]='A' — match. i=5, j=3. T[5]='B' vs P[3]='B' — match. i=6, j=4.",
         },
         {
           label: "KMP Search: second mismatch at i=6, j=4",
-          description:
-            "T[6]='A' vs P[4]='C' — mismatch again! j = lps[3] = 2. i stays at 6.",
+          description: "T[6]='A' vs P[4]='C' — mismatch again! j = lps[3] = 2. i stays at 6.",
         },
         {
           label: "KMP Search: final match sequence",

@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Best Time to Buy & Sell Stock II",
-  subtitle:
-    "Collect every upward price move for maximum profit from unlimited transactions.",
+  subtitle: "Collect every upward price move for maximum profit from unlimited transactions.",
   category: "greedy",
   difficulty: "beginner",
 
@@ -159,23 +158,19 @@ def maxProfitOneLiner(prices: List[int]) -> int:
       variations: [
         {
           name: "Stock I — At Most One Transaction",
-          description:
-            "Track the minimum price seen so far and compute the best single buy-low-sell-high profit.",
+          description: "Track the minimum price seen so far and compute the best single buy-low-sell-high profit.",
         },
         {
           name: "Stock III — At Most Two Transactions",
-          description:
-            "Use dynamic programming with states for first/second buy and sell to limit to two trades.",
+          description: "Use dynamic programming with states for first/second buy and sell to limit to two trades.",
         },
         {
           name: "Stock IV — At Most k Transactions",
-          description:
-            "Generalize Stock III with a DP table of size k × n to cap the number of transactions.",
+          description: "Generalize Stock III with a DP table of size k × n to cap the number of transactions.",
         },
         {
           name: "Stock with Cooldown",
-          description:
-            "After selling, you must wait one day before buying again. Requires state-machine DP.",
+          description: "After selling, you must wait one day before buying again. Requires state-machine DP.",
         },
         {
           name: "Stock with Transaction Fee",
@@ -203,8 +198,8 @@ def maxProfitOneLiner(prices: List[int]) -> int:
       ],
     },
   },
-};
+}
 
 export default function BestTimeStockVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

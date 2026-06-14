@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Tree DP: Diameter",
@@ -76,8 +76,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "DFS complete. global_diameter = 4 is our answer. The path 6→4→2→1→3 has exactly 4 edges.",
+          description: "DFS complete. global_diameter = 4 is our answer. The path 6→4→2→1→3 has exactly 4 edges.",
         },
         {
           step: 10,
@@ -256,8 +255,8 @@ print(diameter_of_binary_tree(TreeNode(1, TreeNode(2))))   # 1`,
       ],
     },
   },
-};
+}
 
 export default function TreeDpDiameterVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

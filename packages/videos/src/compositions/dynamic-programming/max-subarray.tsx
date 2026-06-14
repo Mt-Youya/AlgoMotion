@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Maximum Subarray",
@@ -48,7 +48,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description: "i=1, val=1. current_sum = max(1, -2 + 1) = max(1, -1) = 1. max_sum = 1. Fresh start — 1 alone beats extending.",
+          description:
+            "i=1, val=1. current_sum = max(1, -2 + 1) = max(1, -1) = 1. max_sum = 1. Fresh start — 1 alone beats extending.",
           values: [-2, 1, -3, 4, -1, 2, 1, -5, 4],
           colors: ["gray", "blue", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
         },
@@ -60,13 +61,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description: "i=3, val=4. current_sum = max(4, -2 + 4) = max(4, 2) = 4. Fresh start again — 4 alone beats extending. max_sum = 4.",
+          description:
+            "i=3, val=4. current_sum = max(4, -2 + 4) = max(4, 2) = 4. Fresh start again — 4 alone beats extending. max_sum = 4.",
           values: [-2, 1, -3, 4, -1, 2, 1, -5, 4],
           colors: ["gray", "gray", "gray", "green", "gray", "gray", "gray", "gray", "gray"],
         },
         {
           step: 6,
-          description: "i=4, val=-1. current_sum = max(-1, 4 + -1) = max(-1, 3) = 3. Extending wins — running sum 3 > -1. max_sum stays 4.",
+          description:
+            "i=4, val=-1. current_sum = max(-1, 4 + -1) = max(-1, 3) = 3. Extending wins — running sum 3 > -1. max_sum stays 4.",
           values: [-2, 1, -3, 4, -1, 2, 1, -5, 4],
           colors: ["gray", "gray", "gray", "green", "yellow", "gray", "gray", "gray", "gray"],
         },
@@ -78,13 +81,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description: "i=6, val=1. current_sum = max(1, 5 + 1) = 6. Extending wins. max_sum = 6. This is the global peak!",
+          description:
+            "i=6, val=1. current_sum = max(1, 5 + 1) = 6. Extending wins. max_sum = 6. This is the global peak!",
           values: [-2, 1, -3, 4, -1, 2, 1, -5, 4],
           colors: ["gray", "gray", "gray", "green", "yellow", "green", "green", "gray", "gray"],
         },
         {
           step: 9,
-          description: "i=7, val=-5. current_sum = max(-5, 6 + -5) = max(-5, 1) = 1. Extending wins but sum drops. max_sum stays 6.",
+          description:
+            "i=7, val=-5. current_sum = max(-5, 6 + -5) = max(-5, 1) = 1. Extending wins but sum drops. max_sum stays 6.",
           values: [-2, 1, -3, 4, -1, 2, 1, -5, 4],
           colors: ["gray", "gray", "gray", "green", "yellow", "green", "green", "red", "gray"],
         },
@@ -224,23 +229,28 @@ def max_subarray_with_indices(nums: list[int]) -> tuple[int, int, int]:
       items: [
         {
           name: "Maximum Subarray Sum (Circular Array)",
-          description: "The subarray may wrap around the end of the array back to the beginning. Solved by computing both the standard Kadane result and the total sum minus the minimum subarray sum, then taking the max of the two.",
+          description:
+            "The subarray may wrap around the end of the array back to the beginning. Solved by computing both the standard Kadane result and the total sum minus the minimum subarray sum, then taking the max of the two.",
         },
         {
           name: "Maximum Product Subarray",
-          description: "Replace sum with product. Requires tracking both the current maximum and current minimum (because a large negative times another negative becomes a large positive), making it slightly more complex but still O(n).",
+          description:
+            "Replace sum with product. Requires tracking both the current maximum and current minimum (because a large negative times another negative becomes a large positive), making it slightly more complex but still O(n).",
         },
         {
           name: "Maximum Subarray of Length K",
-          description: "Constrain the subarray to exactly or at most k elements. Use a sliding window of size k combined with a prefix sum array to find the answer in O(n) time.",
+          description:
+            "Constrain the subarray to exactly or at most k elements. Use a sliding window of size k combined with a prefix sum array to find the answer in O(n) time.",
         },
         {
           name: "Maximum Sum of Non-Adjacent Elements",
-          description: "You may not pick adjacent elements. This is the House Robber problem — a different DP recurrence but the same bottom-up linear scan pattern as Kadane's.",
+          description:
+            "You may not pick adjacent elements. This is the House Robber problem — a different DP recurrence but the same bottom-up linear scan pattern as Kadane's.",
         },
         {
           name: "Minimum Subarray Sum",
-          description: "Find the contiguous subarray with the smallest sum. Identical to Kadane's algorithm with max replaced by min and the initialization negated.",
+          description:
+            "Find the contiguous subarray with the smallest sum. Identical to Kadane's algorithm with max replaced by min and the initialization negated.",
         },
       ],
       tips: [
@@ -263,8 +273,8 @@ def max_subarray_with_indices(nums: list[int]) -> tuple[int, int, int]:
       ],
     },
   },
-};
+}
 
 export default function MaxSubarrayVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

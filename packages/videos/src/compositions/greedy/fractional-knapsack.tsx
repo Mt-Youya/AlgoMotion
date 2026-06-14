@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Fractional Knapsack",
-  subtitle:
-    "Maximize knapsack value by taking fractions of items, prioritized by value/weight ratio.",
+  subtitle: "Maximize knapsack value by taking fractions of items, prioritized by value/weight ratio.",
   category: "greedy",
   difficulty: "intermediate",
 
@@ -100,8 +99,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description:
-            "Knapsack is now full (0 kg remaining). Stop processing items.",
+          description: "Knapsack is now full (0 kg remaining). Stop processing items.",
           array: {
             values: [6.0, 5.0, 4.0],
             colors: ["green", "green", "green"],
@@ -109,8 +107,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "Total value = 60 + 100 + 80 = 240 $. This is the maximum achievable value for capacity 50 kg.",
+          description: "Total value = 60 + 100 + 80 = 240 $. This is the maximum achievable value for capacity 50 kg.",
           array: {
             values: [60, 100, 80],
             colors: ["green", "green", "green"],
@@ -302,8 +299,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function FractionalKnapsackVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

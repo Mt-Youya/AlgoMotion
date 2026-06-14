@@ -2054,29 +2054,27 @@ function nQueens(input: number[]): AlgorithmRun {
 // ─── Sudoku Solver ────────────────────────────────────────────────────────────
 // Input: 81-element array (9×9 board), 0 = empty. Visualise writes as solver fills cells.
 function sudokuSolver(input: number[]): AlgorithmRun {
-  const board = input.length === 81 ? [...input] : [
-    5,3,0, 0,7,0, 0,0,0,
-    6,0,0, 1,9,5, 0,0,0,
-    0,9,8, 0,0,0, 0,6,0,
-    8,0,0, 0,6,0, 0,0,3,
-    4,0,0, 8,0,3, 0,0,1,
-    7,0,0, 0,2,0, 0,0,6,
-    0,6,0, 0,0,0, 2,8,0,
-    0,0,0, 4,1,9, 0,0,5,
-    0,0,0, 0,8,0, 0,7,9,
-  ]
+  const board =
+    input.length === 81
+      ? [...input]
+      : [
+          5, 3, 0, 0, 7, 0, 0, 0, 0, 6, 0, 0, 1, 9, 5, 0, 0, 0, 0, 9, 8, 0, 0, 0, 0, 6, 0, 8, 0, 0, 0, 6, 0, 0, 0, 3, 4,
+          0, 0, 8, 0, 3, 0, 0, 1, 7, 0, 0, 0, 2, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 2, 8, 0, 0, 0, 0, 4, 1, 9, 0, 0, 5, 0, 0,
+          0, 0, 8, 0, 0, 7, 9,
+        ]
   const rec = new ArrayTraceRecorder([...board])
 
   function isValid(pos: number, val: number): boolean {
-    const row = Math.floor(pos / 9), col = pos % 9
+    const row = Math.floor(pos / 9),
+      col = pos % 9
     for (let i = 0; i < 9; i++) {
       if ((board[row * 9 + i] ?? 0) === val) return false
       if ((board[i * 9 + col] ?? 0) === val) return false
     }
-    const br = Math.floor(row / 3) * 3, bc = Math.floor(col / 3) * 3
+    const br = Math.floor(row / 3) * 3,
+      bc = Math.floor(col / 3) * 3
     for (let dr = 0; dr < 3; dr++)
-      for (let dc = 0; dc < 3; dc++)
-        if ((board[(br + dr) * 9 + bc + dc] ?? 0) === val) return false
+      for (let dc = 0; dc < 3; dc++) if ((board[(br + dr) * 9 + bc + dc] ?? 0) === val) return false
     return true
   }
 
@@ -2089,7 +2087,10 @@ function sudokuSolver(input: number[]): AlgorithmRun {
         board[pos] = v
         rec.write(pos, v)
         rec.mark([pos], "active")
-        if (solve()) { rec.mark([pos], "sorted"); return true }
+        if (solve()) {
+          rec.mark([pos], "sorted")
+          return true
+        }
         board[pos] = 0
         rec.write(pos, 0)
         rec.mark([pos], "visited")
@@ -2107,7 +2108,7 @@ function sudokuSolver(input: number[]): AlgorithmRun {
 function wordSearch(input: number[]): AlgorithmRun {
   // Default: 4×4 grid with a word to find
   const sep = input.indexOf(-1)
-  const gridFlat = sep > 0 ? input.slice(0, sep) : [1,2,3,4, 5,6,7,8, 9,1,2,3, 4,5,6,7]
+  const gridFlat = sep > 0 ? input.slice(0, sep) : [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7]
   const word = sep > 0 ? input.slice(sep + 1) : [1, 6, 2]
   const rows = Math.round(Math.sqrt(gridFlat.length))
   const cols = Math.ceil(gridFlat.length / rows)
@@ -2152,11 +2153,21 @@ function knightsTour(input: number[]): AlgorithmRun {
   board[0] = 0
   const rec = new ArrayTraceRecorder([...board])
 
-  const moves = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]
+  const moves = [
+    [-2, -1],
+    [-2, 1],
+    [-1, -2],
+    [-1, 2],
+    [1, -2],
+    [1, 2],
+    [2, -1],
+    [2, 1],
+  ]
 
   function degree(r: number, c: number): number {
     return moves.filter(([dr, dc]) => {
-      const nr = r + (dr ?? 0), nc = c + (dc ?? 0)
+      const nr = r + (dr ?? 0),
+        nc = c + (dc ?? 0)
       return nr >= 0 && nr < n && nc >= 0 && nc < n && (board[nr * n + nc] ?? -1) === -1
     }).length
   }
@@ -2193,12 +2204,19 @@ function knightsTour(input: number[]): AlgorithmRun {
 
 export function runBacktrackingAlgorithm(algorithmId: BacktrackingAlgorithmId, input: number[]): AlgorithmRun {
   switch (algorithmId) {
-    case "permutations":    return permutations(input)
-    case "subsets":         return subsets(input)
-    case "combination-sum": return combinationSum(input)
-    case "n-queens":        return nQueens(input)
-    case "sudoku-solver":   return sudokuSolver(input)
-    case "word-search":     return wordSearch(input)
-    case "knights-tour":    return knightsTour(input)
+    case "permutations":
+      return permutations(input)
+    case "subsets":
+      return subsets(input)
+    case "combination-sum":
+      return combinationSum(input)
+    case "n-queens":
+      return nQueens(input)
+    case "sudoku-solver":
+      return sudokuSolver(input)
+    case "word-search":
+      return wordSearch(input)
+    case "knights-tour":
+      return knightsTour(input)
   }
 }

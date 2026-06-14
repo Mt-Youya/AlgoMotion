@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Reverse Bits",
-  subtitle:
-    "Reverses the bits of a 32-bit unsigned integer by iteratively extracting the LSB and building the re",
+  subtitle: "Reverses the bits of a 32-bit unsigned integer by iteratively extracting the LSB and building the re",
   category: "bit-manipulation",
   difficulty: "beginner",
 
@@ -36,8 +35,7 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Initialize result = 0. We will accumulate the reversed bits here over 32 iterations.",
+          description: "Initialize result = 0. We will accumulate the reversed bits here over 32 iterations.",
         },
         {
           step: 2,
@@ -46,18 +44,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Iteration 2: n = 21630798. lsb = n & 1 = 0. result = (0 << 1) | 0 = 0. n >>= 1 → n = 10815399.",
+          description: "Iteration 2: n = 21630798. lsb = n & 1 = 0. result = (0 << 1) | 0 = 0. n >>= 1 → n = 10815399.",
         },
         {
           step: 4,
-          description:
-            "Iteration 3: n = 10815399. lsb = 1. result = (0 << 1) | 1 = 1. n >>= 1 → n = 5407699.",
+          description: "Iteration 3: n = 10815399. lsb = 1. result = (0 << 1) | 1 = 1. n >>= 1 → n = 5407699.",
         },
         {
           step: 5,
-          description:
-            "Iteration 4: n = 5407699. lsb = 1. result = (1 << 1) | 1 = 3. n >>= 1 → n = 2703849.",
+          description: "Iteration 4: n = 5407699. lsb = 1. result = (1 << 1) | 1 = 3. n >>= 1 → n = 2703849.",
         },
         {
           step: 6,
@@ -81,8 +76,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "Return result. The 32-bit reversal is complete in exactly 32 fixed iterations — O(1) time.",
+          description: "Return result. The 32-bit reversal is complete in exactly 32 fixed iterations — O(1) time.",
         },
       ],
     },
@@ -222,8 +216,8 @@ if __name__ == "__main__":
       ],
     },
   ],
-};
+}
 
 export default function ReverseBitsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

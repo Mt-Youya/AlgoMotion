@@ -895,7 +895,8 @@ function longestCommonSubstring(input: number[]): AlgorithmRun {
   const sep = input.indexOf(-1)
   const A = sep > 0 ? input.slice(0, sep) : [1, 2, 3, 4, 5]
   const B = sep > 0 ? input.slice(sep + 1) : [3, 4, 5, 6]
-  const m = A.length, n = B.length
+  const m = A.length,
+    n = B.length
   const flat = new Array<number>((m + 1) * (n + 1)).fill(0)
   const rec = new ArrayTraceRecorder(flat)
   let maxLen = 0
@@ -907,8 +908,10 @@ function longestCommonSubstring(input: number[]): AlgorithmRun {
         const val = (flat[(i - 1) * (n + 1) + (j - 1)] ?? 0) + 1
         flat[idx] = val
         rec.write(idx, val)
-        if (val > maxLen) { maxLen = val; rec.mark([idx], "sorted") }
-        else rec.mark([idx], "active")
+        if (val > maxLen) {
+          maxLen = val
+          rec.mark([idx], "sorted")
+        } else rec.mark([idx], "active")
       } else {
         flat[idx] = 0
         rec.mark([idx], "visited")
@@ -922,11 +925,16 @@ function longestCommonSubstring(input: number[]): AlgorithmRun {
 
 export function runSetsAlgorithm(algorithmId: string, input: number[]): AlgorithmRun {
   switch (algorithmId) {
-    case "fisher-yates-shuffle":      return fisherYatesShuffle(input)
-    case "power-set":                 return powerSet(input)
-    case "cartesian-product":         return cartesianProduct(input)
-    case "combinations":              return combinations(input)
-    case "longest-common-substring":  return longestCommonSubstring(input)
+    case "fisher-yates-shuffle":
+      return fisherYatesShuffle(input)
+    case "power-set":
+      return powerSet(input)
+    case "cartesian-product":
+      return cartesianProduct(input)
+    case "combinations":
+      return combinations(input)
+    case "longest-common-substring":
+      return longestCommonSubstring(input)
     default:
       throw new Error(`Unknown sets algorithm: ${algorithmId}`)
   }

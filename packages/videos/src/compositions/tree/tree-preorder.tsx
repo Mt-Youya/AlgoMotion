@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Preorder Traversal",
@@ -36,13 +36,11 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Start at the root node (1). Preorder rule: visit immediately. Result so far: [1].",
+          description: "Start at the root node (1). Preorder rule: visit immediately. Result so far: [1].",
         },
         {
           step: 2,
-          description:
-            "Recurse into the left child of root → enter node (2). Visit it immediately. Result: [1, 2].",
+          description: "Recurse into the left child of root → enter node (2). Visit it immediately. Result: [1, 2].",
         },
         {
           step: 3,
@@ -51,8 +49,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description:
-            "Node (4) fully processed. Backtrack to (2). Recurse into right child of (2) → enter node (5).",
+          description: "Node (4) fully processed. Backtrack to (2). Recurse into right child of (2) → enter node (5).",
         },
         {
           step: 5,
@@ -76,8 +73,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "All nodes visited. Traversal complete. Final preorder sequence: [1, 2, 4, 5, 3, 6, 7].",
+          description: "All nodes visited. Traversal complete. Final preorder sequence: [1, 2, 4, 5, 3, 6, 7].",
         },
       ],
     },
@@ -183,20 +179,17 @@ if __name__ == "__main__":
         {
           case: "Best",
           notation: "O(n)",
-          explanation:
-            "Even in the best case every node must be visited exactly once — there is no way to skip nodes.",
+          explanation: "Even in the best case every node must be visited exactly once — there is no way to skip nodes.",
         },
         {
           case: "Average",
           notation: "O(n)",
-          explanation:
-            "For a balanced tree with n nodes, each node is processed in constant time, giving O(n) total.",
+          explanation: "For a balanced tree with n nodes, each node is processed in constant time, giving O(n) total.",
         },
         {
           case: "Worst",
           notation: "O(n)",
-          explanation:
-            "A completely skewed (degenerate) tree still requires visiting all n nodes — time stays O(n).",
+          explanation: "A completely skewed (degenerate) tree still requires visiting all n nodes — time stays O(n).",
         },
       ],
       spaceRows: [
@@ -269,8 +262,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function TreePreorderVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

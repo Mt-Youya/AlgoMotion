@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Hamming Distance",
@@ -34,62 +34,53 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Initialize a counter to 0. We will scan both strings from left to right.",
+          description: "Initialize a counter to 0. We will scan both strings from left to right.",
         },
         {
           step: 2,
-          description:
-            "Position 0: A[0]='K', B[0]='K'. Characters match. Counter stays at 0.",
+          description: "Position 0: A[0]='K', B[0]='K'. Characters match. Counter stays at 0.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "default", "default", "default", "default", "default", "default"],
         },
         {
           step: 3,
-          description:
-            "Position 1: A[1]='A', B[1]='A'. Characters match. Counter stays at 0.",
+          description: "Position 1: A[1]='A', B[1]='A'. Characters match. Counter stays at 0.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "sorted", "default", "default", "default", "default", "default"],
         },
         {
           step: 4,
-          description:
-            "Position 2: A[2]='R', B[2]='T'. Characters differ! Increment counter to 1.",
+          description: "Position 2: A[2]='R', B[2]='T'. Characters differ! Increment counter to 1.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "sorted", "active", "default", "default", "default", "default"],
         },
         {
           step: 5,
-          description:
-            "Position 3: A[3]='O', B[3]='H'. Characters differ! Increment counter to 2.",
+          description: "Position 3: A[3]='O', B[3]='H'. Characters differ! Increment counter to 2.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "sorted", "active", "active", "default", "default", "default"],
         },
         {
           step: 6,
-          description:
-            "Position 4: A[4]='L', B[4]='R'. Characters differ! Increment counter to 3.",
+          description: "Position 4: A[4]='L', B[4]='R'. Characters differ! Increment counter to 3.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "sorted", "active", "active", "active", "default", "default"],
         },
         {
           step: 7,
-          description:
-            "Position 5: A[5]='I', B[5]='I'. Characters match. Counter stays at 3.",
+          description: "Position 5: A[5]='I', B[5]='I'. Characters match. Counter stays at 3.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "sorted", "active", "active", "active", "sorted", "default"],
         },
         {
           step: 8,
-          description:
-            "Position 6: A[6]='N', B[6]='N'. Characters match. Counter stays at 3.",
+          description: "Position 6: A[6]='N', B[6]='N'. Characters match. Counter stays at 3.",
           values: ["K", "A", "R", "O", "L", "I", "N"],
           colors: ["sorted", "sorted", "active", "active", "active", "sorted", "sorted"],
         },
         {
           step: 9,
-          description:
-            "Scan complete. Return the counter value: Hamming Distance = 3.",
+          description: "Scan complete. Return the counter value: Hamming Distance = 3.",
         },
         {
           step: 10,
@@ -274,8 +265,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function HammingDistanceVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

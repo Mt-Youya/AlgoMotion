@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Fibonacci",
@@ -183,12 +183,16 @@ def fibonacci_optimised(n: int) -> int:
     complexity: {
       heading: "Time & Space Complexity",
       timeRows: [
-        { label: "Best case",  value: "O(n)", note: "Even for n=0 the function returns immediately — but the loop always runs n-1 iterations for n≥2." },
-        { label: "Average",    value: "O(n)", note: "Single linear pass through indices 2..n." },
+        {
+          label: "Best case",
+          value: "O(n)",
+          note: "Even for n=0 the function returns immediately — but the loop always runs n-1 iterations for n≥2.",
+        },
+        { label: "Average", value: "O(n)", note: "Single linear pass through indices 2..n." },
         { label: "Worst case", value: "O(n)", note: "No branching; every element is visited exactly once." },
       ],
       spaceRows: [
-        { label: "dp array variant",    value: "O(n)", note: "Stores all n+1 Fibonacci values." },
+        { label: "dp array variant", value: "O(n)", note: "Stores all n+1 Fibonacci values." },
         { label: "Rolling-var variant", value: "O(1)", note: "Only prev and curr are kept at any time." },
       ],
       insights: [
@@ -203,23 +207,28 @@ def fibonacci_optimised(n: int) -> int:
       variations: [
         {
           name: "Memoised (top-down) DP",
-          description: "Recursive implementation with a cache dictionary. Same O(n) time, but uses the call stack and is slightly slower in practice.",
+          description:
+            "Recursive implementation with a cache dictionary. Same O(n) time, but uses the call stack and is slightly slower in practice.",
         },
         {
           name: "Matrix Exponentiation",
-          description: "Computes F(n) in O(log n) time by raising the 2×2 Fibonacci matrix to the (n-1)-th power via fast exponentiation.",
+          description:
+            "Computes F(n) in O(log n) time by raising the 2×2 Fibonacci matrix to the (n-1)-th power via fast exponentiation.",
         },
         {
           name: "Climbing Stairs (LeetCode 70)",
-          description: "Exactly the Fibonacci recurrence: ways(n) = ways(n-1) + ways(n-2). A direct application of the same DP.",
+          description:
+            "Exactly the Fibonacci recurrence: ways(n) = ways(n-1) + ways(n-2). A direct application of the same DP.",
         },
         {
           name: "Tribonacci / k-bonacci",
-          description: "Generalises Fibonacci to F(n) = F(n-1) + F(n-2) + F(n-3). The same bottom-up pattern extends trivially.",
+          description:
+            "Generalises Fibonacci to F(n) = F(n-1) + F(n-2) + F(n-3). The same bottom-up pattern extends trivially.",
         },
         {
           name: "Fibonacci modulo M",
-          description: "For cryptography or competitive programming, compute F(n) mod M. The Pisano period allows answers for astronomically large n.",
+          description:
+            "For cryptography or competitive programming, compute F(n) mod M. The Pisano period allows answers for astronomically large n.",
         },
       ],
       tips: [
@@ -242,8 +251,8 @@ def fibonacci_optimised(n: int) -> int:
       ],
     },
   },
-};
+}
 
 export default function FibonacciVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

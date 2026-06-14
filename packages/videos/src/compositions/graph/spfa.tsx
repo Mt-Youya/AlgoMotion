@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "SPFA",
@@ -35,43 +35,53 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           title: "Initialize distances",
-          description: "Set dist[source] = 0 and dist[all others] = ∞. Create a boolean array in_queue[] initialized to false.",
+          description:
+            "Set dist[source] = 0 and dist[all others] = ∞. Create a boolean array in_queue[] initialized to false.",
         },
         {
           title: "Enqueue the source",
-          description: "Add the source node to the queue and set in_queue[source] = true. This is the only node whose outgoing edges we examine first.",
+          description:
+            "Add the source node to the queue and set in_queue[source] = true. This is the only node whose outgoing edges we examine first.",
         },
         {
           title: "Dequeue the front node",
-          description: "Pop node u from the front of the queue. Set in_queue[u] = false — it is no longer in the queue and can be re-added later if needed.",
+          description:
+            "Pop node u from the front of the queue. Set in_queue[u] = false — it is no longer in the queue and can be re-added later if needed.",
         },
         {
           title: "Relax all outgoing edges of u",
-          description: "For each neighbor v of u with edge weight w: if dist[u] + w < dist[v], update dist[v] = dist[u] + w.",
+          description:
+            "For each neighbor v of u with edge weight w: if dist[u] + w < dist[v], update dist[v] = dist[u] + w.",
         },
         {
           title: "Enqueue updated neighbors",
-          description: "If dist[v] was just improved and v is not already in the queue, add v to the queue and set in_queue[v] = true.",
+          description:
+            "If dist[v] was just improved and v is not already in the queue, add v to the queue and set in_queue[v] = true.",
         },
         {
           title: "Repeat until queue is empty",
-          description: "Continue dequeuing nodes and relaxing their edges. The queue shrinks as paths stabilize and no more improvements are found.",
+          description:
+            "Continue dequeuing nodes and relaxing their edges. The queue shrinks as paths stabilize and no more improvements are found.",
         },
         {
           title: "Negative cycle check",
-          description: "Optionally track enqueue_count[v] for each node. If any node is enqueued V or more times, a negative cycle exists — terminate early.",
+          description:
+            "Optionally track enqueue_count[v] for each node. If any node is enqueued V or more times, a negative cycle exists — terminate early.",
         },
         {
           title: "Example: node 0 → node 3 with edges 0→1(4), 0→2(2), 1→3(5), 2→1(1)",
-          description: "Queue starts as [0]. Process 0: dist[1]=4, dist[2]=2, queue=[1,2]. Process 1: dist[3]=9, queue=[2,3]. Process 2: dist[1]=3 (improved!), queue=[3,1]. Process 1 again: dist[3]=8. Queue=[3]. Process 3: no improvements. Final: dist[3]=8.",
+          description:
+            "Queue starts as [0]. Process 0: dist[1]=4, dist[2]=2, queue=[1,2]. Process 1: dist[3]=9, queue=[2,3]. Process 2: dist[1]=3 (improved!), queue=[3,1]. Process 1 again: dist[3]=8. Queue=[3]. Process 3: no improvements. Final: dist[3]=8.",
         },
         {
           title: "Why node 1 is processed twice",
-          description: "Node 1's distance improved when node 2 was processed (via path 0→2→1 with cost 3 < 4). SPFA re-enqueues node 1 to propagate this improvement — Bellman-Ford would have caught this only on the next full pass.",
+          description:
+            "Node 1's distance improved when node 2 was processed (via path 0→2→1 with cost 3 < 4). SPFA re-enqueues node 1 to propagate this improvement — Bellman-Ford would have caught this only on the next full pass.",
         },
         {
           title: "Termination guarantee",
-          description: "Without negative cycles, SPFA always terminates because each node can only be re-enqueued if its distance strictly decreases, and distances are bounded below.",
+          description:
+            "Without negative cycles, SPFA always terminates because each node can only be re-enqueued if its distance strictly decreases, and distances are bounded below.",
         },
       ],
     },
@@ -206,23 +216,28 @@ if __name__ == "__main__":
       variations: [
         {
           name: "SLF Optimization (Shortest Label First)",
-          description: "Instead of a plain FIFO queue, use a deque. When enqueuing v, if dist[v] < dist[front of deque], push v to the front instead of the back. Reduces average relaxations significantly.",
+          description:
+            "Instead of a plain FIFO queue, use a deque. When enqueuing v, if dist[v] < dist[front of deque], push v to the front instead of the back. Reduces average relaxations significantly.",
         },
         {
           name: "LLL Optimization (Large Label Last)",
-          description: "Maintain the average distance of all nodes in the queue. Move nodes with distance above average to the back of the queue. Can further reduce iterations on some graph types.",
+          description:
+            "Maintain the average distance of all nodes in the queue. Move nodes with distance above average to the back of the queue. Can further reduce iterations on some graph types.",
         },
         {
           name: "SPFA with Negative Cycle Detection",
-          description: "Track enqueue counts per node. If any count reaches V, report a negative cycle. Useful for currency arbitrage detection and constraint satisfaction problems.",
+          description:
+            "Track enqueue counts per node. If any count reaches V, report a negative cycle. Useful for currency arbitrage detection and constraint satisfaction problems.",
         },
         {
           name: "Bidirectional SPFA",
-          description: "Run SPFA simultaneously from both source and target, meeting in the middle. Reduces search space roughly by half for point-to-point queries.",
+          description:
+            "Run SPFA simultaneously from both source and target, meeting in the middle. Reduces search space roughly by half for point-to-point queries.",
         },
         {
           name: "SPFA on DAGs",
-          description: "On directed acyclic graphs, topological sort + single-pass relaxation achieves O(V+E) with no queue needed — strictly better than SPFA.",
+          description:
+            "On directed acyclic graphs, topological sort + single-pass relaxation achieves O(V+E) with no queue needed — strictly better than SPFA.",
         },
       ],
       tips: [
@@ -245,8 +260,8 @@ if __name__ == "__main__":
       ],
     },
   ],
-};
+}
 
 export default function SpfaVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

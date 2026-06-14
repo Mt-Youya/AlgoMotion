@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Queue",
@@ -60,11 +60,13 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description: "dequeue(): read data[front] = 10, increment front to 1, decrement size. Returns 10. Queue: [20, 30, 40].",
+          description:
+            "dequeue(): read data[front] = 10, increment front to 1, decrement size. Returns 10. Queue: [20, 30, 40].",
         },
         {
           step: 8,
-          description: "dequeue(): read data[front] = 20, increment front to 2, decrement size. Returns 20. Queue: [30, 40].",
+          description:
+            "dequeue(): read data[front] = 20, increment front to 2, decrement size. Returns 20. Queue: [30, 40].",
         },
         {
           step: 9,
@@ -168,8 +170,8 @@ print(q.size())    # 2
       timeRows: [
         { operation: "enqueue", best: "O(1)", average: "O(1)", worst: "O(1)" },
         { operation: "dequeue", best: "O(1)", average: "O(1)", worst: "O(1)" },
-        { operation: "peek",    best: "O(1)", average: "O(1)", worst: "O(1)" },
-        { operation: "search",  best: "O(1)", average: "O(n)", worst: "O(n)" },
+        { operation: "peek", best: "O(1)", average: "O(1)", worst: "O(1)" },
+        { operation: "search", best: "O(1)", average: "O(n)", worst: "O(n)" },
         { operation: "isEmpty", best: "O(1)", average: "O(1)", worst: "O(1)" },
       ],
       spaceRows: [
@@ -232,8 +234,8 @@ print(q.size())    # 2
       ],
     },
   },
-};
+}
 
 export default function QueueVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

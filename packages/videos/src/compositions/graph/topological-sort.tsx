@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Topological Sort",
@@ -40,19 +40,23 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description: "Compute the in-degree of every node by counting how many edges point into it. Node 4: 0, Node 5: 0, Node 0: 2, Node 1: 2, Node 2: 1, Node 3: 1.",
+          description:
+            "Compute the in-degree of every node by counting how many edges point into it. Node 4: 0, Node 5: 0, Node 0: 2, Node 1: 2, Node 2: 1, Node 3: 1.",
         },
         {
           step: 3,
-          description: "Initialize the queue with all nodes whose in-degree is 0. Here nodes 4 and 5 have no prerequisites, so queue = [4, 5].",
+          description:
+            "Initialize the queue with all nodes whose in-degree is 0. Here nodes 4 and 5 have no prerequisites, so queue = [4, 5].",
         },
         {
           step: 4,
-          description: "Dequeue node 4. Append 4 to the result. Decrement in-degree of its neighbors: in-degree[0] becomes 1, in-degree[1] becomes 1. Result: [4].",
+          description:
+            "Dequeue node 4. Append 4 to the result. Decrement in-degree of its neighbors: in-degree[0] becomes 1, in-degree[1] becomes 1. Result: [4].",
         },
         {
           step: 5,
-          description: "Dequeue node 5. Append 5 to the result. Decrement in-degree[2] → 0 (enqueue 2), in-degree[0] → 0 (enqueue 0). Result: [4, 5].",
+          description:
+            "Dequeue node 5. Append 5 to the result. Decrement in-degree[2] → 0 (enqueue 2), in-degree[0] → 0 (enqueue 0). Result: [4, 5].",
         },
         {
           step: 6,
@@ -60,19 +64,23 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description: "Dequeue node 0. Append 0 to result. Node 0 has no outgoing edges in this graph. Result: [4, 5, 2, 0].",
+          description:
+            "Dequeue node 0. Append 0 to result. Node 0 has no outgoing edges in this graph. Result: [4, 5, 2, 0].",
         },
         {
           step: 8,
-          description: "Dequeue node 3. Append 3 to result. Decrement in-degree[1] → 0 (enqueue 1). Result: [4, 5, 2, 0, 3].",
+          description:
+            "Dequeue node 3. Append 3 to result. Decrement in-degree[1] → 0 (enqueue 1). Result: [4, 5, 2, 0, 3].",
         },
         {
           step: 9,
-          description: "Dequeue node 1. Append 1 to result. No outgoing edges. Result: [4, 5, 2, 0, 3, 1]. Queue is empty.",
+          description:
+            "Dequeue node 1. Append 1 to result. No outgoing edges. Result: [4, 5, 2, 0, 3, 1]. Queue is empty.",
         },
         {
           step: 10,
-          description: "All 6 nodes processed. No cycle detected. Final topological order: 4 → 5 → 2 → 0 → 3 → 1. Every edge u→v has u before v. ✓",
+          description:
+            "All 6 nodes processed. No cycle detected. Final topological order: 4 → 5 → 2 → 0 → 3 → 1. Every edge u→v has u before v. ✓",
         },
       ],
     },
@@ -168,23 +176,28 @@ print(order)  # [4, 5, 2, 0, 3, 1]  (one valid ordering)
       variations: [
         {
           name: "DFS Post-Order (Recursive)",
-          description: "Perform a DFS and push each node onto a stack after all its descendants are visited. Reverse the stack for the topological order. Elegant but uses O(V) call-stack space.",
+          description:
+            "Perform a DFS and push each node onto a stack after all its descendants are visited. Reverse the stack for the topological order. Elegant but uses O(V) call-stack space.",
         },
         {
           name: "Lexicographically Smallest Order",
-          description: "Replace the FIFO queue in Kahn's algorithm with a min-heap (priority queue). At each step the smallest available node is chosen, yielding the lexicographically smallest valid ordering.",
+          description:
+            "Replace the FIFO queue in Kahn's algorithm with a min-heap (priority queue). At each step the smallest available node is chosen, yielding the lexicographically smallest valid ordering.",
         },
         {
           name: "Cycle Detection Only",
-          description: "Run Kahn's algorithm and check whether all V nodes were processed. If not, a cycle exists. This is a clean O(V + E) cycle detector for directed graphs.",
+          description:
+            "Run Kahn's algorithm and check whether all V nodes were processed. If not, a cycle exists. This is a clean O(V + E) cycle detector for directed graphs.",
         },
         {
           name: "Longest Path in DAG",
-          description: "Process nodes in topological order and propagate distances with dynamic programming. This gives the longest (critical) path in O(V + E), which is impossible in general graphs without exponential search.",
+          description:
+            "Process nodes in topological order and propagate distances with dynamic programming. This gives the longest (critical) path in O(V + E), which is impossible in general graphs without exponential search.",
         },
         {
           name: "Parallel Task Scheduling",
-          description: "Assign each node a 'level' equal to the length of the longest path from any source to that node. All nodes at the same level can be executed in parallel, minimizing total wall-clock time.",
+          description:
+            "Assign each node a 'level' equal to the length of the longest path from any source to that node. All nodes at the same level can be executed in parallel, minimizing total wall-clock time.",
         },
       ],
       tips: [
@@ -207,8 +220,8 @@ print(order)  # [4, 5, 2, 0, 3, 1]  (one valid ordering)
       ],
     },
   },
-};
+}
 
 export default function TopologicalSortVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

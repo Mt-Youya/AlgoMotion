@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Binary Search Tree",
@@ -36,13 +36,11 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Start with an empty BST. Insert 8 as the root. Tree: [8].",
+          description: "Start with an empty BST. Insert 8 as the root. Tree: [8].",
         },
         {
           step: 2,
-          description:
-            "Insert 4. Compare 4 < 8 → go left. Left child of 8 is empty → place 4 there. Tree: [8, 4, _].",
+          description: "Insert 4. Compare 4 < 8 → go left. Left child of 8 is empty → place 4 there. Tree: [8, 4, _].",
         },
         {
           step: 3,
@@ -51,13 +49,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description:
-            "Insert 2. 2 < 8 → left to 4. 2 < 4 → left. Empty → place 2. Tree: [8, 4, 12, 2, _, _, _].",
+          description: "Insert 2. 2 < 8 → left to 4. 2 < 4 → left. Empty → place 2. Tree: [8, 4, 12, 2, _, _, _].",
         },
         {
           step: 5,
-          description:
-            "Insert 6. 6 < 8 → left to 4. 6 > 4 → right. Empty → place 6. Tree: [8, 4, 12, 2, 6, _, _].",
+          description: "Insert 6. 6 < 8 → left to 4. 6 > 4 → right. Empty → place 6. Tree: [8, 4, 12, 2, 6, _, _].",
         },
         {
           step: 6,
@@ -217,15 +213,15 @@ print(bst.inorder())   # [2, 6, 8, 10, 12, 14]
     complexity: {
       heading: "Time & Space Complexity",
       timeRows: [
-        { operation: "search",   best: "O(1)",      average: "O(log n)", worst: "O(n)" },
-        { operation: "insert",   best: "O(1)",      average: "O(log n)", worst: "O(n)" },
-        { operation: "delete",   best: "O(1)",      average: "O(log n)", worst: "O(n)" },
-        { operation: "inorder",  best: "O(n)",      average: "O(n)",     worst: "O(n)" },
-        { operation: "min/max",  best: "O(1)",      average: "O(log n)", worst: "O(n)" },
+        { operation: "search", best: "O(1)", average: "O(log n)", worst: "O(n)" },
+        { operation: "insert", best: "O(1)", average: "O(log n)", worst: "O(n)" },
+        { operation: "delete", best: "O(1)", average: "O(log n)", worst: "O(n)" },
+        { operation: "inorder", best: "O(n)", average: "O(n)", worst: "O(n)" },
+        { operation: "min/max", best: "O(1)", average: "O(log n)", worst: "O(n)" },
       ],
       spaceRows: [
-        { label: "Tree storage",            complexity: "O(n)" },
-        { label: "Recursive call stack",    complexity: "O(h) = O(log n) avg, O(n) worst" },
+        { label: "Tree storage", complexity: "O(n)" },
+        { label: "Recursive call stack", complexity: "O(h) = O(log n) avg, O(n) worst" },
         { label: "Iterative search/insert", complexity: "O(1)" },
       ],
       insights: [
@@ -284,8 +280,8 @@ print(bst.inorder())   # [2, 6, 8, 10, 12, 14]
       ],
     },
   },
-};
+}
 
 export default function BinarySearchTreeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Fast Power",
-  subtitle:
-    "Computes x^n in O(log n) time by squaring, optionally with a modulo for large numbers.",
+  subtitle: "Computes x^n in O(log n) time by squaring, optionally with a modulo for large numbers.",
   category: "math",
   difficulty: "intermediate",
 
@@ -46,13 +45,11 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 2 — n=6 (even)",
-          description:
-            "n & 1 == 0, skip result update. Square base: base = 4×4 = 16. Shift: n = 6 >> 1 = 3.",
+          description: "n & 1 == 0, skip result update. Square base: base = 4×4 = 16. Shift: n = 6 >> 1 = 3.",
         },
         {
           label: "Step 3 — n=3 (odd)",
-          description:
-            "n & 1 == 1, so result = 2 × 16 = 32. Square base: base = 16×16 = 256. Shift: n = 3 >> 1 = 1.",
+          description: "n & 1 == 1, so result = 2 × 16 = 32. Square base: base = 16×16 = 256. Shift: n = 3 >> 1 = 1.",
         },
         {
           label: "Step 4 — n=1 (odd)",
@@ -61,8 +58,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Loop ends",
-          description:
-            "n == 0, exit the while loop. result = 8192 = 2^13. Correct!",
+          description: "n == 0, exit the while loop. result = 8192 = 2^13. Correct!",
         },
         {
           label: "Binary view",
@@ -163,7 +159,11 @@ def fast_power_recursive(x: float, n: int) -> float:
       heading: "Complexity Analysis",
       timeRows: [
         { label: "Best case", value: "O(log n)", note: "n is a power of 2 — all bits except the leading one are 0" },
-        { label: "Average case", value: "O(log n)", note: "Expected ~(log n)/2 multiplications for result, log n squarings" },
+        {
+          label: "Average case",
+          value: "O(log n)",
+          note: "Expected ~(log n)/2 multiplications for result, log n squarings",
+        },
         { label: "Worst case", value: "O(log n)", note: "n = 2^k - 1 (all bits set) — maximum multiplications" },
       ],
       spaceRows: [
@@ -226,8 +226,8 @@ def fast_power_recursive(x: float, n: int) -> float:
       ],
     },
   ],
-};
+}
 
 export default function FastPowerVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

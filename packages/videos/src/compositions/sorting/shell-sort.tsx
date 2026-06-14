@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Shell Sort",
-  subtitle:
-    "Generalization of insertion sort that allows exchange of items far apart, using a diminishing gap se",
+  subtitle: "Generalization of insertion sort that allows exchange of items far apart, using a diminishing gap se",
   category: "sorting",
   difficulty: "intermediate",
 
@@ -40,66 +39,31 @@ const config: AlgoVideoConfig = {
           description: "Start with the unsorted array.",
           arrayState: {
             values: [64, 34, 25, 12, 22, 11, 90],
-            colors: [
-              "default",
-              "default",
-              "default",
-              "default",
-              "default",
-              "default",
-              "default",
-            ],
+            colors: ["default", "default", "default", "default", "default", "default", "default"],
           },
         },
         {
           step: 2,
-          description:
-            "Compute initial gap = n/2 = 7/2 = 3. We will compare elements 3 positions apart.",
+          description: "Compute initial gap = n/2 = 7/2 = 3. We will compare elements 3 positions apart.",
           arrayState: {
             values: [64, 34, 25, 12, 22, 11, 90],
-            colors: [
-              "highlight",
-              "default",
-              "default",
-              "highlight",
-              "default",
-              "default",
-              "default",
-            ],
+            colors: ["highlight", "default", "default", "highlight", "default", "default", "default"],
           },
         },
         {
           step: 3,
-          description:
-            "Gap=3, compare index 0 (64) and index 3 (12). 64 > 12, so swap.",
+          description: "Gap=3, compare index 0 (64) and index 3 (12). 64 > 12, so swap.",
           arrayState: {
             values: [12, 34, 25, 64, 22, 11, 90],
-            colors: [
-              "sorted",
-              "default",
-              "default",
-              "active",
-              "default",
-              "default",
-              "default",
-            ],
+            colors: ["sorted", "default", "default", "active", "default", "default", "default"],
           },
         },
         {
           step: 4,
-          description:
-            "Gap=3, compare index 1 (34) and index 4 (22). 34 > 22, so swap.",
+          description: "Gap=3, compare index 1 (34) and index 4 (22). 34 > 22, so swap.",
           arrayState: {
             values: [12, 22, 25, 64, 34, 11, 90],
-            colors: [
-              "sorted",
-              "sorted",
-              "default",
-              "default",
-              "active",
-              "default",
-              "default",
-            ],
+            colors: ["sorted", "sorted", "default", "default", "active", "default", "default"],
           },
         },
         {
@@ -108,100 +72,47 @@ const config: AlgoVideoConfig = {
             "Gap=3, compare index 2 (25) and index 5 (11). 25 > 11, swap. Then compare index 5 (25) and index 2 — done.",
           arrayState: {
             values: [12, 22, 11, 64, 34, 25, 90],
-            colors: [
-              "sorted",
-              "sorted",
-              "active",
-              "default",
-              "default",
-              "sorted",
-              "default",
-            ],
+            colors: ["sorted", "sorted", "active", "default", "default", "sorted", "default"],
           },
         },
         {
           step: 6,
-          description:
-            "Gap=3, compare index 3 (64) and index 6 (90). 64 < 90, no swap. Gap=3 pass complete.",
+          description: "Gap=3, compare index 3 (64) and index 6 (90). 64 < 90, no swap. Gap=3 pass complete.",
           arrayState: {
             values: [12, 22, 11, 64, 34, 25, 90],
-            colors: [
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-            ],
+            colors: ["sorted", "sorted", "sorted", "sorted", "sorted", "sorted", "sorted"],
           },
         },
         {
           step: 7,
-          description:
-            "Halve the gap: gap = 3/2 = 1. Now perform standard insertion sort (gap=1).",
+          description: "Halve the gap: gap = 3/2 = 1. Now perform standard insertion sort (gap=1).",
           arrayState: {
             values: [12, 22, 11, 64, 34, 25, 90],
-            colors: [
-              "default",
-              "default",
-              "default",
-              "default",
-              "default",
-              "default",
-              "default",
-            ],
+            colors: ["default", "default", "default", "default", "default", "default", "default"],
           },
         },
         {
           step: 8,
-          description:
-            "Insertion sort (gap=1): 11 bubbles left past 22 and 12 to its correct position.",
+          description: "Insertion sort (gap=1): 11 bubbles left past 22 and 12 to its correct position.",
           arrayState: {
             values: [11, 12, 22, 64, 34, 25, 90],
-            colors: [
-              "sorted",
-              "sorted",
-              "sorted",
-              "default",
-              "default",
-              "default",
-              "default",
-            ],
+            colors: ["sorted", "sorted", "sorted", "default", "default", "default", "default"],
           },
         },
         {
           step: 9,
-          description:
-            "Insertion sort continues: 34 moves left past 64. 25 moves left past 64 and 34.",
+          description: "Insertion sort continues: 34 moves left past 64. 25 moves left past 64 and 34.",
           arrayState: {
             values: [11, 12, 22, 25, 34, 64, 90],
-            colors: [
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "active",
-              "default",
-            ],
+            colors: ["sorted", "sorted", "sorted", "sorted", "sorted", "active", "default"],
           },
         },
         {
           step: 10,
-          description:
-            "90 is already in place. The array is fully sorted. Total passes: 2 (gap=3, gap=1).",
+          description: "90 is already in place. The array is fully sorted. Total passes: 2 (gap=3, gap=1).",
           arrayState: {
             values: [11, 12, 22, 25, 34, 64, 90],
-            colors: [
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-              "sorted",
-            ],
+            colors: ["sorted", "sorted", "sorted", "sorted", "sorted", "sorted", "sorted"],
           },
         },
       ],
@@ -311,13 +222,11 @@ if __name__ == "__main__":
       variations: [
         {
           name: "Knuth's Sequence",
-          description:
-            "Uses gaps (3^k − 1)/2: 1, 4, 13, 40, 121, … Provides O(n^(3/2)) worst-case performance.",
+          description: "Uses gaps (3^k − 1)/2: 1, 4, 13, 40, 121, … Provides O(n^(3/2)) worst-case performance.",
         },
         {
           name: "Hibbard's Sequence",
-          description:
-            "Gaps 2^k − 1: 1, 3, 7, 15, 31, … Proven O(n^(3/2)) worst case, better than the simple halving.",
+          description: "Gaps 2^k − 1: 1, 3, 7, 15, 31, … Proven O(n^(3/2)) worst case, better than the simple halving.",
         },
         {
           name: "Ciura's Sequence",
@@ -355,8 +264,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function ShellSortVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

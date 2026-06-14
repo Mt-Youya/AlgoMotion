@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Huffman Coding",
-  subtitle:
-    "Build optimal prefix-free binary code by repeatedly merging two lowest-frequency symbols.",
+  subtitle: "Build optimal prefix-free binary code by repeatedly merging two lowest-frequency symbols.",
   category: "greedy",
   difficulty: "advanced",
 
@@ -37,8 +36,7 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Start with six symbols and their frequencies: A=5, B=9, C=12, D=13, E=16, F=45.",
+          description: "Start with six symbols and their frequencies: A=5, B=9, C=12, D=13, E=16, F=45.",
         },
         {
           step: 2,
@@ -271,8 +269,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function HuffmanCodingVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

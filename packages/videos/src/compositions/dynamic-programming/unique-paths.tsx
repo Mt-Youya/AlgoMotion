@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Unique Paths",
@@ -51,38 +51,31 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description:
-            "Process cell (1, 1): dp[1][1] = dp[0][1] + dp[1][0] = 1 + 1 = 2.",
+          description: "Process cell (1, 1): dp[1][1] = dp[0][1] + dp[1][0] = 1 + 1 = 2.",
         },
         {
           step: 5,
-          description:
-            "Process cell (1, 2): dp[1][2] = dp[0][2] + dp[1][1] = 1 + 2 = 3.",
+          description: "Process cell (1, 2): dp[1][2] = dp[0][2] + dp[1][1] = 1 + 2 = 3.",
         },
         {
           step: 6,
-          description:
-            "Process cell (1, 3): dp[1][3] = dp[0][3] + dp[1][2] = 1 + 3 = 4.",
+          description: "Process cell (1, 3): dp[1][3] = dp[0][3] + dp[1][2] = 1 + 3 = 4.",
         },
         {
           step: 7,
-          description:
-            "Process cell (2, 1): dp[2][1] = dp[1][1] + dp[2][0] = 2 + 1 = 3.",
+          description: "Process cell (2, 1): dp[2][1] = dp[1][1] + dp[2][0] = 2 + 1 = 3.",
         },
         {
           step: 8,
-          description:
-            "Process cell (2, 2): dp[2][2] = dp[1][2] + dp[2][1] = 3 + 3 = 6.",
+          description: "Process cell (2, 2): dp[2][2] = dp[1][2] + dp[2][1] = 3 + 3 = 6.",
         },
         {
           step: 9,
-          description:
-            "Process cell (2, 3): dp[2][3] = dp[1][3] + dp[2][2] = 4 + 6 = 10.",
+          description: "Process cell (2, 3): dp[2][3] = dp[1][3] + dp[2][2] = 4 + 6 = 10.",
         },
         {
           step: 10,
-          description:
-            "The answer is dp[m-1][n-1] = dp[2][3] = 10. There are 10 unique paths in a 3 × 4 grid.",
+          description: "The answer is dp[m-1][n-1] = dp[2][3] = 10. There are 10 unique paths in a 3 × 4 grid.",
         },
         {
           step: 11,
@@ -232,8 +225,8 @@ assert unique_paths_math(3, 7) == 28
       ],
     },
   ],
-};
+}
 
 export default function UniquePathsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

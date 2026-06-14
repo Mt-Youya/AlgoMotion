@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Exponential Search",
-  subtitle:
-    "Finds the range where the target may exist by doubling the index, then applies binary search within ",
+  subtitle: "Finds the range where the target may exist by doubling the index, then applies binary search within ",
   category: "search",
   difficulty: "intermediate",
 
@@ -47,8 +46,16 @@ const config: AlgoVideoConfig = {
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
             colors: [
-              "default","default","default","default","default",
-              "default","default","default","default","default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
             ],
           },
         },
@@ -58,8 +65,16 @@ const config: AlgoVideoConfig = {
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
             colors: [
-              "orange","default","default","default","default",
-              "default","default","default","default","default",
+              "orange",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
             ],
           },
         },
@@ -69,8 +84,16 @@ const config: AlgoVideoConfig = {
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
             colors: [
-              "default","yellow","default","default","default",
-              "default","default","default","default","default",
+              "default",
+              "yellow",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
             ],
           },
         },
@@ -80,8 +103,16 @@ const config: AlgoVideoConfig = {
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
             colors: [
-              "default","default","yellow","default","default",
-              "default","default","default","default","default",
+              "default",
+              "default",
+              "yellow",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
             ],
           },
         },
@@ -91,8 +122,16 @@ const config: AlgoVideoConfig = {
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
             colors: [
-              "default","default","default","default","yellow",
-              "default","default","default","default","default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "yellow",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
             ],
           },
         },
@@ -101,10 +140,7 @@ const config: AlgoVideoConfig = {
           description: "i=8: arr[8]=22 >= 14. Stop doubling. Range found: [i/2, i] = [4, 8].",
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
-            colors: [
-              "default","default","default","default","blue",
-              "blue","blue","blue","red","default",
-            ],
+            colors: ["default", "default", "default", "default", "blue", "blue", "blue", "blue", "red", "default"],
           },
         },
         {
@@ -112,10 +148,7 @@ const config: AlgoVideoConfig = {
           description: "Apply binary search in indices [4..8]. mid = (4+8)//2 = 6.",
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
-            colors: [
-              "default","default","default","default","blue",
-              "blue","orange","blue","blue","default",
-            ],
+            colors: ["default", "default", "default", "default", "blue", "blue", "orange", "blue", "blue", "default"],
           },
         },
         {
@@ -124,8 +157,16 @@ const config: AlgoVideoConfig = {
           array: {
             values: [1, 3, 5, 7, 9, 11, 14, 18, 22, 27],
             colors: [
-              "default","default","default","default","default",
-              "default","green","default","default","default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "green",
+              "default",
+              "default",
+              "default",
             ],
           },
         },
@@ -289,8 +330,8 @@ print(exponential_search(arr, 10))   # Output: -1`,
       ],
     },
   ],
-};
+}
 
 export default function ExponentialSearchVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -37,14 +37,14 @@ export interface ChapterDef {
 
 /** Default 27 000-frame (15 min @ 30 fps) chapter layout. */
 export const DEFAULT_CHAPTERS: ChapterDef[] = [
-  { name: "intro",       title: "Introduction",      startFrame:     0, endFrame:  1_800 },
-  { name: "problem",     title: "The Problem",        startFrame: 1_800, endFrame:  5_400 },
-  { name: "intuition",   title: "Intuition",          startFrame: 5_400, endFrame:  9_000 },
-  { name: "walkthrough", title: "Step-by-Step",       startFrame: 9_000, endFrame: 16_200 },
-  { name: "code",        title: "Code Walkthrough",   startFrame: 16_200, endFrame: 21_600 },
-  { name: "complexity",  title: "Complexity Analysis",startFrame: 21_600, endFrame: 24_300 },
-  { name: "variations",  title: "Variations & Tips",  startFrame: 24_300, endFrame: 26_100 },
-  { name: "summary",     title: "Summary",            startFrame: 26_100, endFrame: 27_000 },
+  { name: "intro", title: "Introduction", startFrame: 0, endFrame: 1_800 },
+  { name: "problem", title: "The Problem", startFrame: 1_800, endFrame: 5_400 },
+  { name: "intuition", title: "Intuition", startFrame: 5_400, endFrame: 9_000 },
+  { name: "walkthrough", title: "Step-by-Step", startFrame: 9_000, endFrame: 16_200 },
+  { name: "code", title: "Code Walkthrough", startFrame: 16_200, endFrame: 21_600 },
+  { name: "complexity", title: "Complexity Analysis", startFrame: 21_600, endFrame: 24_300 },
+  { name: "variations", title: "Variations & Tips", startFrame: 24_300, endFrame: 26_100 },
+  { name: "summary", title: "Summary", startFrame: 26_100, endFrame: 27_000 },
 ]
 
 export interface ChapterInfo extends ChapterDef {
@@ -74,9 +74,7 @@ export interface UseChapterReturn {
   chapterProgress: (name: ChapterName) => number
 }
 
-export function useChapter(
-  chapters: ChapterDef[] = DEFAULT_CHAPTERS,
-): UseChapterReturn {
+export function useChapter(chapters: ChapterDef[] = DEFAULT_CHAPTERS): UseChapterReturn {
   const frame = useCurrentFrame()
   const { durationInFrames } = useVideoConfig()
 
@@ -99,8 +97,7 @@ export function useChapter(
     isActive: true,
   }
 
-  const getChapter = (name: ChapterName) =>
-    chapters.find((c) => c.name === name) ?? chapters[0]
+  const getChapter = (name: ChapterName) => chapters.find((c) => c.name === name) ?? chapters[0]
 
   const inChapter = (name: ChapterName) => active.name === name
 

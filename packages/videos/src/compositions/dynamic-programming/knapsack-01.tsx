@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "0/1 Knapsack",
@@ -76,8 +76,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description:
-            "dp[4][8] = 10 is the optimal value. Now trace back to find which items were selected.",
+          description: "dp[4][8] = 10 is the optimal value. Now trace back to find which items were selected.",
         },
         {
           step: 8,
@@ -269,8 +268,8 @@ print(knapsack_01_with_items(weights, values, W)) # (10, [1, 3])`,
       ],
     },
   },
-};
+}
 
 export default function Knapsack01Video() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

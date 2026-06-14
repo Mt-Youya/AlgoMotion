@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Bellman-Ford Algorithm",
-  subtitle:
-    "Shortest paths with negative edge weights, detects negative cycles.",
+  subtitle: "Shortest paths with negative edge weights, detects negative cycles.",
   category: "graph",
   difficulty: "intermediate",
 
@@ -43,13 +42,11 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Pass 1: Relax edge S→A (weight 6)",
-          description:
-            "dist[S]=0, dist[A]=∞. Since 0+6=6 < ∞, update dist[A]=6. We've found a path S→A of cost 6.",
+          description: "dist[S]=0, dist[A]=∞. Since 0+6=6 < ∞, update dist[A]=6. We've found a path S→A of cost 6.",
         },
         {
           label: "Pass 1: Relax edge S→B (weight 7)",
-          description:
-            "dist[S]=0, dist[B]=∞. Since 0+7=7 < ∞, update dist[B]=7. We've found a path S→B of cost 7.",
+          description: "dist[S]=0, dist[B]=∞. Since 0+7=7 < ∞, update dist[B]=7. We've found a path S→B of cost 7.",
         },
         {
           label: "Pass 2: Relax edge B→C (weight −3)",
@@ -210,8 +207,8 @@ def reconstruct_path(parent, source, target):
       ],
     },
   },
-};
+}
 
 export default function BellmanFordVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

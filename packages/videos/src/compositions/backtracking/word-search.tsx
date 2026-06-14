@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Word Search",
@@ -36,43 +36,35 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description:
-            "Scan the grid for all cells that contain the first character of the word ('A').",
+          description: "Scan the grid for all cells that contain the first character of the word ('A').",
         },
         {
           step: 2,
-          description:
-            "Start DFS from cell (0,0) which holds 'A'. Mark (0,0) as visited.",
+          description: "Start DFS from cell (0,0) which holds 'A'. Mark (0,0) as visited.",
         },
         {
           step: 3,
-          description:
-            "Move right to (0,1) which holds 'B' — matches word[1]. Mark visited.",
+          description: "Move right to (0,1) which holds 'B' — matches word[1]. Mark visited.",
         },
         {
           step: 4,
-          description:
-            "Move right to (0,2) which holds 'C' — matches word[2]. Mark visited.",
+          description: "Move right to (0,2) which holds 'C' — matches word[2]. Mark visited.",
         },
         {
           step: 5,
-          description:
-            "Move down to (1,2) which holds 'C' — matches word[3]. Mark visited.",
+          description: "Move down to (1,2) which holds 'C' — matches word[3]. Mark visited.",
         },
         {
           step: 6,
-          description:
-            "Move down to (2,2) which holds 'E' — matches word[4]. Mark visited.",
+          description: "Move down to (2,2) which holds 'E' — matches word[4]. Mark visited.",
         },
         {
           step: 7,
-          description:
-            "Move left to (2,1) which holds 'D' — matches word[5]. All characters matched!",
+          description: "Move left to (2,1) which holds 'D' — matches word[5]. All characters matched!",
         },
         {
           step: 8,
-          description:
-            "Return true immediately. The path (0,0)→(0,1)→(0,2)→(1,2)→(2,2)→(2,1) spells 'ABCCED'.",
+          description: "Return true immediately. The path (0,0)→(0,1)→(0,2)→(1,2)→(2,2)→(2,1) spells 'ABCCED'.",
         },
         {
           step: 9,
@@ -212,8 +204,7 @@ const config: AlgoVideoConfig = {
         },
         {
           name: "Longest Word in Grid",
-          description:
-            "Find the longest word from a given list that can be formed in the grid, combining Trie + DFS.",
+          description: "Find the longest word from a given list that can be formed in the grid, combining Trie + DFS.",
         },
       ],
       tips: [
@@ -236,8 +227,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   },
-};
+}
 
 export default function WordSearchVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

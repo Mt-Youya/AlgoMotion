@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Manacher's Algorithm",
@@ -11,10 +11,10 @@ const config: AlgoVideoConfig = {
       heading: "What Is the Longest Palindromic Substring Problem?",
       bullets: [
         "Given a string s, find the longest contiguous substring that reads the same forwards and backwards.",
-        "Example: in \"babad\", both \"bab\" and \"aba\" are valid answers of length 3.",
+        'Example: in "babad", both "bab" and "aba" are valid answers of length 3.',
         "A brute-force check of all O(n²) substrings and verifying each in O(n) gives O(n³) total — far too slow.",
         "The classic expand-around-center approach improves this to O(n²), but Manacher's achieves O(n) by reusing previously computed palindrome radii.",
-        "The algorithm must handle both odd-length palindromes (\"aba\") and even-length palindromes (\"abba\") correctly.",
+        'The algorithm must handle both odd-length palindromes ("aba") and even-length palindromes ("abba") correctly.',
       ],
     },
 
@@ -25,19 +25,19 @@ const config: AlgoVideoConfig = {
         "The palindrome radius at i is at least min(R - i, P[i']), because the left half mirrors the right half.",
         "We only need to expand beyond R — never re-examine what's already inside a known palindrome.",
         "By transforming the string (inserting '#' separators), we unify odd and even palindromes into a single framework.",
-        "This \"lazy reuse\" of mirror information is what drives the amortized O(n) complexity — each character is visited at most twice.",
+        'This "lazy reuse" of mirror information is what drives the amortized O(n) complexity — each character is visited at most twice.',
       ],
       analogy:
         "Think of a rubber stamp shaped like a palindrome. Once you've stamped a large palindrome on paper, you can read off the shape of every smaller palindrome inside it for free — just look at the mirror image on the other side of the center.",
     },
 
     walkthrough: {
-      heading: "Step-by-Step: s = \"abacaba\"",
+      heading: 'Step-by-Step: s = "abacaba"',
       steps: [
         {
           step: 1,
           description:
-            "Transform the string by inserting '#' separators: \"abacaba\" → \"#a#b#a#c#a#b#a#\". This 15-character string T treats all palindromes as odd-length.",
+            'Transform the string by inserting \'#\' separators: "abacaba" → "#a#b#a#c#a#b#a#". This 15-character string T treats all palindromes as odd-length.',
         },
         {
           step: 2,
@@ -87,12 +87,12 @@ const config: AlgoVideoConfig = {
         {
           step: 11,
           description:
-            "Convert back to original string: start = (7 - 7) / 2 = 0, length = 7. The longest palindromic substring is s[0..6] = \"abacaba\".",
+            'Convert back to original string: start = (7 - 7) / 2 = 0, length = 7. The longest palindromic substring is s[0..6] = "abacaba".',
         },
         {
           step: 12,
           description:
-            "Final answer: \"abacaba\" with length 7. The entire input string is itself a palindrome in this example.",
+            'Final answer: "abacaba" with length 7. The entire input string is itself a palindrome in this example.',
         },
       ],
     },
@@ -180,7 +180,7 @@ print(manacher("abacaba"))  # "abacaba"
         {
           case: "Worst",
           complexity: "O(n)",
-          note: "Even for adversarial inputs like \"aaaa…a\", the algorithm stays linear.",
+          note: 'Even for adversarial inputs like "aaaa…a", the algorithm stays linear.',
         },
       ],
       spaceRows: [
@@ -217,8 +217,7 @@ print(manacher("abacaba"))  # "abacaba"
         },
         {
           name: "Longest Palindromic Subsequence",
-          description:
-            "A different problem (not contiguous) solved with DP in O(n²). Manacher's does not apply here.",
+          description: "A different problem (not contiguous) solved with DP in O(n²). Manacher's does not apply here.",
         },
         {
           name: "Palindrome Partitioning",
@@ -245,14 +244,14 @@ print(manacher("abacaba"))  # "abacaba"
         "Manacher's Algorithm solves the longest palindromic substring problem in O(n) time and O(n) space — optimal in both measures.",
         "The core insight is the mirror property: characters inside a known palindrome inherit radius information from their mirror counterpart, avoiding redundant work.",
         "The '#' transformation elegantly unifies odd and even palindromes, reducing the algorithm to a single case.",
-        "The right boundary R is the algorithm's \"memory\" — it monotonically advances, ensuring each position is expanded at most once in total.",
+        'The right boundary R is the algorithm\'s "memory" — it monotonically advances, ensuring each position is expanded at most once in total.',
         "The P array is a complete palindrome profile of the string: P[i] = k means there is a palindrome of length 2k+1 (in the transformed string) centered at i.",
         "Understanding Manacher's deeply unlocks faster solutions to related problems: palindrome counting, partitioning, and substring queries all benefit from the precomputed P array.",
       ],
     },
   },
-};
+}
 
 export default function ManacherVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

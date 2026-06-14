@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Kruskal's Algorithm",
@@ -251,8 +251,8 @@ print(mst)     # [('E','F',1), ('A','E',2), ('C','D',3), ('A','B',4), ('B','C',6
       ],
     },
   },
-};
+}
 
 export default function KruskalVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

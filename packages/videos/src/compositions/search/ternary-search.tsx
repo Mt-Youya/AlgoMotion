@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Ternary Search",
-  subtitle:
-    "Divides the search space into three equal parts using two midpoints and eliminates one third each it",
+  subtitle: "Divides the search space into three equal parts using two midpoints and eliminates one third each it",
   category: "search",
   difficulty: "intermediate",
 
@@ -41,10 +40,7 @@ const config: AlgoVideoConfig = {
           description: "Start with the sorted array and set lo = 0, hi = n - 1.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "blue", "blue", "blue", "blue", "blue",
-              "blue", "blue", "blue", "blue", "blue",
-            ],
+            colors: ["blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"],
           },
         },
         {
@@ -52,10 +48,7 @@ const config: AlgoVideoConfig = {
           description: "Target = 23. Compute mid1 = lo + (hi - lo) / 3 = 3, mid2 = hi - (hi - lo) / 3 = 6.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "blue", "blue", "blue", "yellow", "blue",
-              "blue", "purple", "blue", "blue", "blue",
-            ],
+            colors: ["blue", "blue", "blue", "yellow", "blue", "blue", "purple", "blue", "blue", "blue"],
           },
         },
         {
@@ -63,21 +56,16 @@ const config: AlgoVideoConfig = {
           description: "Compare target (23) with data[mid1] = data[3] = 12. Since 23 > 12, continue.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "yellow", "blue",
-              "blue", "purple", "blue", "blue", "blue",
-            ],
+            colors: ["gray", "gray", "gray", "yellow", "blue", "blue", "purple", "blue", "blue", "blue"],
           },
         },
         {
           step: 4,
-          description: "Compare target (23) with data[mid2] = data[6] = 38. Since 23 < 38, the target is in the middle third.",
+          description:
+            "Compare target (23) with data[mid2] = data[6] = 38. Since 23 < 38, the target is in the middle third.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "yellow", "blue",
-              "blue", "purple", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "yellow", "blue", "blue", "purple", "gray", "gray", "gray"],
           },
         },
         {
@@ -85,10 +73,7 @@ const config: AlgoVideoConfig = {
           description: "Eliminate left and right thirds: set lo = mid1 + 1 = 4, hi = mid2 - 1 = 5.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "blue",
-              "blue", "gray", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "blue", "blue", "gray", "gray", "gray", "gray"],
           },
         },
         {
@@ -96,10 +81,7 @@ const config: AlgoVideoConfig = {
           description: "Iteration 2: Compute mid1 = 4 + (5 - 4) / 3 = 4, mid2 = 5 - (5 - 4) / 3 = 5.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "yellow",
-              "purple", "gray", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "yellow", "purple", "gray", "gray", "gray", "gray"],
           },
         },
         {
@@ -108,13 +90,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description: "Compare target (23) with data[mid2] = data[5] = 23. Target equals data[mid2]! Found at index 5.",
+          description:
+            "Compare target (23) with data[mid2] = data[5] = 23. Target equals data[mid2]! Found at index 5.",
           array: {
             values: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72],
-            colors: [
-              "gray", "gray", "gray", "gray", "gray",
-              "green", "gray", "gray", "gray", "gray",
-            ],
+            colors: ["gray", "gray", "gray", "gray", "gray", "green", "gray", "gray", "gray", "gray"],
           },
         },
         {
@@ -257,8 +237,8 @@ print(ternary_search(arr, 100))  # Output: -1`,
       ],
     },
   ],
-};
+}
 
 export default function TernarySearchVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

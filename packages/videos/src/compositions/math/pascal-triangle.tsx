@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Pascal's Triangle",
-  subtitle:
-    "Generates the first n rows of Pascal's triangle where each element is the sum of the two above it.",
+  subtitle: "Generates the first n rows of Pascal's triangle where each element is the sum of the two above it.",
   category: "math",
   difficulty: "beginner",
 
@@ -43,18 +42,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Row 1 has no interior elements. Append trailing 1. Row 1 = [1, 1].",
+          description: "Row 1 has no interior elements. Append trailing 1. Row 1 = [1, 1].",
         },
         {
           step: 4,
-          description:
-            "Build row 2. Previous row is [1, 1]. Interior element: 1+1=2. Row 2 = [1, 2, 1].",
+          description: "Build row 2. Previous row is [1, 1]. Interior element: 1+1=2. Row 2 = [1, 2, 1].",
         },
         {
           step: 5,
-          description:
-            "Build row 3. Previous row is [1, 2, 1]. Interior elements: 1+2=3, 2+1=3. Row 3 = [1, 3, 3, 1].",
+          description: "Build row 3. Previous row is [1, 2, 1]. Interior elements: 1+2=3, 2+1=3. Row 3 = [1, 3, 3, 1].",
         },
         {
           step: 6,
@@ -63,18 +59,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description:
-            "All 5 rows are complete. Verify symmetry: each row reads the same forwards and backwards.",
+          description: "All 5 rows are complete. Verify symmetry: each row reads the same forwards and backwards.",
         },
         {
           step: 8,
-          description:
-            "Verify row sums: 1, 2, 4, 8, 16 — each is a power of 2 (2^i for row i).",
+          description: "Verify row sums: 1, 2, 4, 8, 16 — each is a power of 2 (2^i for row i).",
         },
         {
           step: 9,
-          description:
-            "Final result: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]].",
+          description: "Final result: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]].",
         },
       ],
     },
@@ -164,28 +157,23 @@ if __name__ == "__main__":
       items: [
         {
           name: "Pascal's Triangle II (single row)",
-          description:
-            "Return only the k-th row using the rolling update trick in O(k) space.",
+          description: "Return only the k-th row using the rolling update trick in O(k) space.",
         },
         {
           name: "Triangle path sum (LeetCode 120)",
-          description:
-            "Find the minimum path sum from top to bottom of a triangle using bottom-up DP.",
+          description: "Find the minimum path sum from top to bottom of a triangle using bottom-up DP.",
         },
         {
           name: "Binomial coefficients",
-          description:
-            "Use Pascal's Triangle to compute C(n, k) in O(n²) preprocessing, O(1) query.",
+          description: "Use Pascal's Triangle to compute C(n, k) in O(n²) preprocessing, O(1) query.",
         },
         {
           name: "Sierpinski Triangle",
-          description:
-            "Colour cells whose value is odd to reveal the fractal Sierpinski pattern.",
+          description: "Colour cells whose value is odd to reveal the fractal Sierpinski pattern.",
         },
         {
           name: "Modular Pascal's Triangle",
-          description:
-            "Compute triangle[i][j] % p for prime p; Kummer's theorem predicts which entries are divisible.",
+          description: "Compute triangle[i][j] % p for prime p; Kummer's theorem predicts which entries are divisible.",
         },
       ],
       tips: [
@@ -208,8 +196,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function PascalTriangleVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

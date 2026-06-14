@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "3Sum",
-  subtitle:
-    "Finds all unique triplets in a sorted array that sum to zero using a fixed pointer plus two-pointer scan",
+  subtitle: "Finds all unique triplets in a sorted array that sum to zero using a fixed pointer plus two-pointer scan",
   category: "two-pointers",
   difficulty: "intermediate",
 
@@ -46,7 +45,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Sort the array",
-          description: "Sort nums in ascending order: [-4, -1, -1, 0, 1, 2]. Sorting is O(n log n) and enables the two-pointer technique.",
+          description:
+            "Sort nums in ascending order: [-4, -1, -1, 0, 1, 2]. Sorting is O(n log n) and enables the two-pointer technique.",
           arrayState: {
             values: [-4, -1, -1, 0, 1, 2],
             colors: ["white", "white", "white", "white", "white", "white"],
@@ -203,12 +203,24 @@ const config: AlgoVideoConfig = {
       timeRows: [
         { case: "Best", complexity: "O(n²)", note: "Even if no triplets exist, we still scan all pairs for each i." },
         { case: "Average", complexity: "O(n²)", note: "Outer loop O(n) × inner two-pointer scan O(n)." },
-        { case: "Worst", complexity: "O(n²)", note: "All elements are distinct and many triplets exist; no early exits trigger." },
+        {
+          case: "Worst",
+          complexity: "O(n²)",
+          note: "All elements are distinct and many triplets exist; no early exits trigger.",
+        },
       ],
       spaceRows: [
         { label: "Sorting (in-place)", complexity: "O(log n)", note: "Python's Timsort uses O(log n) stack space." },
-        { label: "Output list", complexity: "O(k)", note: "k = number of unique triplets found; not counted as auxiliary space." },
-        { label: "Auxiliary (pointers)", complexity: "O(1)", note: "Only a constant number of index variables are used." },
+        {
+          label: "Output list",
+          complexity: "O(k)",
+          note: "k = number of unique triplets found; not counted as auxiliary space.",
+        },
+        {
+          label: "Auxiliary (pointers)",
+          complexity: "O(1)",
+          note: "Only a constant number of index variables are used.",
+        },
       ],
       insights: [
         "The brute-force O(n³) approach checks every combination of three indices; sorting + two-pointers cuts this to O(n²) by eliminating the innermost loop.",
@@ -223,23 +235,28 @@ const config: AlgoVideoConfig = {
       variations: [
         {
           name: "3Sum Closest (LeetCode 16)",
-          description: "Instead of finding exact zero-sum triplets, find the triplet whose sum is closest to a given target. Track the minimum absolute difference as pointers move.",
+          description:
+            "Instead of finding exact zero-sum triplets, find the triplet whose sum is closest to a given target. Track the minimum absolute difference as pointers move.",
         },
         {
           name: "3Sum Smaller (LeetCode 259)",
-          description: "Count the number of triplets whose sum is less than a given target. When sum < target, all pairs (left, right-1), (left, right-2), … (left, left+1) are valid — add right - left to the count.",
+          description:
+            "Count the number of triplets whose sum is less than a given target. When sum < target, all pairs (left, right-1), (left, right-2), … (left, left+1) are valid — add right - left to the count.",
         },
         {
           name: "4Sum (LeetCode 18)",
-          description: "Generalize to four elements summing to a target. Add one more outer loop and apply the same two-pointer technique inside, giving O(n³) time.",
+          description:
+            "Generalize to four elements summing to a target. Add one more outer loop and apply the same two-pointer technique inside, giving O(n³) time.",
         },
         {
           name: "kSum (generalized recursion)",
-          description: "Recursively reduce kSum to (k-1)Sum until reaching the 2Sum base case. Enables solving any k-element sum problem with O(n^(k-1)) time.",
+          description:
+            "Recursively reduce kSum to (k-1)Sum until reaching the 2Sum base case. Enables solving any k-element sum problem with O(n^(k-1)) time.",
         },
         {
           name: "Two Sum II — sorted array (LeetCode 167)",
-          description: "The direct two-pointer building block for 3Sum. Finding two elements that sum to a target in a sorted array in O(n) time.",
+          description:
+            "The direct two-pointer building block for 3Sum. Finding two elements that sum to a target in a sorted array in O(n) time.",
         },
       ],
       tips: [
@@ -263,8 +280,8 @@ const config: AlgoVideoConfig = {
       ],
     },
   ],
-};
+}
 
 export default function ThreeSumVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

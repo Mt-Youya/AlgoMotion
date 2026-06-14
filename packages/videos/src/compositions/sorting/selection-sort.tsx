@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Selection Sort",
-  subtitle:
-    "Finds the minimum element in the unsorted portion and places it at the beginning each pass.",
+  subtitle: "Finds the minimum element in the unsorted portion and places it at the beginning each pass.",
   category: "sorting",
   difficulty: "beginner",
 
@@ -48,8 +47,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Pass 1: set i = 0. Scan indices 0–4 to find the minimum value.",
+          description: "Pass 1: set i = 0. Scan indices 0–4 to find the minimum value.",
           arrayState: {
             values: [64, 25, 12, 22, 11],
             colors: ["active", "scanning", "scanning", "scanning", "scanning"],
@@ -57,8 +55,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Minimum found: value 11 at index 4. Swap index 0 with index 4.",
+          description: "Minimum found: value 11 at index 4. Swap index 0 with index 4.",
           arrayState: {
             values: [11, 25, 12, 22, 64],
             colors: ["sorted", "default", "default", "default", "default"],
@@ -66,8 +63,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description:
-            "Pass 2: set i = 1. Scan indices 1–4 to find the next minimum.",
+          description: "Pass 2: set i = 1. Scan indices 1–4 to find the next minimum.",
           arrayState: {
             values: [11, 25, 12, 22, 64],
             colors: ["sorted", "active", "scanning", "scanning", "scanning"],
@@ -75,8 +71,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description:
-            "Minimum found: value 12 at index 2. Swap index 1 with index 2.",
+          description: "Minimum found: value 12 at index 2. Swap index 1 with index 2.",
           arrayState: {
             values: [11, 12, 25, 22, 64],
             colors: ["sorted", "sorted", "default", "default", "default"],
@@ -84,8 +79,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description:
-            "Pass 3: set i = 2. Scan indices 2–4. Minimum is 22 at index 3. Swap index 2 with index 3.",
+          description: "Pass 3: set i = 2. Scan indices 2–4. Minimum is 22 at index 3. Swap index 2 with index 3.",
           arrayState: {
             values: [11, 12, 22, 25, 64],
             colors: ["sorted", "sorted", "sorted", "default", "default"],
@@ -102,8 +96,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description:
-            "Pass 5: only one element remains at index 4. It is trivially sorted.",
+          description: "Pass 5: only one element remains at index 4. It is trivially sorted.",
           arrayState: {
             values: [11, 12, 22, 25, 64],
             colors: ["sorted", "sorted", "sorted", "sorted", "sorted"],
@@ -111,8 +104,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "Array is fully sorted. Total comparisons: 10 = n(n-1)/2 for n = 5. Total swaps: ≤ 4 = n-1.",
+          description: "Array is fully sorted. Total comparisons: 10 = n(n-1)/2 for n = 5. Total swaps: ≤ 4 = n-1.",
           arrayState: {
             values: [11, 12, 22, 25, 64],
             colors: ["sorted", "sorted", "sorted", "sorted", "sorted"],
@@ -275,8 +267,8 @@ if __name__ == "__main__":
       ],
     },
   ],
-};
+}
 
 export default function SelectionSortVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

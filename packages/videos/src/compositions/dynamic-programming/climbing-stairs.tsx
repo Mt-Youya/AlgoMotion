@@ -62,8 +62,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Set base case dp[1] = 1",
-          description:
-            "There is exactly one way to reach stair 1: take a single 1-step from stair 0. dp[1] = 1.",
+          description: "There is exactly one way to reach stair 1: take a single 1-step from stair 0. dp[1] = 1.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 1, color: "#CEEB5A" },
@@ -118,8 +117,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Fill dp[5] = dp[4] + dp[3] = 8",
-          description:
-            "To reach stair 5: come from stair 4 (5 ways) or from stair 3 (3 ways). Total = 8.",
+          description: "To reach stair 5: come from stair 4 (5 ways) or from stair 3 (3 ways). Total = 8.",
           array: [
             { value: 1, color: "#CEEB5A" },
             { value: 1, color: "#CEEB5A" },

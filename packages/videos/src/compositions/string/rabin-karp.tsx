@@ -35,32 +35,30 @@ const config: AlgoVideoConfig = {
         {
           label: "Input",
           description:
-            "text = \"abcacabab\", pattern = \"cab\". We want all starting indices where \"cab\" appears. n = 9, m = 3.",
+            'text = "abcacabab", pattern = "cab". We want all starting indices where "cab" appears. n = 9, m = 3.',
         },
         {
           label: "Compute pattern hash",
           description:
-            "Using base b = 31 and modulus q = 101: hash(\"cab\") = (3·31² + 1·31 + 2) % 101 = (2883 + 31 + 2) % 101 = 2916 % 101 = 9. This is our target hash.",
+            'Using base b = 31 and modulus q = 101: hash("cab") = (3·31² + 1·31 + 2) % 101 = (2883 + 31 + 2) % 101 = 2916 % 101 = 9. This is our target hash.',
         },
         {
           label: "Compute first window hash",
           description:
-            "First window is text[0..2] = \"abc\". hash(\"abc\") = (1·31² + 2·31 + 3) % 101 = (961 + 62 + 3) % 101 = 1026 % 101 = 14. 14 ≠ 9 → skip.",
+            'First window is text[0..2] = "abc". hash("abc") = (1·31² + 2·31 + 3) % 101 = (961 + 62 + 3) % 101 = 1026 % 101 = 14. 14 ≠ 9 → skip.',
         },
         {
           label: "Roll hash: window moves to index 1",
           description:
-            "Window becomes text[1..3] = \"bca\". Rolling update: h_new = (h_old − text[0]·b^(m-1))·b + text[3] (mod q) = (14 − 1·961)·31 + 1 (mod 101) = ... = 45. 45 ≠ 9 → skip.",
+            'Window becomes text[1..3] = "bca". Rolling update: h_new = (h_old − text[0]·b^(m-1))·b + text[3] (mod q) = (14 − 1·961)·31 + 1 (mod 101) = ... = 45. 45 ≠ 9 → skip.',
         },
         {
           label: "Roll hash: window moves to index 2",
-          description:
-            "Window becomes text[2..4] = \"cac\". Hash = 27. 27 ≠ 9 → skip.",
+          description: 'Window becomes text[2..4] = "cac". Hash = 27. 27 ≠ 9 → skip.',
         },
         {
           label: "Roll hash: window moves to index 3",
-          description:
-            "Window becomes text[3..5] = \"aca\". Hash = 55. 55 ≠ 9 → skip.",
+          description: 'Window becomes text[3..5] = "aca". Hash = 55. 55 ≠ 9 → skip.',
         },
         {
           label: "Roll hash: window moves to index 4",
@@ -69,23 +67,20 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Match confirmed at index 4",
-          description:
-            "Record index 4 as a match. Continue rolling the hash to search for further occurrences.",
+          description: "Record index 4 as a match. Continue rolling the hash to search for further occurrences.",
         },
         {
           label: "Roll hash: window moves to index 5",
-          description:
-            "Window becomes text[5..7] = \"aba\". Hash = 36. 36 ≠ 9 → skip.",
+          description: 'Window becomes text[5..7] = "aba". Hash = 36. 36 ≠ 9 → skip.',
         },
         {
           label: "Roll hash: window moves to index 6",
-          description:
-            "Window becomes text[6..8] = \"bab\". Hash = 71. 71 ≠ 9 → skip. All windows exhausted.",
+          description: 'Window becomes text[6..8] = "bab". Hash = 71. 71 ≠ 9 → skip. All windows exhausted.',
         },
         {
           label: "Final result",
           description:
-            "Pattern \"cab\" found at index 4. Total work: O(n + m) average — only one window required full character verification. The rolling hash skipped all other windows in O(1) each.",
+            'Pattern "cab" found at index 4. Total work: O(n + m) average — only one window required full character verification. The rolling hash skipped all other windows in O(1) each.',
         },
       ],
     },
@@ -162,7 +157,7 @@ if __name__ == "__main__":
         },
         {
           lines: [42, 43],
-          note: "rabin_karp(\"aaaa\", \"aa\") returns [0, 1, 2] — all overlapping occurrences are reported because the loop runs for every starting index from 0 to n-m inclusive.",
+          note: 'rabin_karp("aaaa", "aa") returns [0, 1, 2] — all overlapping occurrences are reported because the loop runs for every starting index from 0 to n-m inclusive.',
         },
       ],
     },
@@ -197,7 +192,7 @@ if __name__ == "__main__":
         },
       ],
       notes: [
-        "The O(nm) worst case occurs only when every window has the same hash as the pattern (e.g., searching for \"aaa\" in \"aaaa…\"). With a large prime modulus this is astronomically unlikely in practice.",
+        'The O(nm) worst case occurs only when every window has the same hash as the pattern (e.g., searching for "aaa" in "aaaa…"). With a large prime modulus this is astronomically unlikely in practice.',
         "Using a double hash (two independent (base, mod) pairs) reduces the collision probability to roughly 1 / (q1 · q2), making false positives negligible even for adversarial inputs.",
         "For searching k patterns simultaneously, store all k pattern hashes in a hash set. The text scan remains O(n) regardless of k, giving O(n + k·m) total — far better than running k separate searches.",
       ],
@@ -214,7 +209,7 @@ if __name__ == "__main__":
         "Choose a large prime modulus (e.g., 10^9 + 7 or 10^9 + 9) to minimize collisions. Avoid small moduli like 101 in production code — they are only used for illustration.",
         "Always verify character by character after a hash match. Skipping verification trades correctness for speed and will eventually produce wrong answers on adversarial inputs.",
         "When the alphabet is large (e.g., Unicode), map characters to small integers first to avoid overflow when computing base^(m-1) in languages without big integers.",
-        "For overlapping matches (e.g., \"aa\" in \"aaaa\"), ensure the loop runs from i = 0 to i = n - m inclusive and does not skip positions after a match.",
+        'For overlapping matches (e.g., "aa" in "aaaa"), ensure the loop runs from i = 0 to i = n - m inclusive and does not skip positions after a match.',
       ],
     },
     summary: {

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Unbounded Knapsack",
@@ -36,7 +36,8 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description: "Initialize dp array of size W+1 = 9, all values set to 0. Items: A(w=2,v=3), B(w=3,v=4), C(w=4,v=5).",
+          description:
+            "Initialize dp array of size W+1 = 9, all values set to 0. Items: A(w=2,v=3), B(w=3,v=4), C(w=4,v=5).",
           values: [0, 0, 0, 0, 0, 0, 0, 0, 0],
           colors: ["green", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"],
         },
@@ -100,7 +101,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 12,
-          description: "If no item fits any capacity > 0, dp remains all zeros — the knapsack cannot be filled profitably.",
+          description:
+            "If no item fits any capacity > 0, dp remains all zeros — the knapsack cannot be filled profitably.",
         },
       ],
     },
@@ -227,23 +229,28 @@ print(reconstruct(capacity, weights, values, dp))  # [0, 0, 0, 0] → 4× item 0
       items: [
         {
           name: "0/1 Knapsack",
-          description: "Each item can be taken at most once. Requires iterating capacity in reverse (or using a 2-D table) to prevent reuse within the same pass.",
+          description:
+            "Each item can be taken at most once. Requires iterating capacity in reverse (or using a 2-D table) to prevent reuse within the same pass.",
         },
         {
           name: "Bounded Knapsack",
-          description: "Each item i has a maximum quantity limit kᵢ. Can be solved by binary decomposition of quantities or a monotone deque optimization for O(W × n) time.",
+          description:
+            "Each item i has a maximum quantity limit kᵢ. Can be solved by binary decomposition of quantities or a monotone deque optimization for O(W × n) time.",
         },
         {
           name: "Coin Change (Minimum Coins)",
-          description: "Special case of Unbounded Knapsack where all values are 1 and weights are coin denominations. Goal is to minimize count instead of maximize value.",
+          description:
+            "Special case of Unbounded Knapsack where all values are 1 and weights are coin denominations. Goal is to minimize count instead of maximize value.",
         },
         {
           name: "Rod Cutting",
-          description: "Cut a rod of length n into pieces with given prices per length. Identical structure — length is the capacity, piece lengths are weights, prices are values.",
+          description:
+            "Cut a rod of length n into pieces with given prices per length. Identical structure — length is the capacity, piece lengths are weights, prices are values.",
         },
         {
           name: "Integer Partition / Combination Sum",
-          description: "Count the number of ways to fill exactly capacity W. Replace max with sum in the recurrence: dp[w] += dp[w - wᵢ].",
+          description:
+            "Count the number of ways to fill exactly capacity W. Replace max with sum in the recurrence: dp[w] += dp[w - wᵢ].",
         },
       ],
       tips: [
@@ -266,8 +273,8 @@ print(reconstruct(capacity, weights, values, dp))  # [0, 0, 0, 0] → 4× item 0
       ],
     },
   },
-};
+}
 
 export default function KnapsackUnboundedVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

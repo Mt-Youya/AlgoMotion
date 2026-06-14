@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Knight's Tour",
-  subtitle:
-    "Find moves for a chess knight to visit every square exactly once.",
+  subtitle: "Find moves for a chess knight to visit every square exactly once.",
   category: "backtracking",
   difficulty: "expert",
 
@@ -287,8 +286,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function KnightsTourVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

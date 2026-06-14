@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Postorder Traversal",
@@ -41,8 +41,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Move to node 2 (left child of root). Before visiting 2, explore its left subtree rooted at 4.",
+          description: "Move to node 2 (left child of root). Before visiting 2, explore its left subtree rooted at 4.",
         },
         {
           step: 3,
@@ -51,13 +50,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description:
-            "Back at node 2. Left subtree done. Now explore the right subtree rooted at 5.",
+          description: "Back at node 2. Left subtree done. Now explore the right subtree rooted at 5.",
         },
         {
           step: 5,
-          description:
-            "Move to node 5 (right child of 2). Node 5 is a leaf. Visit node 5. Result so far: [4, 5].",
+          description: "Move to node 5 (right child of 2). Node 5 is a leaf. Visit node 5. Result so far: [4, 5].",
         },
         {
           step: 6,
@@ -81,8 +78,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "Back at node 3. Both children (6 and 7) done. Visit node 3. Result so far: [4, 5, 2, 6, 7, 3].",
+          description: "Back at node 3. Both children (6 and 7) done. Visit node 3. Result so far: [4, 5, 2, 6, 7, 3].",
         },
         {
           step: 11,
@@ -196,8 +192,7 @@ if __name__ == "__main__":
         {
           case: "Best",
           notation: "O(n)",
-          explanation:
-            "Every node must be visited exactly once regardless of tree shape — no shortcuts exist.",
+          explanation: "Every node must be visited exactly once regardless of tree shape — no shortcuts exist.",
         },
         {
           case: "Average",
@@ -216,8 +211,7 @@ if __name__ == "__main__":
         {
           type: "Recursive call stack",
           notation: "O(h)",
-          explanation:
-            "h is the height of the tree. O(log n) for a balanced tree, O(n) for a completely skewed tree.",
+          explanation: "h is the height of the tree. O(log n) for a balanced tree, O(n) for a completely skewed tree.",
         },
         {
           type: "Iterative stack",
@@ -228,8 +222,7 @@ if __name__ == "__main__":
         {
           type: "Output array",
           notation: "O(n)",
-          explanation:
-            "Storing the traversal result requires one slot per node, contributing O(n) auxiliary space.",
+          explanation: "Storing the traversal result requires one slot per node, contributing O(n) auxiliary space.",
         },
       ],
       insights: [
@@ -288,8 +281,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function TreePostorderVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

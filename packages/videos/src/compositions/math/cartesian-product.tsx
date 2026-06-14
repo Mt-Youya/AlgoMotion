@@ -44,38 +44,31 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Outer loop: pick a = 1",
-          description:
-            "Fix a = 1 (first element of A). The inner loop will now pair 1 with every element of B.",
+          description: "Fix a = 1 (first element of A). The inner loop will now pair 1 with every element of B.",
         },
         {
           label: "Inner loop: pair (1, x) and (1, y)",
-          description:
-            "Iterate b over B = {x, y}. Append (1, x) then (1, y) to result. result = [(1,x), (1,y)].",
+          description: "Iterate b over B = {x, y}. Append (1, x) then (1, y) to result. result = [(1,x), (1,y)].",
         },
         {
           label: "Outer loop: pick a = 2",
-          description:
-            "Advance the outer loop to a = 2. The inner loop restarts from the beginning of B.",
+          description: "Advance the outer loop to a = 2. The inner loop restarts from the beginning of B.",
         },
         {
           label: "Inner loop: pair (2, x) and (2, y)",
-          description:
-            "Append (2, x) then (2, y). result = [(1,x), (1,y), (2,x), (2,y)].",
+          description: "Append (2, x) then (2, y). result = [(1,x), (1,y), (2,x), (2,y)].",
         },
         {
           label: "Outer loop: pick a = 3",
-          description:
-            "Advance the outer loop to a = 3, the last element of A.",
+          description: "Advance the outer loop to a = 3, the last element of A.",
         },
         {
           label: "Inner loop: pair (3, x) and (3, y)",
-          description:
-            "Append (3, x) then (3, y). result = [(1,x), (1,y), (2,x), (2,y), (3,x), (3,y)].",
+          description: "Append (3, x) then (3, y). result = [(1,x), (1,y), (2,x), (2,y), (3,x), (3,y)].",
         },
         {
           label: "Outer loop exhausted",
-          description:
-            "All elements of A have been processed. The outer loop exits. We have produced all 6 pairs.",
+          description: "All elements of A have been processed. The outer loop exits. We have produced all 6 pairs.",
         },
         {
           label: "Return the result",
@@ -159,14 +152,14 @@ if __name__ == "__main__":
     },
     complexity: {
       timeRows: [
-        { label: "Best Case",    value: "O(|A| · |B|)", color: "#CEEB5A" },
+        { label: "Best Case", value: "O(|A| · |B|)", color: "#CEEB5A" },
         { label: "Average Case", value: "O(|A| · |B|)", color: "#2255CC" },
-        { label: "Worst Case",   value: "O(|A| · |B|)", color: "#E05A3A" },
+        { label: "Worst Case", value: "O(|A| · |B|)", color: "#E05A3A" },
       ],
       spaceRows: [
         { label: "Output storage", value: "O(|A| · |B|)", color: "#2255CC" },
-        { label: "Working memory", value: "O(1)",          color: "#CEEB5A" },
-        { label: "n-ary product",  value: "O(∏|Sᵢ|)",     color: "#E05A3A" },
+        { label: "Working memory", value: "O(1)", color: "#CEEB5A" },
+        { label: "n-ary product", value: "O(∏|Sᵢ|)", color: "#E05A3A" },
       ],
       notes: [
         "The output itself is Θ(|A|·|B|) entries, so no algorithm can avoid this cost — the time complexity is output-sensitive and optimal.",

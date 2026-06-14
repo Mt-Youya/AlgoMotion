@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Prime Factorization",
-  subtitle:
-    "Decomposes an integer into its prime factors by trial division up to the square root.",
+  subtitle: "Decomposes an integer into its prime factors by trial division up to the square root.",
   category: "math",
   difficulty: "intermediate",
 
@@ -41,53 +40,43 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "d = 2, d² = 4 ≤ 360. Check 360 % 2 == 0 → yes. Append 2, n = 180. factors = [2].",
+          description: "d = 2, d² = 4 ≤ 360. Check 360 % 2 == 0 → yes. Append 2, n = 180. factors = [2].",
         },
         {
           step: 3,
-          description:
-            "Still d = 2. 180 % 2 == 0 → yes. Append 2, n = 90. factors = [2, 2].",
+          description: "Still d = 2. 180 % 2 == 0 → yes. Append 2, n = 90. factors = [2, 2].",
         },
         {
           step: 4,
-          description:
-            "Still d = 2. 90 % 2 == 0 → yes. Append 2, n = 45. factors = [2, 2, 2].",
+          description: "Still d = 2. 90 % 2 == 0 → yes. Append 2, n = 45. factors = [2, 2, 2].",
         },
         {
           step: 5,
-          description:
-            "Still d = 2. 45 % 2 == 1 → no. Increment d to 3.",
+          description: "Still d = 2. 45 % 2 == 1 → no. Increment d to 3.",
         },
         {
           step: 6,
-          description:
-            "d = 3, d² = 9 ≤ 45. 45 % 3 == 0 → yes. Append 3, n = 15. factors = [2, 2, 2, 3].",
+          description: "d = 3, d² = 9 ≤ 45. 45 % 3 == 0 → yes. Append 3, n = 15. factors = [2, 2, 2, 3].",
         },
         {
           step: 7,
-          description:
-            "Still d = 3. 15 % 3 == 0 → yes. Append 3, n = 5. factors = [2, 2, 2, 3, 3].",
+          description: "Still d = 3. 15 % 3 == 0 → yes. Append 3, n = 5. factors = [2, 2, 2, 3, 3].",
         },
         {
           step: 8,
-          description:
-            "Still d = 3. 5 % 3 == 2 → no. Increment d to 4.",
+          description: "Still d = 3. 5 % 3 == 2 → no. Increment d to 4.",
         },
         {
           step: 9,
-          description:
-            "d = 4, d² = 16 > 5. Exit outer while loop.",
+          description: "d = 4, d² = 16 > 5. Exit outer while loop.",
         },
         {
           step: 10,
-          description:
-            "n = 5 > 1, so 5 is a prime factor. Append 5. factors = [2, 2, 2, 3, 3, 5].",
+          description: "n = 5 > 1, so 5 is a prime factor. Append 5. factors = [2, 2, 2, 3, 3, 5].",
         },
         {
           step: 11,
-          description:
-            "Return [2, 2, 2, 3, 3, 5]. Verify: 2³ × 3² × 5 = 8 × 9 × 5 = 360. ✓",
+          description: "Return [2, 2, 2, 3, 3, 5]. Verify: 2³ × 3² × 5 = 8 × 9 × 5 = 360. ✓",
         },
       ],
     },
@@ -174,8 +163,7 @@ if __name__ == "__main__":
         {
           case: "Output list",
           notation: "O(log n)",
-          description:
-            "A number n has at most log₂(n) prime factors (each factor is ≥ 2, so repeated halving).",
+          description: "A number n has at most log₂(n) prime factors (each factor is ≥ 2, so repeated halving).",
         },
         {
           case: "Auxiliary",
@@ -239,8 +227,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function PrimeFactorizationVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

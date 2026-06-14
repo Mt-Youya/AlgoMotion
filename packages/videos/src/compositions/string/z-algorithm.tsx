@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Z-Algorithm",
@@ -13,7 +13,7 @@ const config: AlgoVideoConfig = {
         "Given a string S of length n, the Z-array Z has the same length n.",
         "Z[i] is defined as the length of the longest substring starting at index i that is also a prefix of S.",
         "Z[0] is conventionally set to 0 or n — it is not meaningful since the whole string is trivially a prefix of itself.",
-        "For example, S = \"aabxaab\" gives Z = [0, 1, 0, 0, 3, 1, 0].",
+        'For example, S = "aabxaab" gives Z = [0, 1, 0, 0, 3, 1, 0].',
         "The Z-array enables O(n) exact pattern matching by concatenating pattern, separator, and text.",
       ],
     },
@@ -32,7 +32,7 @@ const config: AlgoVideoConfig = {
     },
 
     walkthrough: {
-      heading: "Step-by-Step: S = \"aabxaab\"",
+      heading: 'Step-by-Step: S = "aabxaab"',
       steps: [
         {
           step: 1,
@@ -42,7 +42,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description: "i = 1: i > R, expand naively. S[1]='a' == S[0]='a', S[2]='b' ≠ S[1]='a'. Z[1] = 1. Update L=1, R=1.",
+          description:
+            "i = 1: i > R, expand naively. S[1]='a' == S[0]='a', S[2]='b' ≠ S[1]='a'. Z[1] = 1. Update L=1, R=1.",
           values: ["a", "a", "b", "x", "a", "a", "b"],
           colors: ["green", "yellow", "gray", "gray", "gray", "gray", "gray"],
         },
@@ -66,13 +67,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description: "i = 5: i ≤ R. Mirror index k = i - L = 1. Z[k] = Z[1] = 1. R - i + 1 = 2. Z[1] < 2, so Z[5] = 1.",
+          description:
+            "i = 5: i ≤ R. Mirror index k = i - L = 1. Z[k] = Z[1] = 1. R - i + 1 = 2. Z[1] < 2, so Z[5] = 1.",
           values: ["a", "a", "b", "x", "a", "a", "b"],
           colors: ["gray", "gray", "gray", "gray", "gray", "yellow", "gray"],
         },
         {
           step: 7,
-          description: "i = 6: i ≤ R. Mirror index k = 2. Z[2] = 0. R - i + 1 = 1. Z[2] < 1? No, equal. Try to extend: S[7] out of bounds. Z[6] = 0.",
+          description:
+            "i = 6: i ≤ R. Mirror index k = 2. Z[2] = 0. R - i + 1 = 1. Z[2] < 1? No, equal. Try to extend: S[7] out of bounds. Z[6] = 0.",
           values: ["a", "a", "b", "x", "a", "a", "b"],
           colors: ["gray", "gray", "gray", "gray", "gray", "gray", "yellow"],
         },
@@ -157,7 +160,7 @@ def search(pattern: str, text: str) -> list[int]:
       timeRows: [
         { case: "Best", notation: "O(n)", note: "No extensions needed (all mismatches)" },
         { case: "Average", notation: "O(n)", note: "Each character visited at most twice" },
-        { case: "Worst", notation: "O(n)", note: "Guaranteed linear — e.g. \"aaaa...a\"" },
+        { case: "Worst", notation: "O(n)", note: 'Guaranteed linear — e.g. "aaaa...a"' },
       ],
       spaceRows: [
         { resource: "Z-array", notation: "O(n)", note: "Stores one value per character" },
@@ -175,7 +178,8 @@ def search(pattern: str, text: str) -> list[int]:
       variations: [
         {
           name: "KMP Algorithm",
-          description: "Uses a failure/prefix function instead of Z-array. Equivalent power, different bookkeeping style.",
+          description:
+            "Uses a failure/prefix function instead of Z-array. Equivalent power, different bookkeeping style.",
         },
         {
           name: "Z-Algorithm on Circular Strings",
@@ -187,7 +191,8 @@ def search(pattern: str, text: str) -> list[int]:
         },
         {
           name: "Multiple Pattern Search",
-          description: "Build a combined string P1$P2$...Pk$T and run Z once to find all pattern occurrences simultaneously.",
+          description:
+            "Build a combined string P1$P2$...Pk$T and run Z once to find all pattern occurrences simultaneously.",
         },
         {
           name: "Z-Algorithm on Suffix Array Construction",
@@ -214,8 +219,8 @@ def search(pattern: str, text: str) -> list[int]:
       ],
     },
   },
-};
+}
 
 export default function ZAlgorithmVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

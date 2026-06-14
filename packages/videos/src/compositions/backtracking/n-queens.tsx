@@ -15,8 +15,7 @@ const config: AlgoVideoConfig = {
         "The problem is a classic constraint-satisfaction problem used to benchmark backtracking.",
         "Naive brute-force places queens in all N^N positions; smart backtracking prunes invalid branches early.",
       ],
-      callout:
-        "N-Queens is the canonical example for understanding backtracking: try, check, undo, retry.",
+      callout: "N-Queens is the canonical example for understanding backtracking: try, check, undo, retry.",
     },
     intuition: {
       heading: "Try, Fail Fast, Backtrack",

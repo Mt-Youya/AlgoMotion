@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Word Break",
@@ -12,9 +12,9 @@ const config: AlgoVideoConfig = {
       bullets: [
         "Given a string s and a dictionary of words word_dict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.",
         "Each word in the dictionary may be reused multiple times in the segmentation.",
-        "Example: s = \"leetcode\", word_dict = [\"leet\", \"code\"] → true (\"leet\" + \"code\").",
-        "Example: s = \"applepenapple\", word_dict = [\"apple\", \"pen\"] → true (\"apple\" + \"pen\" + \"apple\").",
-        "Example: s = \"catsandog\", word_dict = [\"cats\", \"dog\", \"sand\", \"and\", \"cat\"] → false (no valid segmentation).",
+        'Example: s = "leetcode", word_dict = ["leet", "code"] → true ("leet" + "code").',
+        'Example: s = "applepenapple", word_dict = ["apple", "pen"] → true ("apple" + "pen" + "apple").',
+        'Example: s = "catsandog", word_dict = ["cats", "dog", "sand", "and", "cat"] → false (no valid segmentation).',
       ],
     },
 
@@ -207,23 +207,28 @@ print(word_break(s3, word_dict3))  # False`,
       items: [
         {
           name: "Word Break II (Return All Sentences)",
-          description: "Instead of returning a boolean, return all possible sentences formed by inserting spaces. Requires backtracking on top of the DP reachability table to reconstruct paths.",
+          description:
+            "Instead of returning a boolean, return all possible sentences formed by inserting spaces. Requires backtracking on top of the DP reachability table to reconstruct paths.",
         },
         {
           name: "Word Break with Word Reuse Count",
-          description: "Count the number of distinct ways to segment the string. Change the boolean dp to an integer dp and accumulate counts instead of short-circuiting with break.",
+          description:
+            "Count the number of distinct ways to segment the string. Change the boolean dp to an integer dp and accumulate counts instead of short-circuiting with break.",
         },
         {
           name: "Concatenated Words",
-          description: "Find all words in a list that can be formed by concatenating other words from the same list. Apply word break to each word using the remaining words as the dictionary.",
+          description:
+            "Find all words in a list that can be formed by concatenating other words from the same list. Apply word break to each word using the remaining words as the dictionary.",
         },
         {
           name: "Trie-Optimized Word Break",
-          description: "Build a trie from the dictionary and traverse it character by character. This avoids repeated string slicing and is faster when max word length is small relative to string length.",
+          description:
+            "Build a trie from the dictionary and traverse it character by character. This avoids repeated string slicing and is faster when max word length is small relative to string length.",
         },
         {
           name: "Segment String with Minimum Cuts",
-          description: "Find the minimum number of dictionary words needed to cover the string, or determine the minimum number of characters that cannot be covered.",
+          description:
+            "Find the minimum number of dictionary words needed to cover the string, or determine the minimum number of characters that cannot be covered.",
         },
       ],
       tips: [
@@ -246,8 +251,8 @@ print(word_break(s3, word_dict3))  # False`,
       ],
     },
   },
-};
+}
 
 export default function WordBreakVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

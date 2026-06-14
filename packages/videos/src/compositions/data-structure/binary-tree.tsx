@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Binary Tree",
@@ -44,23 +44,19 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Insert node 2 as the left child of root (node 1). The tree now has two nodes.",
+          description: "Insert node 2 as the left child of root (node 1). The tree now has two nodes.",
         },
         {
           step: 4,
-          description:
-            "Insert node 3 as the right child of root (node 1). Root now has both children.",
+          description: "Insert node 3 as the right child of root (node 1). Root now has both children.",
         },
         {
           step: 5,
-          description:
-            "Insert nodes 4 and 5 as left and right children of node 2 (level 2).",
+          description: "Insert nodes 4 and 5 as left and right children of node 2 (level 2).",
         },
         {
           step: 6,
-          description:
-            "Insert nodes 6 and 7 as left and right children of node 3 (level 2). Tree is now complete.",
+          description: "Insert nodes 6 and 7 as left and right children of node 3 (level 2). Tree is now complete.",
         },
         {
           step: 7,
@@ -206,8 +202,7 @@ print(bt.height(bt.root))    # 2`,
         },
         {
           name: "Full Binary Tree",
-          description:
-            "Every node has exactly 0 or 2 children. No node has only one child. Used in Huffman encoding.",
+          description: "Every node has exactly 0 or 2 children. No node has only one child. Used in Huffman encoding.",
         },
         {
           name: "Perfect Binary Tree",
@@ -235,8 +230,8 @@ print(bt.height(bt.root))    # 2`,
       ],
     },
   },
-};
+}
 
 export default function BinaryTreeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

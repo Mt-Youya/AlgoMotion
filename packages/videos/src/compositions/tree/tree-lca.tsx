@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Lowest Common Ancestor",
@@ -48,7 +48,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description: "Node 0 is a leaf and is neither p nor q — return None. Node 8 is a leaf and is neither p nor q — return None.",
+          description:
+            "Node 0 is a leaf and is neither p nor q — return None. Node 8 is a leaf and is neither p nor q — return None.",
         },
         {
           step: 5,
@@ -60,15 +61,18 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description: "Wait — q=4 is in node 5's subtree. Because node 5 was returned as soon as we matched p, node 4 was never separately found. The algorithm correctly returns node 5 as LCA.",
+          description:
+            "Wait — q=4 is in node 5's subtree. Because node 5 was returned as soon as we matched p, node 4 was never separately found. The algorithm correctly returns node 5 as LCA.",
         },
         {
           step: 8,
-          description: "Second example: p=5, q=1. DFS left returns node 5 (matches p). DFS right returns node 1 (matches q).",
+          description:
+            "Second example: p=5, q=1. DFS left returns node 5 (matches p). DFS right returns node 1 (matches q).",
         },
         {
           step: 9,
-          description: "At root 3: left=node5 (non-null), right=node1 (non-null) → both sides non-null, so root 3 is the LCA.",
+          description:
+            "At root 3: left=node5 (non-null), right=node1 (non-null) → both sides non-null, so root 3 is the LCA.",
         },
         {
           step: 10,
@@ -80,7 +84,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 12,
-          description: "The recursion stack depth equals the tree height H, giving O(H) space — O(log N) balanced, O(N) worst case.",
+          description:
+            "The recursion stack depth equals the tree height H, giving O(H) space — O(log N) balanced, O(N) worst case.",
         },
       ],
     },
@@ -142,14 +147,14 @@ class Solution:
     complexity: {
       heading: "Complexity Analysis",
       timeRows: [
-        { case: "Best",    complexity: "O(1)",  note: "Root itself is p or q" },
-        { case: "Average", complexity: "O(N)",  note: "Visit a fraction of nodes" },
-        { case: "Worst",   complexity: "O(N)",  note: "Full traversal of all N nodes" },
+        { case: "Best", complexity: "O(1)", note: "Root itself is p or q" },
+        { case: "Average", complexity: "O(N)", note: "Visit a fraction of nodes" },
+        { case: "Worst", complexity: "O(N)", note: "Full traversal of all N nodes" },
       ],
       spaceRows: [
         { label: "Call stack (balanced tree)", complexity: "O(log N)", note: "Height of balanced tree" },
-        { label: "Call stack (skewed tree)",   complexity: "O(N)",     note: "Degenerate linked-list shape" },
-        { label: "Extra variables",            complexity: "O(1)",     note: "No auxiliary data structures" },
+        { label: "Call stack (skewed tree)", complexity: "O(N)", note: "Degenerate linked-list shape" },
+        { label: "Extra variables", complexity: "O(1)", note: "No auxiliary data structures" },
       ],
       insights: [
         "The algorithm is optimal — any correct LCA algorithm must visit at least one node on the path from root to p or q, so O(N) is a tight lower bound for the worst case.",
@@ -163,23 +168,28 @@ class Solution:
       variations: [
         {
           name: "LCA in a Binary Search Tree",
-          description: "Exploit BST ordering: if both p and q are less than root, go left; if both greater, go right; otherwise root is LCA. O(H) time.",
+          description:
+            "Exploit BST ordering: if both p and q are less than root, go left; if both greater, go right; otherwise root is LCA. O(H) time.",
         },
         {
           name: "LCA with Parent Pointers",
-          description: "Walk both nodes up to the root recording visited ancestors in a set. The first repeated ancestor is the LCA. O(H) time and space.",
+          description:
+            "Walk both nodes up to the root recording visited ancestors in a set. The first repeated ancestor is the LCA. O(H) time and space.",
         },
         {
           name: "LCA of Multiple Nodes",
-          description: "Generalise: find LCA of a set S of nodes. Modify the base case to check membership in S; return current node when both subtrees return non-null.",
+          description:
+            "Generalise: find LCA of a set S of nodes. Modify the base case to check membership in S; return current node when both subtrees return non-null.",
         },
         {
           name: "Offline LCA (Tarjan's Algorithm)",
-          description: "Process all queries together using Union-Find during a single DFS. Answers all Q queries in O((N + Q) α(N)) — near-linear total.",
+          description:
+            "Process all queries together using Union-Find during a single DFS. Answers all Q queries in O((N + Q) α(N)) — near-linear total.",
         },
         {
           name: "Binary Lifting / Sparse Table LCA",
-          description: "Precompute 2^k-th ancestors for each node. Answer each query in O(log N) after O(N log N) preprocessing. Ideal for competitive programming.",
+          description:
+            "Precompute 2^k-th ancestors for each node. Answer each query in O(log N) after O(N log N) preprocessing. Ideal for competitive programming.",
         },
       ],
       tips: [
@@ -202,8 +212,8 @@ class Solution:
       ],
     },
   },
-};
+}
 
 export default function TreeLcaVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

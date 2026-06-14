@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Palindrome DP",
@@ -69,8 +69,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description:
-            "Continue length 3. Check S[2..4]='BAD': S[2]='B'≠S[4]='D' → dp[2][4]=False. No update to best.",
+          description: "Continue length 3. Check S[2..4]='BAD': S[2]='B'≠S[4]='D' → dp[2][4]=False. No update to best.",
           values: [1, 1, 0],
           colors: ["green", "green", "red"],
         },
@@ -93,7 +92,33 @@ const config: AlgoVideoConfig = {
           description:
             "DP table is fully filled. The longest palindromic substring has length 3 starting at index 0: S[0..2] = 'BAB'. (Alternatively 'ABA' at index 1 is equally valid.)",
           values: [1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
-          colors: ["green","gray","green","gray","gray","gray","green","green","gray","gray","gray","gray","green","gray","gray","gray","gray","gray","green","gray","gray","gray","gray","gray","green"],
+          colors: [
+            "green",
+            "gray",
+            "green",
+            "gray",
+            "gray",
+            "gray",
+            "green",
+            "green",
+            "gray",
+            "gray",
+            "gray",
+            "gray",
+            "green",
+            "gray",
+            "gray",
+            "gray",
+            "gray",
+            "gray",
+            "green",
+            "gray",
+            "gray",
+            "gray",
+            "gray",
+            "gray",
+            "green",
+          ],
         },
         {
           step: 10,
@@ -284,8 +309,8 @@ print(longest_palindrome_expand(s))       # "BAB"`,
       ],
     },
   },
-};
+}
 
 export default function PalindromeDpVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

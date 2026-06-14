@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Monotonic Queue",
@@ -255,8 +255,8 @@ def sliding_window_minimum(nums: List[int], k: int) -> List[int]:
       ],
     },
   ],
-};
+}
 
 export default function MonotonicQueueVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Longest Increasing Subsequence",
@@ -43,8 +43,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "i=1, nums[1]=1. Look back at j=0: nums[0]=3 > 1, so no extension. dp[1] remains 1.",
+          description: "i=1, nums[1]=1. Look back at j=0: nums[0]=3 > 1, so no extension. dp[1] remains 1.",
           values: [1, 1, 1, 1, 1, 1, 1, 1],
           colors: ["gray", "yellow", "blue", "blue", "blue", "blue", "blue", "blue"],
         },
@@ -57,8 +56,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description:
-            "i=3, nums[3]=1. j=0: 3>1, j=1: 1=1 (not strictly less), j=2: 4>1. No extension. dp[3]=1.",
+          description: "i=3, nums[3]=1. j=0: 3>1, j=1: 1=1 (not strictly less), j=2: 4>1. No extension. dp[3]=1.",
           values: [1, 1, 2, 1, 1, 1, 1, 1],
           colors: ["gray", "gray", "gray", "yellow", "blue", "blue", "blue", "blue"],
         },
@@ -92,8 +90,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 9,
-          description:
-            "Final dp array: [1, 1, 2, 1, 3, 4, 2, 4]. Answer = max(dp) = 4.",
+          description: "Final dp array: [1, 1, 2, 1, 3, 4, 2, 4]. Answer = max(dp) = 4.",
           values: [1, 1, 2, 1, 3, 4, 2, 4],
           colors: ["gray", "gray", "gray", "gray", "gray", "yellow", "gray", "yellow"],
         },
@@ -297,8 +294,8 @@ def findLIS(nums: list[int]) -> list[int]:
       ],
     },
   },
-};
+}
 
 export default function LisVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -34,7 +34,8 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           label: "Initial State",
-          description: "Heights = [0,1,0,2,1,0,1,3,1,0,1,2]. Place left pointer at index 0, right pointer at index 11. Initialize lmax=0, rmax=0, water=0.",
+          description:
+            "Heights = [0,1,0,2,1,0,1,3,1,0,1,2]. Place left pointer at index 0, right pointer at index 11. Initialize lmax=0, rmax=0, water=0.",
           array: [
             { value: 0, color: "#2255CC" },
             { value: 1, color: "#2255CC" },
@@ -52,7 +53,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 1: Process Left Pointer (index 0)",
-          description: "height[0]=0 <= height[11]=2. Since height[0]=0 >= lmax=0, update lmax=0. No water added. Advance left to 1.",
+          description:
+            "height[0]=0 <= height[11]=2. Since height[0]=0 >= lmax=0, update lmax=0. No water added. Advance left to 1.",
           array: [
             { value: 0, color: "#F0A030" },
             { value: 1, color: "#2255CC" },
@@ -70,7 +72,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 2: Process Left Pointer (index 1)",
-          description: "height[1]=1 <= height[11]=2. height[1]=1 >= lmax=0, so update lmax=1. No water trapped here. Advance left to 2.",
+          description:
+            "height[1]=1 <= height[11]=2. height[1]=1 >= lmax=0, so update lmax=1. No water trapped here. Advance left to 2.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#F0A030" },
@@ -88,7 +91,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 3: Trap Water at Index 2",
-          description: "height[2]=0 <= height[11]=2. height[2]=0 < lmax=1. Water += lmax - height[2] = 1 - 0 = 1. Total water = 1. Advance left to 3.",
+          description:
+            "height[2]=0 <= height[11]=2. height[2]=0 < lmax=1. Water += lmax - height[2] = 1 - 0 = 1. Total water = 1. Advance left to 3.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#DDE4F0" },
@@ -106,7 +110,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Step 4: Update lmax at Index 3",
-          description: "height[3]=2 <= height[11]=2. height[3]=2 >= lmax=1, so update lmax=2. No water trapped (bar is a new left maximum). Advance left to 4.",
+          description:
+            "height[3]=2 <= height[11]=2. height[3]=2 >= lmax=1, so update lmax=2. No water trapped (bar is a new left maximum). Advance left to 4.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#DDE4F0" },
@@ -124,7 +129,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Steps 5–7: Trap Water at Indices 4, 5, 6",
-          description: "height[4]=1, height[5]=0, height[6]=1 all < lmax=2. Water += (2-1) + (2-0) + (2-1) = 1+2+1 = 4. Running total = 1+4 = 5.",
+          description:
+            "height[4]=1, height[5]=0, height[6]=1 all < lmax=2. Water += (2-1) + (2-0) + (2-1) = 1+2+1 = 4. Running total = 1+4 = 5.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#DDE4F0" },
@@ -142,7 +148,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Right Side: Process Index 11 → 10 → 9",
-          description: "height[11]=2 sets rmax=2. height[10]=1 < rmax → water += 1. height[9]=0 < rmax → water += 2. Right pointer advances inward.",
+          description:
+            "height[11]=2 sets rmax=2. height[10]=1 < rmax → water += 1. height[9]=0 < rmax → water += 2. Right pointer advances inward.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#DDE4F0" },
@@ -160,7 +167,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Pointers Converge at Index 7",
-          description: "height[7]=3 is the global maximum. Both lmax and rmax are updated. The two pointers meet here. No water is trapped at the peak itself.",
+          description:
+            "height[7]=3 is the global maximum. Both lmax and rmax are updated. The two pointers meet here. No water is trapped at the peak itself.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#DDE4F0" },
@@ -178,7 +186,8 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Final Result: 6 Units of Water",
-          description: "All bars processed in a single O(n) pass. Total trapped water = 6. The two-pointer approach used O(1) extra space — no auxiliary arrays needed.",
+          description:
+            "All bars processed in a single O(n) pass. Total trapped water = 6. The two-pointer approach used O(1) extra space — no auxiliary arrays needed.",
           array: [
             { value: 0, color: "#DDE4F0" },
             { value: 1, color: "#DDE4F0" },

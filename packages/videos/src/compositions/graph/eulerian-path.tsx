@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Eulerian Path / Circuit",
@@ -46,8 +46,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 3,
-          description:
-            "Initialize a stack with the start vertex. Also initialize an empty result path list.",
+          description: "Initialize a stack with the start vertex. Also initialize an empty result path list.",
         },
         {
           step: 4,
@@ -267,8 +266,8 @@ print(find_eulerian_path(5, edges))
       ],
     },
   },
-};
+}
 
 export default function EulerianPathVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

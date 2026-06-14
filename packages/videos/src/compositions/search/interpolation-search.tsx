@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Interpolation Search",
-  subtitle:
-    "Estimates the target position using linear interpolation, offering O(log log n) average time on unif",
+  subtitle: "Estimates the target position using linear interpolation, offering O(log log n) average time on unif",
   category: "search",
   difficulty: "intermediate",
 
@@ -40,7 +39,18 @@ const config: AlgoVideoConfig = {
           description: "Start with sorted array [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], target = 70.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["default", "default", "default", "default", "default", "default", "default", "default", "default", "default"],
+            colors: [
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+            ],
           },
         },
         {
@@ -48,7 +58,18 @@ const config: AlgoVideoConfig = {
           description: "Set lo = 0 (value 10), hi = 9 (value 100). Both pointers mark the current search range.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["green", "default", "default", "default", "default", "default", "default", "default", "default", "red"],
+            colors: [
+              "green",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -57,7 +78,18 @@ const config: AlgoVideoConfig = {
             "Apply interpolation formula: pos = 0 + floor((70 - 10) * (9 - 0) / (100 - 10)) = floor(60 * 9 / 90) = floor(6) = 6.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["green", "default", "default", "default", "default", "default", "yellow", "default", "default", "red"],
+            colors: [
+              "green",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "yellow",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -65,7 +97,18 @@ const config: AlgoVideoConfig = {
           description: "Probe index 6: arr[6] = 70. Compare with target 70.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["green", "default", "default", "default", "default", "default", "yellow", "default", "default", "red"],
+            colors: [
+              "green",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "yellow",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -73,7 +116,18 @@ const config: AlgoVideoConfig = {
           description: "arr[6] == 70 == target! Element found at index 6. Return 6.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["default", "default", "default", "default", "default", "default", "green", "default", "default", "default"],
+            colors: [
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "green",
+              "default",
+              "default",
+              "default",
+            ],
           },
         },
         {
@@ -82,7 +136,18 @@ const config: AlgoVideoConfig = {
             "Miss scenario: searching for 40. pos = 0 + floor((40-10)*9/90) = floor(3) = 3. arr[3] = 40. Found immediately!",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["green", "default", "default", "green", "default", "default", "default", "default", "default", "red"],
+            colors: [
+              "green",
+              "default",
+              "default",
+              "green",
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -91,7 +156,18 @@ const config: AlgoVideoConfig = {
             "Not-found scenario: searching for 55. pos = 0 + floor((55-10)*9/90) = floor(4.5) = 4. arr[4] = 50 < 55.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["green", "default", "default", "default", "yellow", "default", "default", "default", "default", "red"],
+            colors: [
+              "green",
+              "default",
+              "default",
+              "default",
+              "yellow",
+              "default",
+              "default",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -99,7 +175,18 @@ const config: AlgoVideoConfig = {
           description: "Since arr[4] < 55, update lo = 5. New range: lo=5 (value 60), hi=9 (value 100).",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["default", "default", "default", "default", "default", "green", "default", "default", "default", "red"],
+            colors: [
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "green",
+              "default",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -108,7 +195,18 @@ const config: AlgoVideoConfig = {
             "New probe: pos = 5 + floor((55-60)*4/40) = 5 + floor(-0.5) = 4. But now lo=5 > pos=4, which means lo > hi after adjustment.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["default", "default", "default", "default", "default", "green", "default", "default", "default", "red"],
+            colors: [
+              "default",
+              "default",
+              "default",
+              "default",
+              "default",
+              "green",
+              "default",
+              "default",
+              "default",
+              "red",
+            ],
           },
         },
         {
@@ -116,7 +214,18 @@ const config: AlgoVideoConfig = {
           description: "lo > hi (or arr[pos] != target with no room left): 55 is NOT in the array. Return -1.",
           arrayState: {
             values: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            colors: ["default", "default", "default", "default", "red", "red", "default", "default", "default", "default"],
+            colors: [
+              "default",
+              "default",
+              "default",
+              "default",
+              "red",
+              "red",
+              "default",
+              "default",
+              "default",
+              "default",
+            ],
           },
         },
       ],
@@ -164,33 +273,27 @@ print(interpolation_search(arr, 55))   # → -1`,
       annotations: [
         {
           lines: "1-7",
-          note:
-            "Function signature and docstring. The algorithm requires a sorted array; uniform distribution is needed for the O(log log n) guarantee.",
+          note: "Function signature and docstring. The algorithm requires a sorted array; uniform distribution is needed for the O(log log n) guarantee.",
         },
         {
           lines: "9",
-          note:
-            "Initialize lo and hi as the two boundary indices. These shrink each iteration as we narrow the search range.",
+          note: "Initialize lo and hi as the two boundary indices. These shrink each iteration as we narrow the search range.",
         },
         {
           lines: "11-15",
-          note:
-            "Guard: loop only while lo <= hi AND target is within the current value range [arr[lo], arr[hi]]. If target is out of range, it cannot be present.",
+          note: "Guard: loop only while lo <= hi AND target is within the current value range [arr[lo], arr[hi]]. If target is out of range, it cannot be present.",
         },
         {
           lines: "16-19",
-          note:
-            "Division-by-zero guard: when arr[lo] == arr[hi], all remaining values are identical. Check once and return.",
+          note: "Division-by-zero guard: when arr[lo] == arr[hi], all remaining values are identical. Check once and return.",
         },
         {
           lines: "21-24",
-          note:
-            "The interpolation formula. This is the heart of the algorithm — it estimates pos proportionally, like a linear interpolation between lo and hi.",
+          note: "The interpolation formula. This is the heart of the algorithm — it estimates pos proportionally, like a linear interpolation between lo and hi.",
         },
         {
           lines: "26-30",
-          note:
-            "Standard three-way comparison: found → return, too small → move lo right, too large → move hi left. Mirrors binary search logic but with a smarter probe.",
+          note: "Standard three-way comparison: found → return, too small → move lo right, too large → move hi left. Mirrors binary search logic but with a smarter probe.",
         },
       ],
     },
@@ -277,8 +380,8 @@ print(interpolation_search(arr, 55))   # → -1`,
       ],
     },
   },
-};
+}
 
 export default function InterpolationSearchVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

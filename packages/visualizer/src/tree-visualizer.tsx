@@ -60,7 +60,9 @@ function computeTreeLayout(root: TreeNode): Map<string, { x: number; y: number }
 
   // Normalize x to start at some offset
   let minX = Infinity
-  layoutNodes.forEach((ln) => { if (ln.x < minX) minX = ln.x })
+  layoutNodes.forEach((ln) => {
+    if (ln.x < minX) minX = ln.x
+  })
   const offsetX = 30
   layoutNodes.forEach((ln) => {
     positions.set(ln.node.id, { x: ln.x - minX + offsetX, y: ln.y })
@@ -103,7 +105,10 @@ export function TreeVisualizer({ root, width = 560, height = 320, className }: T
 
   if (!root) {
     return (
-      <div className={className} style={{ width, height, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div
+        className={className}
+        style={{ width, height, display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
         <span style={{ color: "#94a3b8", fontSize: 14 }}>空树</span>
       </div>
     )
@@ -116,8 +121,14 @@ export function TreeVisualizer({ root, width = 560, height = 320, className }: T
   function collect(node: TreeNode | null | undefined) {
     if (!node) return
     allNodes.push(node)
-    if (node.left) { edges.push({ from: node.id, to: node.left.id }); collect(node.left) }
-    if (node.right) { edges.push({ from: node.id, to: node.right.id }); collect(node.right) }
+    if (node.left) {
+      edges.push({ from: node.id, to: node.left.id })
+      collect(node.left)
+    }
+    if (node.right) {
+      edges.push({ from: node.id, to: node.right.id })
+      collect(node.right)
+    }
   }
   collect(root)
 
@@ -125,7 +136,9 @@ export function TreeVisualizer({ root, width = 560, height = 320, className }: T
 
   // Compute SVG bounding box
   let maxX = 0
-  positions.forEach((p) => { if (p.x > maxX) maxX = p.x })
+  positions.forEach((p) => {
+    if (p.x > maxX) maxX = p.x
+  })
   const svgWidth = Math.max(width, maxX + 50)
 
   return (
@@ -141,17 +154,7 @@ export function TreeVisualizer({ root, width = 560, height = 320, className }: T
         const from = positions.get(e.from)
         const to = positions.get(e.to)
         if (!from || !to) return null
-        return (
-          <line
-            key={i}
-            x1={from.x}
-            y1={from.y}
-            x2={to.x}
-            y2={to.y}
-            stroke="#94a3b8"
-            strokeWidth={1.5}
-          />
-        )
+        return <line key={i} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="#94a3b8" strokeWidth={1.5} />
       })}
 
       {/* Nodes */}

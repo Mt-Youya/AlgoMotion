@@ -15,8 +15,7 @@ const config: AlgoVideoConfig = {
         "Unlike Merge Sort, no auxiliary array is allocated; the heap is built directly inside the input.",
         "The challenge is maintaining the heap invariant (parent ≥ children) after each extraction.",
       ],
-      callout:
-        "Heap Sort guarantees O(n log n) in all cases — best, average, and worst — making it predictably fast.",
+      callout: "Heap Sort guarantees O(n log n) in all cases — best, average, and worst — making it predictably fast.",
     },
     intuition: {
       heading: "Think of it as a self-organising priority queue",
@@ -34,8 +33,7 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           label: "Initial unsorted array",
-          description:
-            "Start with the raw input: [4, 10, 3, 5, 1, 8, 7, 2, 9, 6]. The goal is to sort this in-place.",
+          description: "Start with the raw input: [4, 10, 3, 5, 1, 8, 7, 2, 9, 6]. The goal is to sort this in-place.",
           array: [
             { value: 4, color: "#2255CC" },
             { value: 10, color: "#2255CC" },
@@ -85,8 +83,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Heapify node at index 2 (value 3)",
-          description:
-            "Node 2 has children at indices 5 (value 8) and 6 (value 7). Largest child is 8. Swap 3 and 8.",
+          description: "Node 2 has children at indices 5 (value 8) and 6 (value 7). Largest child is 8. Swap 3 and 8.",
           array: [
             { value: 4, color: "#2255CC" },
             { value: 10, color: "#2255CC" },
@@ -136,8 +133,7 @@ const config: AlgoVideoConfig = {
         },
         {
           label: "Re-heapify: sift down new root (value 1)",
-          description:
-            "Sift 1 down within the heap of size 9 to restore the max-heap property. Root becomes 9.",
+          description: "Sift 1 down within the heap of size 9 to restore the max-heap property. Root becomes 9.",
           array: [
             { value: 9, color: "#F0A030" },
             { value: 5, color: "#2255CC" },

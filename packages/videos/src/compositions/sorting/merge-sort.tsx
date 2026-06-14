@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Merge Sort",
-  subtitle:
-    "Recursively divides the array in half, sorts each half, then merges the two sorted halves.",
+  subtitle: "Recursively divides the array in half, sorts each half, then merges the two sorted halves.",
   category: "sorting",
   difficulty: "intermediate",
 
@@ -94,8 +93,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "Final merge of [27, 38, 43] and [3, 9, 10, 82]: compare heads, always pick smaller.",
+          description: "Final merge of [27, 38, 43] and [3, 9, 10, 82]: compare heads, always pick smaller.",
           values: [3, 9, 10, 27, 38, 43, 82],
           colors: ["green", "green", "green", "green", "green", "green", "green"],
         },
@@ -270,8 +268,8 @@ print(sorted_arr)  # [3, 9, 10, 27, 38, 43, 82]`,
       ],
     },
   ],
-};
+}
 
 export default function MergeSortVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

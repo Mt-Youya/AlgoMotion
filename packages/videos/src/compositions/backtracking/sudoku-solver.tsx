@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Sudoku Solver",
-  subtitle:
-    "Fill a 9x9 Sudoku board so every row, column, and 3x3 box contains digits 1-9 exactly once.",
+  subtitle: "Fill a 9x9 Sudoku board so every row, column, and 3x3 box contains digits 1-9 exactly once.",
   category: "backtracking",
   difficulty: "advanced",
 
@@ -202,8 +201,7 @@ def is_valid(board: list[list[int]], row: int, col: int, num: int) -> bool:
         {
           type: "Board",
           notation: "O(81) = O(1)",
-          explanation:
-            "The 9×9 board is fixed-size. Solving in-place requires no additional board copies.",
+          explanation: "The 9×9 board is fixed-size. Solving in-place requires no additional board copies.",
         },
         {
           type: "Call Stack",
@@ -268,8 +266,8 @@ def is_valid(board: list[list[int]], row: int, col: int, num: int) -> bool:
       ],
     },
   },
-};
+}
 
 export default function SudokuSolverVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Coin Change",
@@ -170,23 +170,28 @@ print(coin_change([1, 2, 5], 11))  # 3 (5 + 5 + 1)`,
       items: [
         {
           name: "Coin Change II (Count Ways)",
-          description: "Instead of the minimum number of coins, count the total number of distinct combinations that sum to the amount. Uses a similar DP table but accumulates counts instead of minimums.",
+          description:
+            "Instead of the minimum number of coins, count the total number of distinct combinations that sum to the amount. Uses a similar DP table but accumulates counts instead of minimums.",
         },
         {
           name: "Unbounded Knapsack",
-          description: "Generalization where each item has a weight and value. Coin change is the special case where all values are 1 and weights are coin denominations.",
+          description:
+            "Generalization where each item has a weight and value. Coin change is the special case where all values are 1 and weights are coin denominations.",
         },
         {
           name: "Perfect Squares",
-          description: "Find the minimum number of perfect square numbers that sum to n. Identical structure — replace coins with [1, 4, 9, 16, ...].",
+          description:
+            "Find the minimum number of perfect square numbers that sum to n. Identical structure — replace coins with [1, 4, 9, 16, ...].",
         },
         {
           name: "Minimum Cost to Reach Target",
-          description: "A broader class of problems where you move from state 0 to state n with unit-cost transitions of varying sizes — coin change is the canonical instance.",
+          description:
+            "A broader class of problems where you move from state 0 to state n with unit-cost transitions of varying sizes — coin change is the canonical instance.",
         },
         {
           name: "Top-Down Memoization Variant",
-          description: "Solve the same problem recursively with a memo dictionary. Useful when only a sparse subset of amounts is actually queried.",
+          description:
+            "Solve the same problem recursively with a memo dictionary. Useful when only a sparse subset of amounts is actually queried.",
         },
       ],
       tips: [
@@ -209,8 +214,8 @@ print(coin_change([1, 2, 5], 11))  # 3 (5 + 5 + 1)`,
       ],
     },
   },
-};
+}
 
 export default function CoinChangeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

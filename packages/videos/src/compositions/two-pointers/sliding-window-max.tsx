@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Sliding Window Maximum",
-  subtitle:
-    "Uses a monotonic deque to find the maximum element in each sliding window of size k in O(n) time.",
+  subtitle: "Uses a monotonic deque to find the maximum element in each sliding window of size k in O(n) time.",
   category: "two-pointers",
   difficulty: "intermediate",
 
@@ -61,7 +60,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 4,
-          description: "i=2, val=-1. nums[dq[-1]]=3 >= -1, just append 2. dq=[1,2]. i >= k-1, output nums[dq[0]]=nums[1]=3. res=[3].",
+          description:
+            "i=2, val=-1. nums[dq[-1]]=3 >= -1, just append 2. dq=[1,2]. i >= k-1, output nums[dq[0]]=nums[1]=3. res=[3].",
           arrayState: {
             values: [1, 3, -1, -3, 5, 3, 6, 7],
             colors: ["green", "red", "yellow", "gray", "gray", "gray", "gray", "gray"],
@@ -69,7 +69,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description: "i=3, val=-3. Append 3. dq=[1,2,3]. Front 1 still in window [1..3]. Output nums[1]=3. res=[3,3].",
+          description:
+            "i=3, val=-3. Append 3. dq=[1,2,3]. Front 1 still in window [1..3]. Output nums[1]=3. res=[3,3].",
           arrayState: {
             values: [1, 3, -1, -3, 5, 3, 6, 7],
             colors: ["gray", "red", "green", "yellow", "gray", "gray", "gray", "gray"],
@@ -77,7 +78,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description: "i=4, val=5. Pop 3 (-3<5), pop 2 (-1<5), pop 1 (3<5). Append 4. dq=[4]. Output nums[4]=5. res=[3,3,5].",
+          description:
+            "i=4, val=5. Pop 3 (-3<5), pop 2 (-1<5), pop 1 (3<5). Append 4. dq=[4]. Output nums[4]=5. res=[3,3,5].",
           arrayState: {
             values: [1, 3, -1, -3, 5, 3, 6, 7],
             colors: ["gray", "gray", "green", "green", "red", "gray", "gray", "gray"],
@@ -85,7 +87,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description: "i=5, val=3. nums[dq[-1]]=5 >= 3, append 5. dq=[4,5]. Front 4 in window [3..5]. Output nums[4]=5. res=[3,3,5,5].",
+          description:
+            "i=5, val=3. nums[dq[-1]]=5 >= 3, append 5. dq=[4,5]. Front 4 in window [3..5]. Output nums[4]=5. res=[3,3,5,5].",
           arrayState: {
             values: [1, 3, -1, -3, 5, 3, 6, 7],
             colors: ["gray", "gray", "gray", "green", "red", "yellow", "gray", "gray"],
@@ -109,7 +112,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description: "All windows processed. Final result: [3, 3, 5, 5, 6, 7]. Each index entered and left the deque exactly once.",
+          description:
+            "All windows processed. Final result: [3, 3, 5, 5, 6, 7]. Each index entered and left the deque exactly once.",
           arrayState: {
             values: [3, 3, 5, 5, 6, 7],
             colors: ["green", "green", "green", "green", "green", "green"],
@@ -236,8 +240,8 @@ def maxSlidingWindow(nums: List[int], k: int) -> List[int]:
       ],
     },
   },
-};
+}
 
 export default function SlidingWindowMaxVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

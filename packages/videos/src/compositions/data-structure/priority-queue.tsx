@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Priority Queue",
@@ -56,7 +56,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description: "Insert 1: append at index 3. Parent is index 1 (value 5). 1 < 5 → swap. Now parent is index 0 (value 3). 1 < 3 → swap again.",
+          description:
+            "Insert 1: append at index 3. Parent is index 1 (value 5). 1 < 5 → swap. Now parent is index 0 (value 3). 1 < 3 → swap again.",
           detail: "heap = [1, 3, 8, 5]  ← bubbled to root",
         },
         {
@@ -86,7 +87,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 11,
-          description: "Build-heap from arbitrary array: apply sift-down from n//2-1 down to 0. This runs in O(n) total.",
+          description:
+            "Build-heap from arbitrary array: apply sift-down from n//2-1 down to 0. This runs in O(n) total.",
           detail: "Efficient batch construction — better than n individual inserts.",
         },
         {
@@ -264,8 +266,8 @@ class PriorityQueue:
       ],
     },
   },
-};
+}
 
 export default function PriorityQueueVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

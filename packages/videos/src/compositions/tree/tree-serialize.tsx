@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Serialize / Deserialize Tree",
@@ -72,8 +72,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description:
-            "Dequeue node 4. Emit '4'. Both children are None → enqueue None, None. Output: '1,2,3,4'.",
+          description: "Dequeue node 4. Emit '4'. Both children are None → enqueue None, None. Output: '1,2,3,4'.",
           array: {
             values: [1, 2, 3, 4, 5, "#", 6],
             colors: ["green", "green", "green", "green", "yellow", "yellow", "yellow"],
@@ -81,8 +80,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 6,
-          description:
-            "Dequeue node 5. Emit '5'. Both children None → enqueue None, None. Output: '1,2,3,4,5'.",
+          description: "Dequeue node 5. Emit '5'. Both children None → enqueue None, None. Output: '1,2,3,4,5'.",
           array: {
             values: [1, 2, 3, 4, 5, "#", 6],
             colors: ["green", "green", "green", "green", "green", "yellow", "yellow"],
@@ -112,7 +110,19 @@ const config: AlgoVideoConfig = {
             "Deserialization: split the string by ',' to get tokens. Create root from token[0]='1'. Push root into a BFS queue. Index i = 1.",
           array: {
             values: ["1", "2", "3", "4", "5", "#", "6", "#", "#", "#", "#"],
-            colors: ["yellow", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white"],
+            colors: [
+              "yellow",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+            ],
           },
         },
         {
@@ -121,7 +131,19 @@ const config: AlgoVideoConfig = {
             "Pop node 1 from queue. tokens[1]='2' → create left child 2 and enqueue it. tokens[2]='3' → create right child 3 and enqueue it. i advances to 3.",
           array: {
             values: ["1", "2", "3", "4", "5", "#", "6", "#", "#", "#", "#"],
-            colors: ["green", "yellow", "yellow", "white", "white", "white", "white", "white", "white", "white", "white"],
+            colors: [
+              "green",
+              "yellow",
+              "yellow",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+              "white",
+            ],
           },
         },
         {
@@ -324,8 +346,8 @@ class Codec:
       ],
     },
   },
-};
+}
 
 export default function TreeSerializeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

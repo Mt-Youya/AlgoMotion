@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "LRU Cache",
-  subtitle:
-    "Cache evicting least recently used item, implemented with hash map and doubly linked list.",
+  subtitle: "Cache evicting least recently used item, implemented with hash map and doubly linked list.",
   category: "data-structure",
   difficulty: "advanced",
 
@@ -73,13 +72,11 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 8,
-          description:
-            "get(1): key 1 was evicted, not in map. Return -1. Cache state unchanged.",
+          description: "get(1): key 1 was evicted, not in map. Return -1. Cache state unchanged.",
         },
         {
           step: 9,
-          description:
-            "get(3): key 3 exists. Move node(3) to front. List: HEAD ↔ [3:C] ↔ [4:D] ↔ [2:B] ↔ TAIL.",
+          description: "get(3): key 3 exists. Move node(3) to front. List: HEAD ↔ [3:C] ↔ [4:D] ↔ [2:B] ↔ TAIL.",
         },
         {
           step: 10,
@@ -242,8 +239,8 @@ class LRUCache:
       ],
     },
   ],
-};
+}
 
 export default function LruCacheVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

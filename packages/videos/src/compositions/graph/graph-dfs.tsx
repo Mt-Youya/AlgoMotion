@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Depth-First Search",
@@ -152,7 +152,11 @@ print(dfs_iterative(graph, 0))  # [0, 1, 3, 4, 2, 5, 6]`,
       ],
       spaceRows: [
         { type: "Visited Set", complexity: "O(V)", note: "Stores each visited node exactly once" },
-        { type: "Call Stack / Explicit Stack", complexity: "O(V)", note: "Depth of recursion bounded by number of vertices" },
+        {
+          type: "Call Stack / Explicit Stack",
+          complexity: "O(V)",
+          note: "Depth of recursion bounded by number of vertices",
+        },
         { type: "Adjacency List", complexity: "O(V + E)", note: "Input representation, not algorithm overhead" },
       ],
       insights: [
@@ -211,8 +215,8 @@ print(dfs_iterative(graph, 0))  # [0, 1, 3, 4, 2, 5, 6]`,
       ],
     },
   },
-};
+}
 
 export default function GraphDfsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

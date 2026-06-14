@@ -1,9 +1,8 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Bubble Sort",
-  subtitle:
-    "Repeatedly swaps adjacent elements that are in the wrong order until the array is sorted.",
+  subtitle: "Repeatedly swaps adjacent elements that are in the wrong order until the array is sorted.",
   category: "sorting",
   difficulty: "beginner",
 
@@ -264,8 +263,8 @@ if __name__ == "__main__":
       ],
     },
   },
-};
+}
 
 export default function BubbleSortVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Level Order Traversal",
@@ -52,7 +52,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 5,
-          description: "Queue size = 2. Dequeue 2, enqueue children 4 and 5. Dequeue 3, enqueue children 6 and 7. Level = [2, 3].",
+          description:
+            "Queue size = 2. Dequeue 2, enqueue children 4 and 5. Dequeue 3, enqueue children 6 and 7. Level = [2, 3].",
         },
         {
           step: 6,
@@ -60,7 +61,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 7,
-          description: "Queue size = 4. Dequeue 4 (no children), dequeue 5 (no children), dequeue 6 (no children), dequeue 7 (no children). Level = [4, 5, 6, 7].",
+          description:
+            "Queue size = 4. Dequeue 4 (no children), dequeue 5 (no children), dequeue 6 (no children), dequeue 7 (no children). Level = [4, 5, 6, 7].",
         },
         {
           step: 8,
@@ -174,8 +176,7 @@ def level_order(root: Optional[TreeNode]) -> List[List[int]]:
         },
         {
           name: "Average of Levels",
-          description:
-            "Compute the arithmetic mean of node values at each level and return the list of averages.",
+          description: "Compute the arithmetic mean of node values at each level and return the list of averages.",
         },
         {
           name: "Maximum Width of Binary Tree",
@@ -208,8 +209,8 @@ def level_order(root: Optional[TreeNode]) -> List[List[int]]:
       ],
     },
   },
-};
+}
 
 export default function TreeLevelOrderVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

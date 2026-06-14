@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Jump Game",
@@ -96,7 +96,8 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 11,
-          description: "The zero at index 3 acts as a wall — no jump from any earlier index can skip over it to reach index 4.",
+          description:
+            "The zero at index 3 acts as a wall — no jump from any earlier index can skip over it to reach index 4.",
         },
       ],
     },
@@ -248,8 +249,8 @@ print(can_jump([2, 0, 0]))         # True  (jump 2 from index 0)`,
       ],
     },
   },
-};
+}
 
 export default function JumpGameVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

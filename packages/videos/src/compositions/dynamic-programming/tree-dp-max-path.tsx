@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Tree DP: Max Path Sum",
@@ -41,8 +41,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 2,
-          description:
-            "Initialize global_max = -Infinity. We will update it at every node during the post-order DFS.",
+          description: "Initialize global_max = -Infinity. We will update it at every node during the post-order DFS.",
         },
         {
           step: 3,
@@ -81,8 +80,7 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description:
-            "gain(-10) = -10 + max(9, 35) = 25. Since -10 is the root, this value is not returned further.",
+          description: "gain(-10) = -10 + max(9, 35) = 25. Since -10 is the root, this value is not returned further.",
         },
         {
           step: 11,
@@ -279,8 +277,8 @@ def maxPathSumIterative(root: Optional[TreeNode]) -> int:
       ],
     },
   },
-};
+}
 
 export default function TreeDpMaxPathVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

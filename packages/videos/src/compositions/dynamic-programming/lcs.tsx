@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Longest Common Subsequence",
@@ -36,13 +36,15 @@ const config: AlgoVideoConfig = {
       steps: [
         {
           step: 1,
-          description: "Set up a (m+1) × (n+1) DP table. Rows represent characters of A = 'ABCB', columns represent characters of B = 'BCB'. All cells start at 0.",
+          description:
+            "Set up a (m+1) × (n+1) DP table. Rows represent characters of A = 'ABCB', columns represent characters of B = 'BCB'. All cells start at 0.",
           values: [0, 0, 0, 0],
           colors: ["gray", "gray", "gray", "gray"],
         },
         {
           step: 2,
-          description: "Fill the first row and first column with zeros — the base case: LCS with an empty string is always 0.",
+          description:
+            "Fill the first row and first column with zeros — the base case: LCS with an empty string is always 0.",
           values: [0, 0, 0, 0],
           colors: ["green", "green", "green", "green"],
         },
@@ -90,13 +92,15 @@ const config: AlgoVideoConfig = {
         },
         {
           step: 10,
-          description: "dp[4][3]: A[3]='B' vs B[2]='B'. Match! dp[4][3] = dp[3][2] + 1 = 2 + 1 = 3. Final answer: LCS length = 3 ('BCB').",
+          description:
+            "dp[4][3]: A[3]='B' vs B[2]='B'. Match! dp[4][3] = dp[3][2] + 1 = 2 + 1 = 3. Final answer: LCS length = 3 ('BCB').",
           values: [0, 1, 2, 3],
           colors: ["green", "blue", "blue", "yellow"],
         },
         {
           step: 11,
-          description: "Traceback: starting from dp[m][n], follow diagonal on matches, otherwise go left or up. This reconstructs the actual LCS string.",
+          description:
+            "Traceback: starting from dp[m][n], follow diagonal on matches, otherwise go left or up. This reconstructs the actual LCS string.",
         },
         {
           step: 12,
@@ -231,23 +235,28 @@ print(lcs_string(a, b))   # "BCAB" (one valid LCS)`,
       items: [
         {
           name: "Longest Common Substring",
-          description: "Requires the common characters to be contiguous. The recurrence resets to 0 on a mismatch instead of taking a max, and the answer is the global maximum seen in the table rather than dp[m][n].",
+          description:
+            "Requires the common characters to be contiguous. The recurrence resets to 0 on a mismatch instead of taking a max, and the answer is the global maximum seen in the table rather than dp[m][n].",
         },
         {
           name: "Edit Distance (Levenshtein)",
-          description: "Counts the minimum insertions, deletions, and substitutions needed to transform one string into another. The DP table structure mirrors LCS but accumulates costs instead of lengths.",
+          description:
+            "Counts the minimum insertions, deletions, and substitutions needed to transform one string into another. The DP table structure mirrors LCS but accumulates costs instead of lengths.",
         },
         {
           name: "Shortest Common Supersequence",
-          description: "The shortest string that has both A and B as subsequences. Its length equals m + n - LCS(A, B), connecting directly to the LCS result.",
+          description:
+            "The shortest string that has both A and B as subsequences. Its length equals m + n - LCS(A, B), connecting directly to the LCS result.",
         },
         {
           name: "Longest Increasing Subsequence (LIS)",
-          description: "A special case of LCS where B is the sorted version of A. LCS(A, sort(A)) gives the LIS. An O(n log n) patience-sorting solution also exists for LIS specifically.",
+          description:
+            "A special case of LCS where B is the sorted version of A. LCS(A, sort(A)) gives the LIS. An O(n log n) patience-sorting solution also exists for LIS specifically.",
         },
         {
           name: "Diff / Patch (Unix diff)",
-          description: "File comparison tools compute the LCS of lines to identify unchanged regions. The diff output shows insertions and deletions relative to the LCS backbone.",
+          description:
+            "File comparison tools compute the LCS of lines to identify unchanged regions. The diff output shows insertions and deletions relative to the LCS backbone.",
         },
       ],
       tips: [
@@ -270,8 +279,8 @@ print(lcs_string(a, b))   # "BCAB" (one valid LCS)`,
       ],
     },
   },
-};
+}
 
 export default function LcsVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

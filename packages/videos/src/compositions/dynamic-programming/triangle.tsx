@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Triangle",
@@ -53,8 +53,7 @@ const config: AlgoVideoConfig = {
         {
           step: 4,
           description: "Process row 1: [3, 4]",
-          detail:
-            "col=0: dp[0] = 3 + min(7,6) = 9. col=1: dp[1] = 4 + min(6,10) = 10. dp = [9, 10, 10, 3].",
+          detail: "col=0: dp[0] = 3 + min(7,6) = 9. col=1: dp[1] = 4 + min(6,10) = 10. dp = [9, 10, 10, 3].",
         },
         {
           step: 5,
@@ -69,17 +68,20 @@ const config: AlgoVideoConfig = {
         {
           step: 7,
           description: "Trace the optimal path: 2 → 3 → 5 → 1",
-          detail: "At each row, follow the child with the smaller dp value: row0→(0,0)=2, row1→(1,0)=3, row2→(2,1)=5, row3→(3,1)=1. Sum = 11.",
+          detail:
+            "At each row, follow the child with the smaller dp value: row0→(0,0)=2, row1→(1,0)=3, row2→(2,1)=5, row3→(3,1)=1. Sum = 11.",
         },
         {
           step: 8,
           description: "Verify: 2 + 3 + 5 + 1 = 11",
-          detail: "All adjacency constraints are satisfied: (0,0)→(1,0)→(2,1)→(3,1) follows the rule (r,c)→(r+1,c) or (r+1,c+1).",
+          detail:
+            "All adjacency constraints are satisfied: (0,0)→(1,0)→(2,1)→(3,1) follows the rule (r,c)→(r+1,c) or (r+1,c+1).",
         },
         {
           step: 9,
           description: "Compare with naive top-down DFS",
-          detail: "A brute-force DFS would explore 2^(n-1) paths for n rows. DP reduces this to O(n²) by caching sub-path costs.",
+          detail:
+            "A brute-force DFS would explore 2^(n-1) paths for n rows. DP reduces this to O(n²) by caching sub-path costs.",
         },
         {
           step: 10,
@@ -253,8 +255,8 @@ class Solution:
       ],
     },
   },
-};
+}
 
 export default function TriangleVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }

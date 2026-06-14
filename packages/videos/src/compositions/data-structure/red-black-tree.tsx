@@ -1,4 +1,4 @@
-import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video";
+import { AlgoVideo, AlgoVideoConfig } from "../../template/algo-video"
 
 const config: AlgoVideoConfig = {
   title: "Red-Black Tree",
@@ -217,12 +217,12 @@ class RedBlackTree:
     complexity: {
       heading: "Time & Space Complexity",
       timeRows: [
-        { case: "Best",    operation: "Search / Insert / Delete", complexity: "O(log n)" },
+        { case: "Best", operation: "Search / Insert / Delete", complexity: "O(log n)" },
         { case: "Average", operation: "Search / Insert / Delete", complexity: "O(log n)" },
-        { case: "Worst",   operation: "Search / Insert / Delete", complexity: "O(log n)" },
+        { case: "Worst", operation: "Search / Insert / Delete", complexity: "O(log n)" },
       ],
       spaceRows: [
-        { label: "Tree storage",    complexity: "O(n)" },
+        { label: "Tree storage", complexity: "O(n)" },
         { label: "Recursive stack", complexity: "O(log n)" },
       ],
       insights: [
@@ -237,23 +237,28 @@ class RedBlackTree:
       variations: [
         {
           name: "Left-Leaning Red-Black Tree (LLRB)",
-          description: "Restricts red links to left children only, reducing the number of cases to handle from 6 to 3. Popularized by Robert Sedgewick for teaching purposes.",
+          description:
+            "Restricts red links to left children only, reducing the number of cases to handle from 6 to 3. Popularized by Robert Sedgewick for teaching purposes.",
         },
         {
           name: "AVL Tree",
-          description: "Stricter balance (height difference ≤ 1 per node). Faster lookups, more rotations on insert/delete. Preferred when reads dominate.",
+          description:
+            "Stricter balance (height difference ≤ 1 per node). Faster lookups, more rotations on insert/delete. Preferred when reads dominate.",
         },
         {
           name: "2-3-4 Tree",
-          description: "The conceptual isomorphism of a red-black tree. Each black node with its red children forms a 2-, 3-, or 4-node. Easier to reason about correctness.",
+          description:
+            "The conceptual isomorphism of a red-black tree. Each black node with its red children forms a 2-, 3-, or 4-node. Easier to reason about correctness.",
         },
         {
           name: "Treap",
-          description: "Combines BST keys with random heap priorities to achieve expected O(log n) balance without deterministic rebalancing logic.",
+          description:
+            "Combines BST keys with random heap priorities to achieve expected O(log n) balance without deterministic rebalancing logic.",
         },
         {
           name: "Weight-Balanced Tree",
-          description: "Balances on subtree sizes rather than height. Useful when you need order-statistics (rank/select) in O(log n) alongside standard BST ops.",
+          description:
+            "Balances on subtree sizes rather than height. Useful when you need order-statistics (rank/select) in O(log n) alongside standard BST ops.",
         },
       ],
       tips: [
@@ -276,8 +281,8 @@ class RedBlackTree:
       ],
     },
   },
-};
+}
 
 export default function RedBlackTreeVideo() {
-  return <AlgoVideo config={config} />;
+  return <AlgoVideo config={config} />
 }
