@@ -49,8 +49,7 @@ import {
 } from "@algomotion/visualizer"
 import Link from "next/link"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-
-// ─── Language type ────────────────────────────────────────────────────────────
+import { useParams, useRouter } from "next/navigation"
 
 type Lang = "zh" | "en"
 
@@ -400,7 +399,10 @@ export function LabClient() {
   const workerRef = useRef<Worker | null>(null)
   const pendingRequestRef = useRef<string | null>(null)
   const didInitialRunRef = useRef(false)
-  const [lang, setLang] = useState<Lang>("zh")
+  const params = useParams()
+  const router = useRouter()
+  const lang = (params.locale as Lang) ?? "zh"
+  const toggleLang = () => router.push(`/${lang === "zh" ? "en" : "zh"}/lab`)
   const [algorithmId, setAlgorithmId] = useState<string>("quick-sort")
   const [comboFilter, setComboFilter] = useState("")
   const [run, setRun] = useState<AlgorithmRun | null>(null)
@@ -462,7 +464,7 @@ export function LabClient() {
   }, [algorithmId, inputText, schema, t])
 
   useEffect(() => {
-    const worker = new Worker(new URL("../../workers/algorithm.worker.ts", import.meta.url))
+    const worker = new Worker(new URL("../../../workers/algorithm.worker.ts", import.meta.url))
     workerRef.current = worker
 
     worker.onmessage = (event: MessageEvent<AlgorithmWorkerResponse>) => {
@@ -533,7 +535,7 @@ export function LabClient() {
   return (
     <main className="lab-shell">
       <header className="lab-nav">
-        <Link className="lab-brand" href="/">
+        <Link className="lab-brand" href={`/${lang}`}>
           <LogoMark className="lab-logo" />
           <span>AlgoMotion</span>
         </Link>
@@ -542,12 +544,12 @@ export function LabClient() {
           <button
             className="lab-lang-toggle"
             data-lang={lang}
-            onClick={() => setLang((l) => (l === "zh" ? "en" : "zh"))}
+            onClick={toggleLang}
             aria-label="Toggle language"
           >
             {lang === "zh" ? "EN" : "中文"}
           </button>
-          <Link href="/">{t.backToHome}</Link>
+          <Link href={`/${lang}`}>{t.backToHome}</Link>
         </div>
       </header>
 
