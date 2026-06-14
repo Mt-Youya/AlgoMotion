@@ -2,3 +2,7 @@
 @import "./tokens.css";
 
 @source "../**/*.{ts,tsx}";
+
+.bg-kumo-brand {
+  background-color: light-dark(oklch(57.72% 0.2324 260), oklch(57.72% 0.2324 260));
+}

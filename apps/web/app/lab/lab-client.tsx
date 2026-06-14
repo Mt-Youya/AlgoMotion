@@ -619,7 +619,7 @@ export function LabClient() {
                     if (filtered.length === 0) return null
                     const catLabel = CATEGORY_LABELS[category]
                     return (
-                      <ComboboxGroup key={category} className="p-2">
+                      <ComboboxGroup key={category} className="p-3">
                         <ComboboxLabel>{catLabel ? catLabel[lang] : category}</ComboboxLabel>
                         {filtered.map((meta) => {
                           if (!meta) return
@@ -638,22 +638,16 @@ export function LabClient() {
                             expert: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
                           }
                           return (
-                            <ComboboxItem key={meta.id as string} value={meta.id as string}>
+                            <ComboboxItem key={meta.id as string} value={meta.id as string} className="px-4">
                               <Item size="xs" className="p-0">
                                 <ItemContent>
                                   <ItemTitle>
-                                    <span className="flex items-start gap-2 w-full">
-                                      <span
-                                        className={`mt-1 shrink-0 inline-block w-2 h-2 rounded-full ${diffDot[diff] ?? "bg-gray-400"}`}
-                                      />
-                                      <Badge className={cn(diffLevel[diff], "hover:text-white")}>
+                                      <Badge className={cn(diffLevel[diff])}>
                                         {diffShort[diff]?.[lang]}
                                       </Badge>
-                                      <span className="mt-0.5 shrink-0 w-px self-stretch bg-current opacity-20" />
                                       <span className="truncate">{meta.displayName[lang]}</span>
-                                    </span>
                                   </ItemTitle>
-                                  <ItemDescription>{meta.description?.[lang]}</ItemDescription>
+                                  <ItemDescription className="mt-1">{meta.description?.[lang]}</ItemDescription>
                                 </ItemContent>
                               </Item>
                             </ComboboxItem>
