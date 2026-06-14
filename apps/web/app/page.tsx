@@ -43,6 +43,15 @@ const algorithmChapters = [
 
 const manifesto = "算法不是一段等待背诵的代码。它是一连串可以被看见、暂停、质疑和重新播放的决定。"
 
+const friendlyLinks = [
+  { name: "Portfolio", url: "https://yonjay.me", key: "portfolio" },
+  { name: "TubePilot", url: "https://tubepilot.yonjay.me", key: "tubepilot" },
+  { name: "Agent Learning", url: "https://agent-learning.yonjay.me", key: "agentLearning" },
+  { name: "Rust Learning", url: "https://rust-learning.yonjay.me", key: "rustLearning" },
+  { name: "Sub Gen", url: "https://sub-gen.yonjay.me", key: "subGen" },
+  { name: "Developer Tools", url: "https://developer-tools.yonjay.me", key: "developerTools" },
+  { name: "Stream Grab", url: "https://stream-grab.yonjay.me", key: "streamgrab" },
+]
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20">
@@ -567,6 +576,14 @@ export default function Home() {
           <a href="https://github.com" target="_blank" rel="noreferrer">
             GitHub
           </a>
+        </div>
+        <div className="footer-friends">
+          <span>友情链接</span>
+          {friendlyLinks.map((link) => (
+            <a key={link.key} href={link.url} target="_blank" rel="noreferrer">
+              {link.name}
+            </a>
+          ))}
         </div>
         <small>MIT © 2026 AlgoMotion</small>
       </footer>

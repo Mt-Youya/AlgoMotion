@@ -186,6 +186,43 @@ footer > div {
   font-size: 13px;
 }
 
+.footer-friends {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 24px;
+  border-top: 1px solid color-mix(in oklch, var(--paper) 10%, transparent);
+}
+
+.footer-friends span {
+  color: color-mix(in oklch, var(--paper) 30%, transparent);
+  letter-spacing: 0.1em;
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.footer-friends a {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in oklch, var(--paper) 14%, transparent);
+  border-radius: 3px;
+  color: color-mix(in oklch, var(--paper) 50%, transparent);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: border-color 0.18s, color 0.18s;
+}
+
+.footer-friends a:hover {
+  border-color: color-mix(in oklch, var(--paper) 40%, transparent);
+  color: color-mix(in oklch, var(--paper) 85%, transparent);
+}
+
 footer small {
   grid-column: 1 / -1;
   margin-top: 60px;
